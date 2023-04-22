@@ -63,10 +63,10 @@
 
     {{-- section of form and map --}}
     <section>
-        <div class="left-container">
+        <div class="full-container">
 
-        <h3>Contact Us</h3>
-            <form class="contact">
+            <div class="left-container">
+                <h2>Contact Us</h2>
                 {{-- <h6>  Full name </h6> --}}
                 <div class="input-group mb-3">
               {{-- <span class="input-group-text" id="basic-addon1">Name </span> --}}
@@ -87,14 +87,12 @@
 
             {{-- <button type="button" class="btn btn-light">Light</button> --}}
             <input class="btn btn-success" type="submit" value="Submit">
-            </form>
+            </div>
+            {{-- map integration --}}
+            <div class="right-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5902933229836!2d88.37954111496536!3d22.891588485019646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89167529a8f17%3A0xe94a8f21ca53259a!2sTechno%20India%20Hooghly!5e0!3m2!1sen!2sin!4v1682076381784!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-
-
-    {{-- map integration --}}
-    <div class="right-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.5902933229836!2d88.37954111496536!3d22.891588485019646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89167529a8f17%3A0xe94a8f21ca53259a!2sTechno%20India%20Hooghly!5e0!3m2!1sen!2sin!4v1682076381784!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
 
 </section>
 <script src="{{asset('js/index.js')}}"></script>
