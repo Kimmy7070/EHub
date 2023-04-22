@@ -1,0 +1,139 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Jost", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+
+
+/* navbar css */
+
+header {
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1% 10% 0 10%;
+}
+
+.logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+.search-bar {
+    display: flex;
+    background-color: hsl(252, 30%, 95%);
+    border-radius: 2rem;
+    padding: 0.2rem 1rem;
+}
+
+.search-bar input[type="search"] {
+    background: transparent;
+    border: none;
+    width: 20vw;
+    /* margin-left: 1rem; */
+    font-size: 0.9rem;
+    color: black;
+}
+
+.search-bar a {
+    color: #2c2c2c;
+    font-size: 16px;
+    padding: 3px 20px;
+    margin-right: 20px;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all 0.42s ease;
+}
+
+.search-bar a:hover {
+    color: #ee1c47;
+}
+
+.nav-icon {
+    display: flex;
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon i {
+    margin-right: 20px;
+    color: #2c2c2c;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all 0.42s ease;
+}
+
+.nav-icon i:hover {
+    transform: scale(1, 1);
+    color: #ee1c47;
+}
+
+#menu-icon {
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 2px;
+    color: #2c2c2c;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* responsive */
+
+@media (max-width: 900px) {
+    header {
+        padding: 0 3%;
+        transition: 0.4s;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: flex;
+    }
+    .nav-icon i {
+        margin: none;
+    }
+    .icons-container {
+        position: absolute;
+        top: 150%;
+        right: -100%;
+        width: 100px;
+        /* height: 100vh; */
+        background: #5b24e0;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 20px 30px 200% 30px;
+        transition: all 0.42s ease;
+    }
+    .icons-container a {
+        display: block;
+        margin: 1rem 0;
+        padding-left: 55%;
+    }
+    .icons-container i {
+        color: rgb(218, 218, 218);
+    }
+    .icons-container.open {
+        right: 0;
+    }
+}
+
+
+/* navbar css end  */
