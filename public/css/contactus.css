@@ -47,6 +47,12 @@ section {
     height: 80%;
 }
 
+.left-container h1 {
+    text-align: center;
+    font-size: 300%;
+    padding: 2rem;
+}
+
 .right-container {
     display: flex;
     align-items: center;
