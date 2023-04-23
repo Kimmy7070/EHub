@@ -187,5 +187,8 @@ textarea {
     }
 }
 
-
+@media (max-width: 500px) {
+    .left-container h1 {
+        font-size: 150%;
+    }
 }
