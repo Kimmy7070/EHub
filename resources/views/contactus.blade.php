@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- Bootstrap cdn --}}
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     {{-- custom css --}}
     <link rel="stylesheet" href="{{asset('css/contactus.css')}}">
@@ -44,23 +44,31 @@
 <body>
     {{-- navbar --}}
     <header>
-      <a href="" class="logo"><img src="./img/logo.png" alt="" /></a>
-      <ul class="search-bar">
-        <input type="search" class="search" placeholder="Search" />
-        <a href="#"><i class="bx bx-search"></i></a>
-      </ul>
+        <a href="" class="logo"><img src="./img/logo.png" alt="" /></a>
+        <ul class="search-bar">
+          <input type="search" class="search" placeholder="Search" />
+          <a href="#"><i class="bx bx-search"></i></a>
+        </ul>
 
-      <div class="nav-icon">
-        <div class="icons-container">
-          <a href=""><i class="bx bx-heart"></i></a>
-          <a href="#"><i class="bx bx-cart"></i></a>
-          <a href=""><i class="bx bx-bell"></i></a>
-          <a href="#"><i class="bx bx-user-circle"></i></a>
+        <div class="nav-icon">
+          <div class="icons-container">
+            <a href=""><i class="bx bx-heart"></i></a>
+            <a href="#"><i class="bx bx-cart"></i></a>
+            <a href=""><i class="bx bx-bell"></i></a>
+            <div class="dropdown">
+              <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bx bx-user-circle"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Login</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="bx bx-menu" id="menu-icon"></div>
         </div>
-
-        <div class="bx bx-menu" id="menu-icon"></div>
-      </div>
-    </header>
+      </header>
 
     {{-- section of form and map --}}
     <section>

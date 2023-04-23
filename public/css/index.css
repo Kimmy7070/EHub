@@ -74,7 +74,7 @@ header {
   transform: scale(1, 1);
   color: #ee1c47;
 }
-.btn{
+.dropdown .btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +83,7 @@ header {
     padding: 0;
 
 }
-.btn i{
+.dropdown .btn i{
     margin: 0;
     padding: 0;
 }
