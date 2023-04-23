@@ -20,7 +20,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    padding: 10px 100px;
+    padding: 10px 20px;
 }
 
 .full-container {
