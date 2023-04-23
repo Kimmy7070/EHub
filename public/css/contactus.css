@@ -25,6 +25,8 @@ section {
 
 .full-container {
     color: white;
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,6 +51,10 @@ section {
     padding: 2rem;
 }
 
+.textarea {
+    resize: vertical;
+}
+
 .right-container {
     display: flex;
     align-items: center;
@@ -61,7 +67,8 @@ section {
 }
 
 iframe {
-    height: 80vh;
+    height: 60vh;
+    width: 60vw;
 }
 
 
@@ -162,4 +169,23 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+}
+
+
+/* responsive */
+
+@media (max-width: 900px) {
+    .full-container {
+        flex-direction: column;
+    }
+    .right-container {
+        width: 80%;
+        padding: 10%;
+    }
+    .left-container h1 {
+        font-size: 200%;
+    }
+}
+
+
 }
