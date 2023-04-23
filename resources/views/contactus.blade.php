@@ -92,7 +92,94 @@
 
 </section>
 
+<!-- footer  -->
+
+<div class="contact">
+    <div class="contact-info">
+      <div class="first-info">
+        <img src="./img/logo.png" alt="" srcset="" />
+
+        <p>
+          <a href="#"><i class="fa-solid fa-phone"></i>+123-456-7890</a>
+        </p>
+        <p>
+          <a href="#"><i class="fa-solid fa-mobile"></i>+919123066813</a>
+        </p>
+        <p>
+          <a href="#"
+            ><i class="fa-solid fa-envelope"></i> maxvolt123@gmail.com</a
+          >
+        </p>
+        <p>
+          <a href="#"
+            ><i class="fa-solid fa-location-dot"></i> Chinsurah ,
+            west-bengal,712136</a
+          >
+        </p>
+        <br />
+
+        <div class="social-icon">
+          <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram"></i></a>
+          <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+          <a href="#"><i class="bx bxl-github"></i></a>
+        </div>
+      </div>
+
+      <div class="second-info">
+        <h4>Support</h4>
+        <p>Contact Us</p>
+        <p>Policy</p>
+        <p>privacy</p>
+        <p>Cancellation and Return</p>
+      </div>
+
+      <div class="third-info">
+        <h4>Shop</h4>
+        <p>Laptops</p>
+        <p>Mobiles</p>
+        <p>Custom PCs</p>
+        <p>Tablets</p>
+        <p>Mobile accessories</p>
+        <p>PC components</p>
+      </div>
+
+      <div class="forth-info">
+        <h4>Company</h4>
+        <p>About Us</p>
+        <p>Blog</p>
+        <p>Donate</p>
+        <p>Login</p>
+        <p>Register</p>
+      </div>
+    </div>
+  </div>
+  <div class="end-text">
+    <p>
+      Copyright &copy; 2023. All Rights Reserved. Designed By Jai shree ram
+    </p>
+  </div>
+
 {{-- navbar script  --}}
 <script src="{{asset('js/index.js')}}"></script>
+{{-- footer script --}}
+
+<script
+src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"
+></script>
+
 </body>
 </html>
