@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('contact', function () {
+Route::get('contactus', function () {
     return view('contactus');
 });
 
