@@ -89,7 +89,7 @@
               <textarea class="form-control" placeholder="Your query" aria-label="With textarea"></textarea>
             </div>
 
-            <input class="btn btn-success" type="submit" value="Submit">
+            <input class="btn btn-primary" type="submit" value="Submit">
             </div>
 
             {{-- map integration --}}
