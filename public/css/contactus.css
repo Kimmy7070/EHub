@@ -174,8 +174,12 @@ textarea {
 
 /* responsive */
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
+    .left-container{
+        width: 60%;
+    }
     .full-container {
+        transition:all .5s ease;
         flex-direction: column;
     }
     .right-container {
@@ -188,7 +192,21 @@ textarea {
 }
 
 @media (max-width: 500px) {
+    .full-container {
+        transition:all .5s ease;
+    }
+    .left-container{
+        width: 60%;
+    }
     .left-container h1 {
         font-size: 150%;
+    }
+    .section
+    {
+        padding:10px 50px;
+    }
+    .form-control
+    {
+        padding: 3% 2%;
     }
 }
