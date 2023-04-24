@@ -174,7 +174,7 @@ textarea {
 
 /* responsive */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .full-container {
         flex-direction: column;
     }
