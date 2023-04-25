@@ -21,6 +21,11 @@ Route::get('contactus', function () {
     return view('contactus');
 });
 
+Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::class, 'contactus_backend_ganja']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//testing push
+
