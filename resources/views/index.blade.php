@@ -93,7 +93,7 @@
 
             <div class="second-info">
                 <h4>Support</h4>
-                <a href="{{url('/contactus')}}"><p>Contact Us</p></a>
+                <a href="{{url('contactus')}}"><p>Contact Us</p></a>
                 <p>Policy</p>
                 <p>privacy</p>
                 <p>Cancellation and Return</p>
