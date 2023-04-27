@@ -30,5 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/testing', function(){
+    //this route is totally for testing purposes
     return view('testing');
 });
