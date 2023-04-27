@@ -1,13 +1,5 @@
-{{-- @extends('layouts.master') --}}
+@extends('layout')
 
-@extends('nav')
+@section('body')
 
-@extends('footer')
-
-
-
-
-
-
-
-
+@stop

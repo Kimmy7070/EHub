@@ -33,3 +33,7 @@ Route::get('/testing', function(){
     //this route is totally for testing purposes
     return view('testing');
 });
+
+Route::get('/admin', function(){
+    return view('/admin/admin');
+});
