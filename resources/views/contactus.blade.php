@@ -72,7 +72,7 @@
             {{-- form integration --}}
             <div class="left-container">
                 <h1>Contact Us</h1>
-                <form action=" {{ url('contactus_backend_api') }} " method="POST" enctype="multipart/form-data">
+                <form action=" {{ url('contactus_backend_api') }} " method="GET" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="name" id="name"
