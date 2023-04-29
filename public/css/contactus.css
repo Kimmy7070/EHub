@@ -13,7 +13,7 @@ body {
     max-width: 80;
 }
 
-section {
+.full-section {
     justify-content: space-evenly;
     align-items: center;
     background-color: antiquewhite;
@@ -175,11 +175,11 @@ textarea {
 /* responsive */
 
 @media (max-width: 800px) {
-    .left-container{
+    .left-container {
         width: 60%;
     }
     .full-container {
-        transition:all .5s ease;
+        transition: all .5s ease;
         flex-direction: column;
     }
     .right-container {
@@ -193,20 +193,18 @@ textarea {
 
 @media (max-width: 500px) {
     .full-container {
-        transition:all .5s ease;
+        transition: all .5s ease;
     }
-    .left-container{
+    .left-container {
         width: 60%;
     }
     .left-container h1 {
         font-size: 150%;
     }
-    .section
-    {
-        padding:10px 50px;
+    .section {
+        padding: 10px 50px;
     }
-    .form-control
-    {
+    .form-control {
         padding: 3% 2%;
     }
 }

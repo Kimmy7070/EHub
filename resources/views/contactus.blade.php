@@ -66,7 +66,7 @@
     </header>
 
     {{-- section of form and map --}}
-    <section>
+    <section class=".full-section">
         <div class="full-container">
 
             {{-- form integration --}}
