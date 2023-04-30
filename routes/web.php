@@ -40,31 +40,23 @@ Route::get('/admin', function(){
     return view('/admin/admin');
 });
 
-Route::get('/admin/contact', function(){
-    return view('/admin/pages-contact');
+Route::get('/admin/profile', function(){
+    return view('/admin/profile');
 });
 
-Route::get('/admin/forms', function(){
-    return view('/admin/forms-elements');
+Route::get('/admin/contact', function(){
+    return view('/admin/contact');
 });
 
 Route::get('/admin/error', function(){
-    return view('/admin/pages-error-404');
+    return view('/admin/error');
 });
 
 Route::get('/admin/faq', function(){
-    return view('/admin/pages-faq');
+    return view('/admin/faq');
 });
 
-Route::get('/admin/tables', function(){
-    return view('admin.tables-data');
+Route::get('/admin/contactus', function(){
+    return view('/admin/contactus');
 });
 
-Route::get('/admin/user', function(){
-    return view('/admin/users-profile');
-});
-
-
-Route::get('/admin/layout', function(){
-    return view ('/admin/layout');
-});
