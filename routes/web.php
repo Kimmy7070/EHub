@@ -40,7 +40,7 @@ Route::get('/testing', function(){
 
 // Admin view
 
-Route::get('/admin', function(){
+Route::get('/admin/admin', function(){
     return view('/admin/admin');
 });
 

@@ -16,6 +16,7 @@
   }
 
   .about_section .detail-box a {
+    text-decoration: none;
     display: inline-block;
     padding: 7px 25px;
     background-color: #252525;
