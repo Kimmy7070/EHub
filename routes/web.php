@@ -25,7 +25,7 @@ Route::get('aboutus', function () {
     return view('aboutus');
 });
 
-Route::get('contactus_backend_api', [contactus_controller::class, 'contactus_backend_ganja']);
+Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::class, 'contactus_backend_ganja']);
 
 Auth::routes();
 
