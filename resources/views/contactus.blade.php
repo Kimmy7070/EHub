@@ -1,5 +1,7 @@
 @extends('layout')
 
+<link rel="stylesheet" href="{{asset('css/contactus.css')}}">
+
 @section('body')
 {{-- section of form and map --}}
     <section class="full-section">
