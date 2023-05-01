@@ -43,6 +43,7 @@
     <link href="{{asset('assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{asset('assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
     <link href="{{asset('assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+
     <!-- Template Main CSS File -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 
@@ -56,7 +57,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="{{url('/admin/profile')}}" class="logo d-flex align-items-center">
+            <a href="{{url('/admin/admin')}}" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block">Admin</span>
             </a>
@@ -293,7 +294,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{url('admin')}}">
+                <a class="nav-link " href="{{url('/admin/admin')}}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
