@@ -115,7 +115,7 @@
 
             <div class="forth-info">
                 <h4>Company</h4>
-                <p>About Us</p>
+                <p><a href="{{url('aboutus')}}">About Us</a></p>
                 <p>Blog</p>
                 <p>Donate</p>
                 <p>Login</p>

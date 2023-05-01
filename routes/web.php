@@ -1,6 +1,6 @@
 <?php
 
-use Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +25,11 @@ Route::get('aboutus', function () {
     return view('aboutus');
 });
 
-Route::get('contactus_backend_api', [contactus_controller::class, 'contactus_backend_ganja']);
+Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::class, 'contactus_backend_ganja']);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
