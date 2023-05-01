@@ -27,11 +27,12 @@
 
             </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam
+                Welcome to our e-commerce website! We are a team of dedicated professionals who are passionate about providing the best online shopping experience to our customers.
+
+                Our mission is to make shopping easier, faster, and more convenient for everyone. We understand that our customers have busy lives, and we want to make sure that they can shop for the products they need without any hassle.
             </p>
             <a href="">
-              Buy us a GOAT
+              Read more
             </a>
           </div>
         </div>
