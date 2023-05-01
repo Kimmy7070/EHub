@@ -1,0 +1,80 @@
+.section-title h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.section-title h2::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: #753e8e;
+}
+
+.section-title{
+    margin: 3% 0;
+}
+
+.single-team{
+    padding-bottom: 70px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 38px;
+    border-radius: 8%;
+}
+.single-team:hover{
+    box-shadow: -1px 1px 19px 2px rgba(0,0,0,0.76);
+-webkit-box-shadow: -1px 1px 19px 2px rgba(0,0,0,0.76);
+-moz-box-shadow: -1px 1px 19px 2px rgba(0,0,0,0.76);
+}
+
+.team-img{
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.team-img img{
+    width: 100%;
+    transition: 0.3s;
+}
+
+.team-info{
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+    bottom: 0;
+    transition: all 0.4s;
+    background:  #753e8e;
+    z-index: 5;
+    color: #fff;
+}
+
+.team-info:hover{
+    background-color: #451a59;
+    padding: 10px 20px;
+}
+
+.team-info h3{
+    font-size: 19px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.team-info p{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.single-team:hover .team-info{
+    height: 100px;
+}
