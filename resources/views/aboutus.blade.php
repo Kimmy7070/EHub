@@ -13,38 +13,45 @@
 
 
 @section('body')
-<!-- about section -->
+    <!-- about section -->
 
-<section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                About Us
-              </h2>
+    <section class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                About Us
+                            </h2>
 
+                        </div>
+                        <p>
+                            Welcome to our e-commerce website! We are a team of dedicated professionals who are
+                            passionate
+                            about providing the best online shopping experience to our customers.
+
+                            Our mission is to make shopping easier, faster, and more convenient for everyone. We
+                            understand
+                            that our customers have busy lives, and we want to make sure that they can shop for the
+                            products
+                            they need without any hassle.
+                        </p>
+                        <a href="">
+                            Read more
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="./img/3.jpg" alt="">
+                    </div>
+                </div>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam
-            </p>
-            <a href="">
-              Buy us a GOAT
-            </a>
-          </div>
         </div>
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="./img/3.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- end about section -->
+    <!-- end about section -->
 
     <div class="team-area">
         <div class="container">
