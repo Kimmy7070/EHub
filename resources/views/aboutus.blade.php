@@ -109,7 +109,7 @@
                             <img src="./img/3.jpg">
                         </div>
                         <div class="team-info">
-                            <h3>Snehashis Banerjee</h3>
+                            <h3>Snehasish Banerjee</h3>
                             <p>Member</p>
                         </div>
                     </div>
