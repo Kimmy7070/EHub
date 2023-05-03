@@ -64,7 +64,7 @@ Route::get('/admin/user', [App\Http\Controllers\HomeController::class, 'Admin_Us
 
 Route::get('/admin/product', [App\Http\Controllers\HomeController::class, 'Admin_Product']);
 
-Route::get('/admin/add_products', [App\Http\Controllers\HomeController::class, 'Admin_Add_Product']);
+Route::get('/admin/add_product', [App\Http\Controllers\HomeController::class, 'Admin_Add_Product']);
 
 Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'index']);
 
