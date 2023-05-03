@@ -16,9 +16,6 @@
                 </ol>
             </nav>
         </div><!-- End Page Title -->
-        <a href=""><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
-        <br>
-        <br>
         <section class="section">
             <div class="row">
                 <div class="col-lg-6">
@@ -164,10 +161,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Submit Button</label>
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Submit Form</button>
-                                    </div>
+                                    <a href=""><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
                                 </div>
 
                             </form><!-- End General Form Elements -->

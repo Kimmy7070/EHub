@@ -292,9 +292,16 @@
             </li><!-- End F.A.Q Page Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ url('/admin/add_categories') }}">
+                    <i class="bi bi-people-fill"></i>
+                    <span>User</span>
+                </a>
+            </li><!-- End Users Page Nav -->
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ url('/admin/contact') }}">
                     <i class="bi bi-envelope"></i>
-                    <span>Contact</span>
+                    <span>Queries</span>
                 </a>
             </li><!-- End Contact Page Nav -->
 
