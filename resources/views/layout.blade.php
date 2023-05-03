@@ -115,7 +115,7 @@
 
             <div class="forth-info">
                 <h4>Company</h4>
-                <p><a href="{{url('aboutus')}}">About Us</a></p>
+                <p>About Us</p>
                 <p>Blog</p>
                 <p>Donate</p>
                 <p>Login</p>
@@ -139,6 +139,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/mixitup.min.js')}}"></script>
+    <script src="{{asset('js/sly.min.js')}}"></script>
+    <script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>
