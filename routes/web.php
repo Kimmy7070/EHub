@@ -60,6 +60,10 @@ Route::get('/admin/profile', [App\Http\Controllers\HomeController::class, 'Admin
 
 Route::get('/admin/faq', [App\Http\Controllers\HomeController::class, 'Admin_Contact_FAQ']);
 
+Route::get('/admin/add_products', [App\Http\Controllers\HomeController::class, 'Admin_Product']);
+
+Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'index']);
+
 Route::get('/admin/error', function(){
     return view('/admin/error');
 });
@@ -72,3 +76,18 @@ Route::get('/admin/contactus', function(){
     return view('/admin/contactus');
 });
 
+Route::get('/admin/table', function(){
+    return view('/admin/ref-table-data-elements');
+});
+
+Route::get('/admin/form', function(){
+    return view('admin.ref-forms-elements');
+});
+
+// Route::get('/admin/add_categories', function(){
+//     return view('admin.add_categories');
+// });
+
+// Route::get('/admin/add_products', function(){
+//     return view('admin.add_products');
+// });

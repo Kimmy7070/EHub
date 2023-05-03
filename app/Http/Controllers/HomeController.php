@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
+use Auth;
+
 use Illuminate\Http\Request;
+
+use App\Http\Models\contactus;
 
 class HomeController extends Controller
 {
@@ -31,7 +37,8 @@ class HomeController extends Controller
     }
 
     public function Admin_Contact_Index(){
-        return view ('admin.contact');
+        $data = DB::table('contactuses')->select('id','name','email','query','created_at')->get();
+        return view ('admin.contact', compact('data'));
     }
 
     public function Admin_Contact_Error(){
@@ -44,5 +51,9 @@ class HomeController extends Controller
 
     public function Admin_Contact_FAQ(){
         return view ('admin.faq');
+    }
+
+    public function Admin_Product(){
+        return view ('admin.add_products');
     }
 }

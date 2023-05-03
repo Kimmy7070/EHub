@@ -36,17 +36,22 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Query</th>
                                     <th scope="col">Time</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data as $contact)
+
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Brandon Jacob</td>
-                                    <td>Designer</td>
-                                    <td>28</td>
-                                    <td>2016-05-25</td>
+                                    <th scope="row">{{ $contact->id }}</th>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->query }}</td>
+                                    <td>{{ $contact->created_at }}</td>
+                                    <td><button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button></td>
                                 </tr>
-                                <tr>
+                                @endforeach
+                                {{-- <tr>
                                     <th scope="row">2</th>
                                     <td>Bridie Kessler</td>
                                     <td>Developer</td>
@@ -73,7 +78,7 @@
                                     <td>Dynamic Division Officer</td>
                                     <td>47</td>
                                     <td>2011-04-19</td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->

@@ -298,7 +298,19 @@
                 </a>
             </li><!-- End Contact Page Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ url('/admin/add_categories') }}">
+                    <i class="bi bi-collection"></i>
+                    <span>Categories</span>
+                </a>
+            </li><!-- End Categories Page Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ url('/admin/add_products') }}">
+                    <i class="bi bi-p-square-fill"></i>
+                    <span>Product</span>
+                </a>
+            </li><!-- End Product Page Nav -->
 
             <li class="nav-item">
                 {{-- <a class="nav-link collapsed" href="{{ url('/admin/logout') }}">
@@ -345,7 +357,7 @@
             &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">Jai shree Ram</a>
         </div>
     </footer><!-- End Footer -->
 
