@@ -48,9 +48,17 @@ Route::get('/admin/profile', function(){
     return view('/admin/profile');
 });
 
-Route::get('/admin/contact', function(){
-    return view('/admin/contact');
-});
+// Route::get('/admin/contact', function(){
+//     return view('/admin/contact');
+// });
+
+Route::get('/admin/contact', [App\Http\Controllers\HomeController::class, 'Admin_Contact_Index']);
+
+Route::get('/admin/error', [App\Http\Controllers\HomeController::class, 'Admin_Contact_Error']);
+
+Route::get('/admin/profile', [App\Http\Controllers\HomeController::class, 'Admin_Contact_Profile']);
+
+Route::get('/admin/faq', [App\Http\Controllers\HomeController::class, 'Admin_Contact_FAQ']);
 
 Route::get('/admin/error', function(){
     return view('/admin/error');

@@ -23,10 +23,26 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('admin.admin');
     }
 
     public function testing(){
         return view ('home');
+    }
+
+    public function Admin_Contact_Index(){
+        return view ('admin.contact');
+    }
+
+    public function Admin_Contact_Error(){
+        return view ('admin.error');
+    }
+
+    public function Admin_Contact_Profile(){
+        return view ('admin.profile');
+    }
+
+    public function Admin_Contact_FAQ(){
+        return view ('admin.faq');
     }
 }
