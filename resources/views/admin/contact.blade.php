@@ -31,11 +31,11 @@
                         <table class="table datatable">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">id</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Position</th>
-                                    <th scope="col">Age</th>
-                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Query</th>
+                                    <th scope="col">Time</th>
                                 </tr>
                             </thead>
                             <tbody>
