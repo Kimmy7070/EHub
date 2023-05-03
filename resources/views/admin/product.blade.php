@@ -5,14 +5,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Queries</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admin.blade.php">Home</a></li>
-                <li class="breadcrumb-item">Tables</li>
-                <li class="breadcrumb-item active">Data</li>
-            </ol>
-        </nav>
+        <h1>Products</h1>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -48,7 +41,7 @@
                                     <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->query }}</td>
                                     <td>{{ $contact->created_at }}</td>
-                                    <td><button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button></td>
+                                    <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
                                 </tr>
                                 @endforeach
 
@@ -62,7 +55,7 @@
             </div>
         </div>
     </section>
-
+    <a href="{{ url('/admin/add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
 </main><!-- End #main -->
 
 @stop

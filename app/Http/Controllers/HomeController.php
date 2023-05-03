@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Models\contactus;
 
+use App\Http\Models\User;
+
 class HomeController extends Controller
 {
     /**
@@ -53,7 +55,20 @@ class HomeController extends Controller
         return view ('admin.faq');
     }
 
+    public function Admin_User_Index(){
+        $data = DB::table('users')->select('id','name','email','type','created_at')->get();
+        return view ('admin.user', compact('data'));
+    }
+
+    public function Admin_User(){
+        return view ('admin.user');
+    }
+
     public function Admin_Product(){
-        return view ('admin.add_products');
+        return view ('admin.product');
+    }
+
+    public function Admin_Add_Product(){
+        return view ('admin.add_product');
     }
 }
