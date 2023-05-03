@@ -60,7 +60,11 @@ Route::get('/admin/profile', [App\Http\Controllers\HomeController::class, 'Admin
 
 Route::get('/admin/faq', [App\Http\Controllers\HomeController::class, 'Admin_Contact_FAQ']);
 
-Route::get('/admin/add_products', [App\Http\Controllers\HomeController::class, 'Admin_Product']);
+Route::get('/admin/user', [App\Http\Controllers\HomeController::class, 'Admin_User_Index']);
+
+Route::get('/admin/product', [App\Http\Controllers\HomeController::class, 'Admin_Product']);
+
+Route::get('/admin/add_products', [App\Http\Controllers\HomeController::class, 'Admin_Add_Product']);
 
 Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'index']);
 

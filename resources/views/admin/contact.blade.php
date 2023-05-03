@@ -48,7 +48,7 @@
                                     <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->query }}</td>
                                     <td>{{ $contact->created_at }}</td>
-                                    <td><button type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button></td>
+                                    <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
                                 </tr>
                                 @endforeach
                                 {{-- <tr>

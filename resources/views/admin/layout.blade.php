@@ -292,7 +292,7 @@
             </li><!-- End F.A.Q Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/add_categories') }}">
+                <a class="nav-link collapsed" href="{{ url('/admin/user') }}">
                     <i class="bi bi-people-fill"></i>
                     <span>User</span>
                 </a>
@@ -313,7 +313,7 @@
             </li><!-- End Categories Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/add_products') }}">
+                <a class="nav-link collapsed" href="{{ url('/admin/product') }}">
                     <i class="bi bi-p-square-fill"></i>
                     <span>Product</span>
                 </a>
