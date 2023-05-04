@@ -78,7 +78,7 @@
                     <a href="#"><i class="fa-solid fa-mobile"></i>+919123066813</a>
                 </p>
                 <p>
-                    <a href="#"><i class="fa-solid fa-envelope"></i> maxvolt123@gmail.com</a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> jaishreeram@gmail.com</a>
                 </p>
                 <p>
                     <a href="#"><i class="fa-solid fa-location-dot"></i> Chinsurah ,
@@ -115,11 +115,11 @@
 
             <div class="forth-info">
                 <h4>Company</h4>
-                <p>About Us</p>
+                <p><a href="{{url('aboutus')}}">About Us</a></p>
                 <p>Blog</p>
                 <p>Donate</p>
-                <p>Login</p>
-                <p>Register</p>
+                <p><a href="{{url('login')}}">Login</a></p>
+                <p><a href="{{url('register')}}">Register</a></p>
             </div>
         </div>
     </div>
