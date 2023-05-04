@@ -64,6 +64,10 @@ class HomeController extends Controller
         return view ('admin.user');
     }
 
+    public function Admin_Categories(){
+        return view ('admin.categories');
+    }
+
     public function Admin_Product(){
         return view ('admin.product');
     }
