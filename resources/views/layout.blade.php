@@ -51,7 +51,7 @@
                         <i class="bx bx-user-circle"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{url('/home')}}">Login</a>
+                        <a class="dropdown-item" href="{{url('/admin/home')}}">Login</a>
                     </div>
                 </div>
 

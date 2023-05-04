@@ -29,7 +29,7 @@ Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 
 
@@ -80,6 +80,8 @@ Route::get('/admin/contactus', function(){
     return view('/admin/contactus');
 });
 
+
+
 Route::get('/admin/table', function(){
     return view('/admin/ref-table-data-elements');
 });
@@ -88,9 +90,9 @@ Route::get('/admin/form', function(){
     return view('admin.ref-forms-elements');
 });
 
-// Route::get('/admin/add_categories', function(){
-//     return view('admin.add_categories');
-// });
+Route::get('/admin/categories', function(){
+    return view('admin.categories');
+});
 
 // Route::get('/admin/add_products', function(){
 //     return view('admin.add_products');
