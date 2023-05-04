@@ -31,8 +31,9 @@ class CategoriesController extends Controller
     public function create(Request $request)
     {
         //for add_categories
-        $data = categories::create($request->all());
-        return redirect('admin.categories')->with('success', "Categories added successfully.");
+        $fetch_data = categories::create($request->all());
+        $data = DB::table('categories')->select('id','cat_name','cat_status','created_at')->get();
+        return view ('admin.categories',compact('data'))->with('success', "Categories added successfully.");
     }
 
     /**
@@ -49,7 +50,8 @@ class CategoriesController extends Controller
     public function show()
     {
         $data = DB::table('categories')->select('id','cat_name','cat_status','created_at')->get();
-        return view ('admin.contact', compact('data'));
+        // return view ('admin.categories', compact('data'));
+        return view('admin.categories', compact('data'));
     }
 
     /**

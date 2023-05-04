@@ -72,6 +72,7 @@ Route::get('add_categories', [App\Http\Controllers\CategoriesController::class, 
 
 Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'index']);
 
+
 Route::get('/admin/error', function(){
     return view('/admin/error');
 });
@@ -94,9 +95,9 @@ Route::get('/admin/form', function(){
     return view('admin.ref-forms-elements');
 });
 
-Route::get('/admin/categories', function(){
-    return view('admin.categories');
-});
+// Route::get('/admin/categories', function(){
+//     return view('admin.categories');
+// });
 
 // Route::get('/admin/add_products', function(){
 //     return view('admin.add_products');

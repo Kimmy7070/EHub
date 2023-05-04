@@ -1,18 +1,10 @@
 @extends('admin.layout')
 
 @section('body')
-<<<<<<< HEAD
-
-<main id="main" class="main">
-
-    <div class="pagetitle">
-        <h1>Products</h1>
-=======
 <main id="main" class="main">
 
     <div class="pagetitle">
         <h1>Categories</h1>
->>>>>>> 06fbfd5eba602b36f92df19d8db7b4f3b49779c0
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -22,13 +14,6 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Datatables</h5>
-<<<<<<< HEAD
-                        <p>Add lightweight datatables to your project with using the <a
-                                href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
-                                DataTables</a> library. Just add <code>.datatable</code> class name to any table you
-                            wish to conver to a datatable</p>
-
-=======
                         {{-- <p>Add lightweight datatables to your project with using the <a
                                 href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
                                 DataTables</a> library. Just add <code>.datatable</code> class name to any table you
@@ -44,38 +29,18 @@
 
                             <br>
                             <br>
->>>>>>> 06fbfd5eba602b36f92df19d8db7b4f3b49779c0
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th scope="col">id</th>
-<<<<<<< HEAD
-                                    <th scope="col">Category</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Edit</th>
-=======
                                     <th scope="col">Name</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Time</th>
->>>>>>> 06fbfd5eba602b36f92df19d8db7b4f3b49779c0
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-<<<<<<< HEAD
-                                {{-- @foreach ($cat_data as $categories) --}}
-
-                                <tr>
-                                    <th scope="row">{{ $categories->id }}</th>
-                                    <td>{{ $categories->category }}</td>
-                                    <td><span class="badge badge-pill badge-danger">Status</span></td>
-                                    <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
-                                    <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
-                                </tr>
-                                {{-- @endforeach --}}
-
-=======
                                 @foreach ($data as $cat)
 
                                 <tr>
@@ -114,7 +79,6 @@
                                     <td>47</td>
                                     <td>2011-04-19</td>
                                 </tr> --}}
->>>>>>> 06fbfd5eba602b36f92df19d8db7b4f3b49779c0
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->
@@ -125,11 +89,5 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
-    <a href="{{ url('/admin/add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
 </main><!-- End #main -->
-
-=======
-</main><!-- End #main -->
->>>>>>> 06fbfd5eba602b36f92df19d8db7b4f3b49779c0
 @stop
