@@ -47,7 +47,7 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->type }}</td>
                                             <td>{{ $user->created_at }}</td>
-                                            <td><button type="button" class="btn btn-sucess"><i class="bi bi-pencil-square"></i></button></td>
+                                            <td><button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></td>
                                             <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
                                         </tr>
                                     @endforeach

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
+use Auth;
+
 use App\Models\categories;
 use Illuminate\Http\Request;
 
@@ -24,9 +28,11 @@ class CategoriesController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        //for add_categories
+        $data = categories::create($request->all());
+        return redirect('admin.categories')->with('success', "Categories added successfully.");
     }
 
     /**
@@ -34,15 +40,16 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(categories $categories)
+    public function show()
     {
-        //
+        $data = DB::table('categories')->select('id','cat_name','cat_status','created_at')->get();
+        return view ('admin.contact', compact('data'));
     }
 
     /**

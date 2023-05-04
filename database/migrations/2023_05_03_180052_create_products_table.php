@@ -18,9 +18,9 @@ return new class extends Migration
             $table->integer('mrp')->default(0);
             $table->integer('price')->default(0);
             $table->integer('quantity')->default(0);
-            $table->blob('img-1')->default();
-            $table->blob('img-2')->default();
-            $table->blob('img-3')->default();
+            $table->string('img-1')->default();
+            $table->string('img-2')->default();
+            $table->string('img-3')->default();
             $table->string('desc')->default();
             $table->string('short-desc')->default();
             $table->string('meta-title')->default();

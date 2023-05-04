@@ -26,11 +26,12 @@
               <h5 class="card-title">General Form Elements</h5>
 
               <!-- General Form Elements -->
-              <form>
+              <form action=" {{ url('add_categories') }} " method="GET" enctype="multipart/form-data">
+                @csrf
                 <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Text</label>
+                  <label for="inputText" class="col-sm-2 col-form-label">Category</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="cat_name">
                   </div>
                 </div>
 

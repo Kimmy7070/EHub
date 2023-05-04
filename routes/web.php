@@ -66,6 +66,10 @@ Route::get('/admin/product', [App\Http\Controllers\HomeController::class, 'Admin
 
 Route::get('/admin/add_product', [App\Http\Controllers\HomeController::class, 'Admin_Add_Product']);
 
+Route::get('/admin/categories', [App\Http\Controllers\CategoriesController::class, 'show']);
+
+Route::get('add_categories', [App\Http\Controllers\CategoriesController::class, 'create']);
+
 Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'index']);
 
 Route::get('/admin/error', function(){
