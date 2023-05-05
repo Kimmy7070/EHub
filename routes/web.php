@@ -32,6 +32,7 @@ Auth::routes();
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 
+// testing here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#############
 
 // Route::get('/admin/testing', function(){
 //     //this route is totally for testing purposes
@@ -40,9 +41,9 @@ Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])
 
 // Admin view
 
-Route::get('/admin/admin', function(){
-    return view('/admin/admin');
-});
+// Route::get('/admin/home', function(){
+//     return view('/admin/home');
+// });
 
 Route::get('/admin/profile', function(){
     return view('/admin/profile');
@@ -62,17 +63,24 @@ Route::get('/admin/faq', [App\Http\Controllers\HomeController::class, 'Admin_Con
 
 Route::get('/admin/user', [App\Http\Controllers\HomeController::class, 'Admin_User_Index']);
 
+// product route
+
 Route::get('/admin/product', [App\Http\Controllers\ProductController::class, 'show']);
 
 Route::get('/admin/add_product', [App\Http\Controllers\ProductController::class, 'create']);
 
 Route::get('add_product', [App\Http\Controllers\ProductController::class, 'index']);
 
-Route::get('/admin/categories', [App\Http\Controllers\CategoriesController::class, 'show']);
+// product routes ends
 
-Route::get('add_categories', [App\Http\Controllers\CategoriesController::class, 'create']);
+// categories route
+Route::get('/admin/categories', [App\Http\Controllers\CategoriesController::class, 'show']);//view categories table page
 
-Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'index']);
+Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'create']);//backend for uploading add categories data to db
+
+Route::get('/admin/add_categories/form', [App\Http\Controllers\CategoriesController::class, 'add_categories_form_view']);//viewing add categories form page from where categories data has to be filled up in the form.
+
+//categories route ends
 
 
 Route::get('/admin/error', function(){
@@ -97,10 +105,3 @@ Route::get('/admin/form', function(){
     return view('admin.ref-forms-elements');
 });
 
-// Route::get('/admin/categories', function(){
-//     return view('admin.categories');
-// });
-
-// Route::get('/admin/add_products', function(){
-//     return view('admin.add_products');
-// });

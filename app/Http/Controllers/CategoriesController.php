@@ -22,6 +22,7 @@ class CategoriesController extends Controller
 
     public function index()
     {
+        $data = DB::table('categories')->select('id','cat_name','cat_status','created_at')->get();
         return view ('admin.add_categories');
     }
 
@@ -32,8 +33,7 @@ class CategoriesController extends Controller
     {
         //for add_categories
         $fetch_data = categories::create($request->all());
-        $data = DB::table('categories')->select('id','cat_name','cat_status','created_at')->get();
-        return view ('admin.categories',compact('data'))->with('success', "Categories added successfully.");
+        return redirect ('/admin/categories');
     }
 
     /**
@@ -54,27 +54,8 @@ class CategoriesController extends Controller
         return view('admin.categories', compact('data'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(categories $categories)
-    {
-        //
+    public function add_categories_form_view(){
+        return view('admin.add_categories');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, categories $categories)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(categories $categories)
-    {
-        //
-    }
 }

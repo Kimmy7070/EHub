@@ -47,7 +47,7 @@ class ProductController extends Controller
      */
     public function show()
     {
-        $Product_data =  DB::table('products')->select(`id`, `name`, `category`, `mrp`, `price`, `quantity`, `img-1`, `img-2`, `img-3`, `desc`, `short-desc`, `meta-title`, `meta-desc`, `meta-keyword`, `status`, `created_at`)->get();
+        $Product_data = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
         // return view ('admin.categories', compact('data'));
         return view('admin.product',compact('Product_data'));
     }

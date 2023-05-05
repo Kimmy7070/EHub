@@ -34,9 +34,9 @@ class HomeController extends Controller
         return view('admin.admin');
     }
 
-    public function testing(){
-        return view ('/admin/admin');
-    }
+    // public function testing(){
+    //     return view ('/admin/home');
+    // }
 
     public function Admin_Contact_Index(){
         $data = DB::table('contactuses')->select('id','name','email','query','created_at')->get();

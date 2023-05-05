@@ -25,7 +25,7 @@
                             <h5 class="card-title">General Form Elements</h5>
 
                             <!-- Add product form -->
-                            <form>
+                            <form action="{{url('/admin/add_product')}}" enctype="multipart/form-data" method="post">
                                 <div class="row mb-3">
                                     <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                                     <div class="col-sm-10">

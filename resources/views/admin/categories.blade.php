@@ -22,11 +22,11 @@
                                 <div class="form-group">
                                     <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px">
                                     <input type="submit" value="Search" class="btn btn-primary mr-3">
-                                    <a href="{{ url('/admin/add_categories') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Categories</i></button></a>
+
                                 </div>
 
                             </form>
-
+                            <a href="{{ url('/admin/add_categories/form') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Categories</i></button></a>
                             <br>
                             <br>
                         <!-- Table with stripped rows -->
