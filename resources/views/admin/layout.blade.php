@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Admin dashboard</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
@@ -18,6 +14,22 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
+
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Fonts -->
+    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+
+
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -30,25 +42,15 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Mar 09 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
-
-    <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="admin.blade.php" class="logo d-flex align-items-center">
+            <a href="{{ url('/admin/home') }}" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
+                <span class="d-none d-lg-block">Admin</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -72,81 +74,6 @@
                 <li class="nav-item dropdown">
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <i class="bi bi-bell"></i>
-                        <span class="badge bg-primary badge-number">4</span>
-                    </a><!-- End Notification Icon -->
-
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                        <li class="dropdown-header">
-                            You have 4 new notifications
-                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                            <i class="bi bi-exclamation-circle text-warning"></i>
-                            <div>
-                                <h4>Lorem Ipsum</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>30 min. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                            <i class="bi bi-x-circle text-danger"></i>
-                            <div>
-                                <h4>Atque rerum nesciunt</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>1 hr. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                            <i class="bi bi-check-circle text-success"></i>
-                            <div>
-                                <h4>Sit rerum fuga</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>2 hrs. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                            <i class="bi bi-info-circle text-primary"></i>
-                            <div>
-                                <h4>Dicta reprehenderit</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>4 hrs. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li class="dropdown-footer">
-                            <a href="#">Show all notifications</a>
-                        </li>
-
-                    </ul><!-- End Notification Dropdown Items -->
-
-                </li><!-- End Notification Nav -->
-
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-chat-left-text"></i>
                         <span class="badge bg-success badge-number">3</span>
                     </a><!-- End Messages Icon -->
@@ -154,7 +81,8 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                         <li class="dropdown-header">
                             You have 3 new messages
-                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                            <a href="{{ url('/admin/contact') }}"><span
+                                    class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -215,19 +143,72 @@
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
                         <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
+                            <h6>{{ Auth::user()->name }}</h6>
                             <span>Web Designer</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li>
+                        @guest
+                            @if (Route::has('login'))
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('login') }}">
+                                        <i class="bi bi-person"></i><span>{{ __('Login') }}</span></a>
+
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('register') }}">
+                                        <i class="bi bi-person"></i><span>{{ __('Register') }}</span></a>
+
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            @endif
+                        @else
+                            <li>
+                                {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a> --}}
+
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                    <span><i class="bi bi-box-arrow-in-right"></i>{{ __('Logout') }}</span>
+                                </a>
+
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            </div>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                @endguest
+
+                {{-- <li>
                             <a class="dropdown-item d-flex align-items-center" href="users-profile.blade.php">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
@@ -262,15 +243,19 @@
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
-                        </li>
+                        </li> --}}
 
-                    </ul><!-- End Profile Dropdown Items -->
-                </li><!-- End Profile Nav -->
+            </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
 
             </ul>
         </nav><!-- End Icons Navigation -->
 
     </header><!-- End Header -->
+
+
+
+
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
@@ -278,60 +263,12 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="admin.blade.php">
+                <a class="nav-link " href="{{ url('/admin/home') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
-
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="forms-elements.blade.php">
-                            <i class="bi bi-circle"></i><span>Form Elements</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-layouts.blade.php">
-                            <i class="bi bi-circle"></i><span>Form Layouts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-editors.blade.php">
-                            <i class="bi bi-circle"></i><span>Form Editors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-validation.blade.php">
-                            <i class="bi bi-circle"></i><span>Form Validation</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Forms Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="tables-general.blade.php">
-                            <i class="bi bi-circle"></i><span>General Tables</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tables-data.blade.php">
-                            <i class="bi bi-circle"></i><span>Data Tables</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Tables Nav -->
 
 
 
@@ -340,52 +277,84 @@
             <li class="nav-heading">Pages</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.blade.php">
+                <a class="nav-link collapsed" href="{{ url('/admin/profile') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>
             </li><!-- End Profile Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-faq.blade.php">
+                <a class="nav-link collapsed" href="{{ url('/admin/faq') }}">
                     <i class="bi bi-question-circle"></i>
                     <span>F.A.Q</span>
                 </a>
             </li><!-- End F.A.Q Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-contact.blade.php">
+                <a class="nav-link collapsed" href="{{ url('/admin/user') }}">
+                    <i class="bi bi-people-fill"></i>
+                    <span>User</span>
+                </a>
+            </li><!-- End Users Page Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ url('/admin/contact') }}">
                     <i class="bi bi-envelope"></i>
-                    <span>Contact</span>
+                    <span>Queries</span>
                 </a>
             </li><!-- End Contact Page Nav -->
 
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ url('/admin/categories') }}">
+                    <i class="bi bi-collection"></i>
+                    <span>Categories</span>
+                </a>
+            </li><!-- End Categories Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-login.blade.php">
+                <a class="nav-link collapsed" href="{{ url('/admin/product') }}">
+                    <i class="bi bi-p-square-fill"></i>
+                    <span>Product</span>
+                </a>
+            </li><!-- End Product Page Nav -->
+
+            <li class="nav-item">
+                {{-- <a class="nav-link collapsed" href="{{ url('/admin/logout') }}">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Logout Fuckers</span>
+                </a> --}}
+                <a class="nav-link collapsed" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <span><i class="bi bi-box-arrow-in-right"></i>{{ __('Logout') }}</span>
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </li><!-- End Login Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-error-404.blade.php">
+                <a class="nav-link collapsed" href="{{ url('/admin/error') }}">
                     <i class="bi bi-dash-circle"></i>
                     <span>Error 404</span>
                 </a>
             </li><!-- End Error 404 Page Nav -->
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="pages-blank.blade.php">
                     <i class="bi bi-file-earmark"></i>
                     <span>Blank</span>
                 </a>
-            </li><!-- End Blank Page Nav -->
+            </li>
+            <!-- End Blank Page Nav --> --}}
 
         </ul>
 
     </aside><!-- End Sidebar-->
+
+    {{-- main body yielded here --}}
+
+    @yield('body')
 
     {{-- main body yielded here --}}
     @yield('body')
@@ -396,11 +365,7 @@
             &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">Jai shree Ram</a>
         </div>
     </footer><!-- End Footer -->
 
@@ -418,7 +383,8 @@
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+
 
 </body>
 

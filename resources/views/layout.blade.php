@@ -13,7 +13,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
     <!-- custom css -->
-    <link rel="stylesheet" href="{{asset('css/navfoot.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/layout.css')}}" />
 
     <!-- font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,7 +51,7 @@
                         <i class="bx bx-user-circle"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{url('/home')}}">Login</a>
+                        <a class="dropdown-item" href="{{url('/admin/home')}}">Login</a>
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@
                     <a href="#"><i class="fa-solid fa-mobile"></i>+919123066813</a>
                 </p>
                 <p>
-                    <a href="#"><i class="fa-solid fa-envelope"></i> maxvolt123@gmail.com</a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> jaishreeram@gmail.com</a>
                 </p>
                 <p>
                     <a href="#"><i class="fa-solid fa-location-dot"></i> Chinsurah ,
@@ -115,11 +115,11 @@
 
             <div class="forth-info">
                 <h4>Company</h4>
-                <p>About Us</p>
+                <p><a href="{{url('aboutus')}}">About Us</a></p>
                 <p>Blog</p>
                 <p>Donate</p>
-                <p>Login</p>
-                <p>Register</p>
+                <p><a href="{{ route('login') }}">Login</a></p>
+                <p><a href="{{ route('register') }}">Register</a></p>
             </div>
         </div>
     </div>
@@ -139,6 +139,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/mixitup.min.js')}}"></script>
+    <script src="{{asset('js/sly.min.js')}}"></script>
+    <script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>

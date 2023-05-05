@@ -89,7 +89,7 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 30%;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     padding: 0;
 }
 
@@ -161,9 +161,11 @@ header {
 
 
 /* contact section  */
-footer{
+
+footer {
     position: relative;
 }
+
 .contact {
     background-color: #f3f4f6;
     padding: 3% 3%;
@@ -213,11 +215,12 @@ footer{
     text-decoration: none;
     color: #565656;
 }
-.contact-info p a:hover{
+
+.contact-info p a:hover {
     color: #ee1c47;
 }
 
-.contact-info p:hover{
+.contact-info p:hover {
     color: #ee1c47;
     padding-left: 1rem;
 }
