@@ -26,6 +26,7 @@
                                 </div>
 
                             </form>
+                            <br>
                             <a href="{{ url('/admin/add_categories/form') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Categories</i></button></a>
                             <br>
                             <br>

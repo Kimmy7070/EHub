@@ -64,9 +64,9 @@
                                             <button type="button" class="badge bg-warning">Out of Stock</button></td>
                                         @endif
                                     </td>
-                                    <td><img src="{{url('storage/' . $product->img1)}}" width="30rem" height="auto" alt=""></td>
-                                    <td><img src="{{url('storage/' . $product->img2)}}" width="30rem" height="auto" alt=""></td>
-                                    <td><img src="{{url('storage/' . $product->img3)}}" width="30rem" height="auto" alt=""></td>
+                                    <td><a href="{{url('storage/' . $product->img1)}}"><img src="{{url('storage/' . $product->img1)}}" width="30rem" height="auto" alt=""></a></td>
+                                    <td><a href="{{url('storage/' . $product->img2)}}"><img src="{{url('storage/' . $product->img2)}}" width="30rem" height="auto" alt=""></a></td>
+                                    <td><a href="{{url('storage/' . $product->img3)}}"><img src="{{url('storage/' . $product->img3)}}" width="30rem" height="auto" alt=""></a></td>
                                     <td>
                                         @if ( $product->status == '1')
                                             <button type="button" class="btn btn-danger">Inactive</button></td>
