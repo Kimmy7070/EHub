@@ -36,7 +36,16 @@
                                 <div class="row mb-3">
                                     <label for="inputText" class="col-sm-2 col-form-label">Category</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <select class="form-control" name="cars" id="cars">
+                                            @foreach ( $data as $category )
+
+
+                                            <option class="form-control" value="{{$category->cat_name}}">{{$category->cat_name}}</option>
+
+                                            @endforeach
+
+
+                                          </select>
                                     </div>
                                 </div>
 

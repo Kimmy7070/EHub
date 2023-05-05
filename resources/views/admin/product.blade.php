@@ -24,7 +24,7 @@
                                 <div class="form-group">
                                     <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px">
                                     <input type="submit" value="Search" class="btn btn-primary mr-3">
-                                    <a href="{{ url('/admin/add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
+                                    <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
 
                                 </div>
 
@@ -39,49 +39,34 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Query</th>
                                     <th scope="col">Time</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($data as $contact)
+                                @foreach ($Product_data as $product)
 
                                 <tr>
-                                    <th scope="row">{{ $contact->id }}</th>
-                                    <td>{{ $contact->name }}</td>
-                                    <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->query }}</td>
-                                    <td>{{ $contact->created_at }}</td>
+                                    <th scope="row">{{ $product->id }}</th>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->category }}</td>
+                                    <td>{{ $product->mrp }}</td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->quantity }}</td>
+                                    <td>{{ $product->img-1 }}</td>
+                                    <td>{{ $product->img-2 }}</td>
+                                    <td>{{ $product->img-3 }}</td>
+                                    <td>{{ $product->desc }}</td>
+                                    <td>{{ $product->short-desc }}</td>
+                                    <td>{{ $product->meta-title }}</td>
+                                    <td>{{ $product->meta-desc }}</td>
+                                    <td>{{ $product->meta-keyword }}</td>
+                                    <td>{{ $product->status }}</td>
+
                                     <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
                                 </tr>
-                                @endforeach --}}
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Bridie Kessler</td>
-                                    <td>Developer</td>
-                                    <td>35</td>
-                                    <td>2014-12-05</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Ashleigh Langosh</td>
-                                    <td>Finance</td>
-                                    <td>45</td>
-                                    <td>2011-08-12</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Angus Grady</td>
-                                    <td>HR</td>
-                                    <td>34</td>
-                                    <td>2012-06-11</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Raheem Lehner</td>
-                                    <td>Dynamic Division Officer</td>
-                                    <td>47</td>
-                                    <td>2011-04-19</td>
-                                </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->
