@@ -5,14 +5,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Queries</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admin.blade.php">Home</a></li>
-                <li class="breadcrumb-item">Tables</li>
-                <li class="breadcrumb-item active">Data</li>
-            </ol>
-        </nav>
+        <h1>Products</h1>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -30,7 +23,10 @@
                             <form action="">
                                 <div class="form-group">
                                     <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px">
-                                    <input type="submit" value="Search" class="btn btn-primary mr-3">                                </div>
+                                    <input type="submit" value="Search" class="btn btn-primary mr-3">
+                                    <a href="{{ url('/admin/add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
+
+                                </div>
 
                             </form>
 
@@ -47,7 +43,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $contact)
+                                {{-- @foreach ($data as $contact)
 
                                 <tr>
                                     <th scope="row">{{ $contact->id }}</th>
@@ -57,8 +53,8 @@
                                     <td>{{ $contact->created_at }}</td>
                                     <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
                                 </tr>
-                                @endforeach
-                                {{-- <tr>
+                                @endforeach --}}
+                                <tr>
                                     <th scope="row">2</th>
                                     <td>Bridie Kessler</td>
                                     <td>Developer</td>
@@ -85,7 +81,7 @@
                                     <td>Dynamic Division Officer</td>
                                     <td>47</td>
                                     <td>2011-04-19</td>
-                                </tr> --}}
+                                </tr>
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->
@@ -96,7 +92,6 @@
             </div>
         </div>
     </section>
-
 </main><!-- End #main -->
 
 @stop
