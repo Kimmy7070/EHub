@@ -24,39 +24,65 @@
                         <div class="card-body" style="width: 100%">
                             <h5 class="card-title">General Form Elements</h5>
 
-                            <!-- General Form Elements -->
+                            <!-- Add product form -->
                             <form>
                                 <div class="row mb-3">
-                                    <label for="inputText" class="col-sm-2 col-form-label">Text</label>
+                                    <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
-                                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                                    <label for="inputText" class="col-sm-2 col-form-label">Category</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control">
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputNumber" class="col-sm-2 col-form-label">Number</label>
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">MRP</label>
                                     <div class="col-sm-10">
                                         <input type="number" class="form-control">
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
-                                    <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">Price</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">Quantity</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">Image 1</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" type="file" id="formFile">
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">Image 2</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="file" id="formFile">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputNumber" class="col-sm-2 col-form-label">Image 3</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="file" id="formFile">
+                                    </div>
+                                </div>
+
+                                {{-- <div class="row mb-3">
                                     <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
                                     <div class="col-sm-10">
                                         <input type="date" class="form-control">
@@ -75,14 +101,51 @@
                                         <input type="color" class="form-control form-control-color" id="exampleColorInput"
                                             value="#4154f1" title="Choose your color">
                                     </div>
-                                </div>
+                                </div> --}}
+
                                 <div class="row mb-3">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Textarea</label>
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
                                     <div class="col-sm-10">
                                         <textarea class="form-control" style="height: 100px"></textarea>
                                     </div>
                                 </div>
-                                <fieldset class="row mb-3">
+
+                                <div class="row mb-3">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Short Description</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" style="height: 100px"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-2 col-form-label">Meta Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Meta Description</label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" style="height: 100px"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-2 col-form-label">Meta Keyword</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-2 col-form-label">Status</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                {{-- <fieldset class="row mb-3">
                                     <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
                                     <div class="col-sm-10">
                                         <div class="form-check">
@@ -158,7 +221,7 @@
                                             <option value="3">Three</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="row mb-3">
                                     <a href=""><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>

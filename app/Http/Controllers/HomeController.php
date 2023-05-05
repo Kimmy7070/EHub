@@ -35,7 +35,7 @@ class HomeController extends Controller
     }
 
     public function testing(){
-        return view ('home');
+        return view ('/admin/admin');
     }
 
     public function Admin_Contact_Index(){
@@ -62,6 +62,10 @@ class HomeController extends Controller
 
     public function Admin_User(){
         return view ('admin.user');
+    }
+
+    public function Admin_Categories(){
+        return view ('admin.categories');
     }
 
     public function Admin_Product(){

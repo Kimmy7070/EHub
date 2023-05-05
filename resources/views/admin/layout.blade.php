@@ -306,7 +306,7 @@
             </li><!-- End Contact Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/add_categories') }}">
+                <a class="nav-link collapsed" href="{{ url('/admin/categories') }}">
                     <i class="bi bi-collection"></i>
                     <span>Categories</span>
                 </a>

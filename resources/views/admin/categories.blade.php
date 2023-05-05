@@ -1,11 +1,10 @@
 @extends('admin.layout')
 
 @section('body')
-
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Products</h1>
+        <h1>Categories</h1>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -19,42 +18,40 @@
                                 href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
                                 DataTables</a> library. Just add <code>.datatable</code> class name to any table you
                             wish to conver to a datatable</p> --}}
-
                             <form action="">
                                 <div class="form-group">
                                     <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px">
                                     <input type="submit" value="Search" class="btn btn-primary mr-3">
-                                    <a href="{{ url('/admin/add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
-
+                                    <a href="{{ url('/admin/add_categories') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Categories</i></button></a>
                                 </div>
 
                             </form>
 
+                            <br>
+                            <br>
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th scope="col">id</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Query</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Time</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($data as $contact)
+                                @foreach ($data as $cat)
 
                                 <tr>
-                                    <th scope="row">{{ $contact->id }}</th>
-                                    <td>{{ $contact->name }}</td>
-                                    <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->query }}</td>
-                                    <td>{{ $contact->created_at }}</td>
+                                    <th scope="row">{{ $cat->id }}</th>
+                                    <td>{{ $cat->cat_name }}</td>
+                                    <td>{{ $cat->cat_status }}</td>
+                                    <td>{{ $cat->created_at }}</td>
                                     <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
                                 </tr>
-                                @endforeach --}}
-                                <tr>
+                                @endforeach
+                                {{-- <tr>
                                     <th scope="row">2</th>
                                     <td>Bridie Kessler</td>
                                     <td>Developer</td>
@@ -81,7 +78,7 @@
                                     <td>Dynamic Division Officer</td>
                                     <td>47</td>
                                     <td>2011-04-19</td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->
@@ -93,5 +90,4 @@
         </div>
     </section>
 </main><!-- End #main -->
-
 @stop
