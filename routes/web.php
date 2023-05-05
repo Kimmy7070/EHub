@@ -72,6 +72,10 @@ Route::get('/admin/product', [App\Http\Controllers\ProductController::class, 'sh
 
 Route::get('/admin/add_product', [App\Http\Controllers\ProductController::class, 'create']);
 
+// Route::get('/admin/add_product/add', [App\Http\Controllers\ProductController::class, 'store']);
+Route::match(['get','post'], '/admin/add_product/add', [App\Http\Controllers\ProductController::class, 'store']); //for error change to HomeController
+
+
 Route::get('add_product', [App\Http\Controllers\ProductController::class, 'index']);
 
 // product routes ends

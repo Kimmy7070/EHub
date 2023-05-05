@@ -36,10 +36,15 @@
                                 <tr>
                                     <th scope="col">id</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Query</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">category</th>
+                                    <th scope="col">mrp</th>
+                                    <th scope="col">price</th>
+                                    <th scope="col">quantity</th>
+                                    <th scope="col">img1</th>
+                                    <th scope="col">img2</th>
+                                    <th scope="col">img3</th>
+                                    <th scope="col">status</th>
+                                    <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
                             </thead>
@@ -52,17 +57,26 @@
                                     <td>{{ $product->category }}</td>
                                     <td>{{ $product->mrp }}</td>
                                     <td>{{ $product->price }}</td>
-                                    <td>{{ $product->quantity }}</td>
-                                    <td>{{ $product->img-1 }}</td>
-                                    <td>{{ $product->img-2 }}</td>
-                                    <td>{{ $product->img-3 }}</td>
-                                    <td>{{ $product->desc }}</td>
-                                    <td>{{ $product->short-desc }}</td>
-                                    <td>{{ $product->meta-title }}</td>
-                                    <td>{{ $product->meta-desc }}</td>
-                                    <td>{{ $product->meta-keyword }}</td>
-                                    <td>{{ $product->status }}</td>
+                                    <td>
+                                        @if ( $product->quantity >= '1')
+                                        {{ $product->quantity }}</td>
+                                        @else
+                                            <button type="button" class="badge bg-warning">Out of Stock</button></td>
+                                        @endif
+                                    </td>
+                                    <td><img src="{{url('storage/' . $product->img1)}}" width="30rem" height="auto" alt=""></td>
+                                    <td><img src="{{url('storage/' . $product->img2)}}" width="30rem" height="auto" alt=""></td>
+                                    <td><img src="{{url('storage/' . $product->img3)}}" width="30rem" height="auto" alt=""></td>
+                                    <td>
+                                        @if ( $product->status == '1')
+                                            <button type="button" class="btn btn-danger">Inactive</button></td>
 
+                                        @elseif ( $product->status == '0')
+                                            <button type="button" class="btn btn-sucess">Active</button></td>
+                                        @endif
+
+
+                                    <td><button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></td>
                                     <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
                                 </tr>
                                 @endforeach

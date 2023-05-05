@@ -25,21 +25,20 @@
                             <h5 class="card-title">General Form Elements</h5>
 
                             <!-- Add product form -->
-                            <form action="{{url('/admin/add_product')}}" enctype="multipart/form-data" method="post">
+                            <form action="{{url('/admin/add_product/add')}}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row mb-3">
                                     <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="name">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputText" class="col-sm-2 col-form-label">Category</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" name="cars" id="cars">
+                                        <select class="form-control" name="category" id="cars">
                                             @foreach ( $data as $category )
-
-
                                             <option class="form-control" value="{{$category->cat_name}}">{{$category->cat_name}}</option>
 
                                             @endforeach
@@ -52,42 +51,42 @@
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">MRP</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" name="mrp">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">Price</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" name="price">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">Quantity</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control">
+                                        <input type="number" class="form-control" name="quantity">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">Image 1</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="file" id="formFile">
+                                        <input class="form-control" type="file" id="img1" name="img1">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">Image 2</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="file" id="formFile">
+                                        <input class="form-control" type="file" id="formFile" name="img2">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">Image 3</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="file" id="formFile">
+                                        <input class="form-control" type="file" id="formFile" name="img3">
                                     </div>
                                 </div>
 
@@ -115,44 +114,38 @@
                                 <div class="row mb-3">
                                     <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" style="height: 100px"></textarea>
+                                        <textarea class="form-control" style="height: 100px" name="desc"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputPassword" class="col-sm-2 col-form-label">Short Description</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" style="height: 100px"></textarea>
+                                        <textarea class="form-control" style="height: 100px" name="short_desc"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputText" class="col-sm-2 col-form-label">Meta Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="meta_title">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Meta Description</label>
+                                    <label for="Meta Description" class="col-sm-2 col-form-label">Meta Description</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" style="height: 100px"></textarea>
+                                        <textarea class="form-control" style="height: 100px" name="meta_desc"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="inputText" class="col-sm-2 col-form-label">Meta Keyword</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="meta_keyword">
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
-                                    <label for="inputText" class="col-sm-2 col-form-label">Status</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
 
                                 {{-- <fieldset class="row mb-3">
                                     <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
@@ -233,7 +226,7 @@
                                 </div> --}}
 
                                 <div class="row mb-3">
-                                    <a href=""><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
+                                    <a href=""><button type="submit" name="submit" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
                                 </div>
 
                             </form><!-- End General Form Elements -->
