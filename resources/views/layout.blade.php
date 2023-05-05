@@ -118,8 +118,8 @@
                 <p><a href="{{url('aboutus')}}">About Us</a></p>
                 <p>Blog</p>
                 <p>Donate</p>
-                <p><a href="{{url('login')}}">Login</a></p>
-                <p><a href="{{url('register')}}">Register</a></p>
+                <p><a href="{{ route('login') }}">Login</a></p>
+                {{-- <p><a href="{{ route('register') }}">Register</a></p> --}}
             </div>
         </div>
     </div>
