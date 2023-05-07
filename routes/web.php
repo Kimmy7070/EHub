@@ -35,7 +35,8 @@ Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::
 
 Auth::routes();
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index']); //route for admin access
+Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'index'])->middleware('is_admin'); //application base route; route for customer access
 
 ##########################################################################
 // admin dashboard routes ends here
@@ -146,9 +147,12 @@ Route::get('/admin/form', function(){
 
 
 
-###############################################################################
-// Customer side routes starts here
-###############################################################################
+#######################################################################################################################################################################
+//////////////                                               Customer side routes starts here              /////////////////////////////////////////////////
+// ***********************                                  DO NOT WRITE ANYTHING IN THIS SPACE                               ****************************
+// $$$$$$$$$$$$$$$$$$$$$$$$                       IF YOU WRITE THEN YOU WILL STAND RESPONSIBLE FOR ANY DEFECTS $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                            DO NOT MESS WITH THIS CODE                            $$$$$$$$$$$$$$$$$$$$$$$
+#######################################################################################################################################################################
 
 
 Auth::routes();
