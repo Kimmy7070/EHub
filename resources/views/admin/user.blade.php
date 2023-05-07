@@ -23,10 +23,10 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Datatables</h5>
-                            <p>Add lightweight datatables to your project with using the <a
+                            {{-- <p>Add lightweight datatables to your project with using the <a
                                     href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
                                     DataTables</a> library. Just add <code>.datatable</code> class name to any table you
-                                wish to conver to a datatable</p>
+                                wish to conver to a datatable</p> --}}
 
                             <form action="">
                                 <div class="form-group">
@@ -44,7 +44,7 @@
                                         <th scope="col">id</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Admin</th>
+                                        <th scope="col">Type</th>
                                         <th scope="col">Time</th>
                                         <th scope="col">Edit</th>
                                         <th scope="col">Delete</th>
@@ -56,7 +56,17 @@
                                             <th scope="row">{{ $user->id }}</th>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->type }}</td>
+                                            <td>
+                                                @if ($user->is_admin == 1 && $user->is_customer == 0)
+                                                    <button type="button" class="badge bg-success">Admin</button>
+                                                @elseif($user->is_admin == 0 && $user->is_customer == 1)
+                                                    <button type="button" class="badge bg-primary">Customer</button>
+                                                @elseif($user->is_admin == 1 && $user->is_customer == 1)
+                                                    <button type="button" class="badge bg-danger">Admin & User</button>
+                                                @else
+                                                     <button type="button" class="badge bg-Secondary">Undefined</button>
+                                                @endif
+                                            </td>
                                             <td>{{ $user->created_at }}</td>
                                             <td><button type="button" class="btn btn-success"><i
                                                         class="bi bi-pencil-square"></i></button></td>

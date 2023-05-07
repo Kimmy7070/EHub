@@ -56,12 +56,13 @@ class HomeController extends Controller
     }
 
     public function Admin_User_Index(Request $request){
+        //->orwhere('type' , 'LIKE', '%' . $search .'%') type search code
 
         $search = $request['search'] ?? "";
         if ($search != "") {
-            $data = DB::table('users')->where('name', 'LIKE', '%' . $search .'%')->orwhere('email', 'LIKE', '%' . $search .'%')->orwhere('type' , 'LIKE', '%' . $search .'%')->get();
+            $data = DB::table('users')->where('name', 'LIKE', '%' . $search .'%')->orwhere('email', 'LIKE', '%' . $search .'%')->get();
         } else {
-            $data = DB::table('users')->select('id','name','email','type','created_at')->get();
+            $data = DB::table('users')->select('id','name','email','is_admin','is_customer','created_at')->get();
         }
         $data = compact('data', 'search');
         return view ('admin.user')->with($data);
