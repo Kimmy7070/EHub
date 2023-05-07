@@ -55,7 +55,7 @@ class LoginController extends Controller
 
             if (Auth::user()->is_admin == 1) {
                 return redirect('admin/home');
-            } else {
+            } elseif (Auth::user()->is_customer == 1) {
                 return redirect('/customer/home');
             }
         } else {

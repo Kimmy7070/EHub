@@ -35,8 +35,8 @@ Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::
 
 Auth::routes();
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index']); //route for admin access
-Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'index'])->middleware('is_admin'); //application base route; route for customer access
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('is_admin'); //route for admin access
+// Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'index'])->middleware('is_customer'); //application base route; route for customer access
 
 ##########################################################################
 // admin dashboard routes ends here
@@ -157,7 +157,7 @@ Route::get('/admin/form', function(){
 
 Auth::routes();
 
-Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'index']);
+Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'index'])->middleware('is_customer'); //application base route; route for customer access
 
 Route::get('/customer/error', [App\Http\Controllers\CustomerController::class, 'Customer_Error_view']);
 

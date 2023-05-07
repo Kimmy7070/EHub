@@ -2,12 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use Auth;
+use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsAdmin
+class IsCustomer
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->is_admin==1){
+        if (Auth::user()->is_customer==1){
             return $next($request);
         }
-        return redirect('login')->with('error', "Access Denied");
+        return redirect('/admin/home')->with('error', "Access Denied");
     }
 }
