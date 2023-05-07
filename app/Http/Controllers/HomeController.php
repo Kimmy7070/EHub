@@ -67,6 +67,11 @@ class HomeController extends Controller
         return view ('admin.user')->with($data);
     }
 
+    public function user_delete($id)
+    {
+        DB::table('users')->where('id', $id)->delete();
+        return redirect('/admin/user');
+    }
     public function Admin_User(){
         return view ('admin.user');
     }

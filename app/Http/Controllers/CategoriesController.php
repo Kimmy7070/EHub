@@ -63,4 +63,10 @@ class CategoriesController extends Controller
     {
         return view('admin.add_categories');
     }
+
+    public function delete($id)
+    {
+        DB::table('categories')->where('id', $id)->delete();
+        return redirect('/admin/categories');
+    }
 }

@@ -20,7 +20,8 @@
                             wish to conver to a datatable</p> --}}
                             <form action="">
                                 <div class="form-group">
-                                    <input type="search" name="search" class="col-5 p-1 mt-1" style="border-radius: 10px" value="{{$search}}">
+                                    <input type="search" name="search" class="col-5 p-1 mt-1" style="border-radius: 10px"
+                                        value="{{ $search }}">
                                     <button class="btn btn-primary" type="submit">Search</button>
                                     {{ $search }}
                                 </div>
@@ -49,8 +50,18 @@
                                             <td>{{ $cat->cat_name }}</td>
                                             <td>{{ $cat->cat_status }}</td>
                                             <td>{{ $cat->created_at }}</td>
-                                            <td><button type="button" class="btn btn-danger"><i
-                                                        class='bi bi-trash'></i></button></td>
+
+                                            <td>
+                                                <form action="{{ url('/admin/categories/delete', ['id' => $cat->id]) }}">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger" name="delete"><i
+                                                                class='bi bi-trash'></i></button>
+                                                    </div>
+
+                                                </form>
+                                            </td>
+
+
                                         </tr>
                                     @endforeach
                                     {{-- <tr>

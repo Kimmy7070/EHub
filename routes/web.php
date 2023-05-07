@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\categories;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,8 +64,17 @@ Route::get('/admin/profile', [App\Http\Controllers\HomeController::class, 'Admin
 
 Route::get('/admin/faq', [App\Http\Controllers\HomeController::class, 'Admin_Contact_FAQ']);
 
+##################################################
+// user routes
+
 Route::get('/admin/user', [App\Http\Controllers\HomeController::class, 'Admin_User_Index']);
 
+Route::get('/admin/user/delete/{id}', [App\Http\Controllers\HomeController::class, 'user_delete']);
+
+// user routes ends here
+###################################################
+
+###################################################
 // product route
 
 Route::get('/admin/product', [App\Http\Controllers\ProductController::class, 'show']);
@@ -78,17 +87,28 @@ Route::match(['get','post'], '/admin/add_product/add', [App\Http\Controllers\Pro
 
 Route::get('add_product', [App\Http\Controllers\ProductController::class, 'index']);
 
+// delete route
+Route::get('/admin/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
+
 // product routes ends
 
+######################################################
+
+######################################################
 // categories route
+
 Route::get('/admin/categories', [App\Http\Controllers\CategoriesController::class, 'show']);//view categories table page
 
 Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'create']);//backend for uploading add categories data to db
 
 Route::get('/admin/add_categories/form', [App\Http\Controllers\CategoriesController::class, 'add_categories_form_view']);//viewing add categories form page from where categories data has to be filled up in the form.
 
-//categories route ends
+// categories delete
 
+Route::get('/admin/categories/delete/{id}', [App\Http\Controllers\CategoriesController::class, 'delete']);
+
+//categories route ends
+##########################################################
 
 Route::get('/admin/error', function(){
     return view('/admin/error');

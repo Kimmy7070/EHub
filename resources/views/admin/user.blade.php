@@ -28,15 +28,15 @@
                                     DataTables</a> library. Just add <code>.datatable</code> class name to any table you
                                 wish to conver to a datatable</p>
 
-                                <form action="">
-                                    <div class="form-group">
-                                        <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search">
+                            <form action="">
+                                <div class="form-group">
+                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search">
 
-                                        <button class="btn btn-primary" type="submit">Search</button>
-                                        {{$search}}
-                                    </div>
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    {{ $search }}
+                                </div>
 
-                                </form>
+                            </form>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
@@ -58,8 +58,17 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->type }}</td>
                                             <td>{{ $user->created_at }}</td>
-                                            <td><button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></td>
-                                            <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
+                                            <td><button type="button" class="btn btn-success"><i
+                                                        class="bi bi-pencil-square"></i></button></td>
+                                            <td>
+                                                <form action="{{ url('/admin/user/delete', ['id' => $user->id]) }}">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger" name="delete"><i
+                                                                class='bi bi-trash'></i></button>
+                                                    </div>
+
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
