@@ -22,14 +22,15 @@
 
                             <form action="">
                                 <div class="form-group">
-                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px">
-                                    <input type="submit" value="Search" class="btn btn-primary mr-3">
-                                    <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
+                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search">
 
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    {{$search}}
                                 </div>
 
                             </form>
-
+                            <br>
+                            <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Product</i></button></a>
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>

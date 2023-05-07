@@ -70,11 +70,17 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(Request $request)
     {
-        $Product_data = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            $Product_data = DB::table('products')->where('name', 'LIKE', '%' . $search .'%')->orwhere('category' , 'LIKE', '%' . $search .'%')->orwhere('mrp' ,'LIKE', '%' . $search .'%')->orwhere('quantity' , 'LIKE', '%' . $search .'%')->get();
+        } else {
+            $Product_data = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
+        }
+        $Product_data = compact('Product_data', 'search');
         // return view ('admin.categories', compact('data'));
-        return view('admin.product', compact('Product_data'));
+        return view('admin.product')->with($Product_data);
     }
 
     /**

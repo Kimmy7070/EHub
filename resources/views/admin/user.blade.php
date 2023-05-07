@@ -19,6 +19,8 @@
                 <div class="col-lg-12">
 
                     <div class="card">
+
+
                         <div class="card-body">
                             <h5 class="card-title">Datatables</h5>
                             <p>Add lightweight datatables to your project with using the <a
@@ -26,6 +28,15 @@
                                     DataTables</a> library. Just add <code>.datatable</code> class name to any table you
                                 wish to conver to a datatable</p>
 
+                                <form action="">
+                                    <div class="form-group">
+                                        <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search">
+
+                                        <button class="btn btn-primary" type="submit">Search</button>
+                                        {{$search}}
+                                    </div>
+
+                                </form>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>

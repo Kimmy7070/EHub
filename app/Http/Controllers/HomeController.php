@@ -55,9 +55,16 @@ class HomeController extends Controller
         return view ('admin.faq');
     }
 
-    public function Admin_User_Index(){
-        $data = DB::table('users')->select('id','name','email','type','created_at')->get();
-        return view ('admin.user', compact('data'));
+    public function Admin_User_Index(Request $request){
+
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            $data = DB::table('users')->where('name', 'LIKE', '%' . $search .'%')->orwhere('email', 'LIKE', '%' . $search .'%')->orwhere('type' , 'LIKE', '%' . $search .'%')->get();
+        } else {
+            $data = DB::table('users')->select('id','name','email','type','created_at')->get();
+        }
+        $data = compact('data', 'search');
+        return view ('admin.user')->with($data);
     }
 
     public function Admin_User(){
