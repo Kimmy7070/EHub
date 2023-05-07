@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('index');
 });
@@ -44,17 +46,9 @@ Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])
 
 // Admin view
 
-// Route::get('/admin/home', function(){
-//     return view('/admin/home');
-// });
-
 Route::get('/admin/profile', function(){
     return view('/admin/profile');
 });
-
-// Route::get('/admin/contact', function(){
-//     return view('/admin/contact');
-// });
 
 Route::get('/admin/contact', [App\Http\Controllers\HomeController::class, 'Admin_Contact_Index']);
 
@@ -132,3 +126,36 @@ Route::get('/admin/form', function(){
     return view('admin.ref-forms-elements');
 });
 
+
+
+
+
+###############################################################################
+// Customer side routes starts here
+###############################################################################
+
+
+Auth::routes();
+
+Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'index']);
+
+Route::get('/customer/error', [App\Http\Controllers\CustomerController::class, 'Customer_Error_view']);
+
+Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class, 'Customer_Profile_view']);
+
+Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################
+// Customer side routes ends here
+###############################################################################
