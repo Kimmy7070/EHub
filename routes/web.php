@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
+##########################################################################
+// admin dashboard routes
+##########################################################################
 Route::get('/', function () {
     return view('index');
 });
@@ -36,8 +37,14 @@ Auth::routes();
 
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index']);
 
+##########################################################################
+// admin dashboard routes ends here
+##########################################################################
 
-// testing here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#############
+
+#####################################################################
+// testing route
+#####################################################################
 
 // Route::get('/admin/testing', function(){
 //     //this route is totally for testing purposes
@@ -45,6 +52,11 @@ Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])
 // });
 
 // Admin view
+
+#####################################################################
+// testing route ends
+#####################################################################
+
 
 Route::get('/admin/profile', function(){
     return view('/admin/profile');
@@ -65,12 +77,13 @@ Route::get('/admin/user', [App\Http\Controllers\HomeController::class, 'Admin_Us
 
 Route::get('/admin/user/delete/{id}', [App\Http\Controllers\HomeController::class, 'user_delete']);
 
+###################################################
 // user routes ends here
 ###################################################
 
 ###################################################
 // product route
-
+###################################################
 Route::get('/admin/product', [App\Http\Controllers\ProductController::class, 'show']);
 
 Route::get('/admin/add_product', [App\Http\Controllers\ProductController::class, 'create']);
@@ -84,13 +97,15 @@ Route::get('add_product', [App\Http\Controllers\ProductController::class, 'index
 // delete route
 Route::get('/admin/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
 
-// product routes ends
-
 ######################################################
+// product routes ends
+######################################################
+
+
 
 ######################################################
 // categories route
-
+######################################################
 Route::get('/admin/categories', [App\Http\Controllers\CategoriesController::class, 'show']);//view categories table page
 
 Route::get('/admin/add_categories', [App\Http\Controllers\CategoriesController::class, 'create']);//backend for uploading add categories data to db
@@ -101,6 +116,7 @@ Route::get('/admin/add_categories/form', [App\Http\Controllers\CategoriesControl
 
 Route::get('/admin/categories/delete/{id}', [App\Http\Controllers\CategoriesController::class, 'delete']);
 
+##########################################################
 //categories route ends
 ##########################################################
 
@@ -144,16 +160,6 @@ Route::get('/customer/error', [App\Http\Controllers\CustomerController::class, '
 Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class, 'Customer_Profile_view']);
 
 Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
-
-
-
-
-
-
-
-
-
-
 
 
 ###############################################################################
