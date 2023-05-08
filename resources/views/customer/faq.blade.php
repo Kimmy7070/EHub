@@ -1,5 +1,7 @@
 @extends('customer.layout')
+
 <link rel="stylesheet" href="{{ asset('css/faq.css') }}" />
+
 @section('body')
 
 <main id="main" class="main">
