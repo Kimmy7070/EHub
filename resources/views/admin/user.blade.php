@@ -62,9 +62,9 @@
                                                 @elseif($user->is_admin == 0 && $user->is_customer == 1)
                                                     <button type="button" class="badge bg-primary">Customer</button>
                                                 @elseif($user->is_admin == 1 && $user->is_customer == 1)
-                                                    <button type="button" class="badge bg-danger">Admin & User</button>
+                                                    <button type="button" class="badge bg-warning">Super Admin</button>
                                                 @else
-                                                     <button type="button" class="badge bg-Secondary">Undefined</button>
+                                                    <button type="button" class="badge bg-danger">Banned</button>
                                                 @endif
                                             </td>
                                             <td>{{ $user->created_at }}</td>
