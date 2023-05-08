@@ -60,8 +60,17 @@ class HomeController extends Controller
 
         $search = $request['search'] ?? "";
         if ($search != "") {
-            $data = DB::table('users')->where('name', 'LIKE', '%' . $search .'%')->orwhere('email', 'LIKE', '%' . $search .'%')->get();
-        } else {
+            if ($search == "Admin" || $search == "admin" || $search == "ADMIN") {
+                $data = DB::table('users')->where('is_admin', 1)->get();
+            }
+            elseif ($search == "Customer" || $search == "customer" || $search == "CUSTOMER") {
+                $data = DB::table('users')->where('is_customer', 1)->get();
+            }
+            else{
+                $data = DB::table('users')->where('name', 'LIKE', '%' . $search .'%')->orwhere('email', 'LIKE', '%' . $search .'%')->get();
+            }
+        }
+         else {
             $data = DB::table('users')->select('id','name','email','is_admin','is_customer','created_at')->get();
         }
         $data = compact('data', 'search');
