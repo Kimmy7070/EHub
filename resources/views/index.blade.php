@@ -47,13 +47,30 @@
     <!-- Intro section -->
     <section class="intro-section spad pb-0">
         <div class="section-title">
-            <h2>pemium products</h2>
+            <h2>premium products</h2>
             <p>We recommend</p>
         </div>
         <div class="intro-slider">
             <ul class="slidee">
-                <li>
-                    <div class="intro-item">
+                @foreach ($data as $product)
+                    <li>
+                        <form action="">
+                            <div class="intro-item">
+                                <figure>
+                                    <img src="{{ url('storage/' . $product->img1) }}" alt="#" />
+                                </figure>
+                                <div class="product-info">
+                                    <h5>{{ $product->name }}</h5>
+                                    {{-- <span>{{ $product->mrp }}</span> --}}
+                                    <p>{{ $product->price }}</p>
+                                    <a href="#" class="site-btn btn-line">ADD TO CART</a>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                @endforeach
+                {{-- <li>
+                        <div class="intro-item">
                         <figure>
                             <img src="img/intro/1.jpg" alt="#" />
                         </figure>
@@ -112,7 +129,7 @@
                             <a href="#" class="site-btn btn-line">ADD TO CART</a>
                         </div>
                     </div>
-                </li>
+                    </li> --}}
             </ul>
         </div>
         <div class="container">
@@ -155,7 +172,33 @@
                 <li class="control" data-filter=".best">Best sellers</li>
             </ul>
             <div class="row" id="product-filter">
-                <div class="mix col-lg-3 col-md-6 best">
+                @for ($data->id = 1; $data->id <= 6; $i++)
+                    {{-- @include('partials.product'); --}}
+                    <div class="mix col-lg-3 col-md-6 best">
+                        <div class="product-item">
+                            <figure>
+                                <img src="{{ url('storage/' . $data->img1) }}" alt="" />
+                                <div class="pi-meta">
+                                    <div class="pi-m-left">
+                                        <img src="img/icons/eye.png" alt="" />
+                                        <p>quick view</p>
+                                    </div>
+                                    <div class="pi-m-right">
+                                        <img src="img/icons/heart.png" alt="" />
+                                        <p>save</p>
+                                    </div>
+                                </div>
+                            </figure>
+                            <div class="product-info">
+                                <h6>{{$data->name}}</h6>
+                                <p>{{$data->price}}</p>
+                                <a href="#" class="site-btn btn-line">ADD TO CART</a>
+                            </div>
+                        </div>
+                    </div>
+                @endfor
+
+                {{-- <div class="mix col-lg-3 col-md-6 best">
                     <div class="product-item">
                         <figure>
                             <img src="img/products/1.jpg" alt="" />
@@ -333,7 +376,7 @@
                             <a href="#" class="site-btn btn-line">ADD TO CART</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
