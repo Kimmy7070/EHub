@@ -18,9 +18,22 @@
 
 
     <!-- Hero section -->
-    <section class="hero-section set-bg" data-setbg="img/bg.jpg">
+    <section class="hero-section set-bg" data-setbg="{{ asset('img/bg.jpg') }}">
+
         <div class="hero-slider owl-carousel">
-            <div class="hs-item">
+            @foreach ($data->slice(0, 4) as $product)
+                <div class="hs-item">
+                    <div class="hs-left"><img src="{{ url('storage/' . $product->img1) }}" alt="" /></div>
+                    <div class="hs-right">
+                        <div class="hs-content">
+                            <div class="price">from {{ $product->price }}</div>
+                            <h2><span>2023</span> <br />summer collection</h2>
+                            <a href="" class="site-btn">Shop NOW!</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="hs-item">
                 <div class="hs-left"><img src="img/slider-img.png" alt="" /></div>
                 <div class="hs-right">
                     <div class="hs-content">
@@ -29,17 +42,7 @@
                         <a href="" class="site-btn">Shop NOW!</a>
                     </div>
                 </div>
-            </div>
-            <div class="hs-item">
-                <div class="hs-left"><img src="img/slider-img.png" alt="" /></div>
-                <div class="hs-right">
-                    <div class="hs-content">
-                        <div class="price">from $19.90</div>
-                        <h2><span>2018</span> <br />summer collection</h2>
-                        <a href="" class="site-btn">Shop NOW!</a>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- Hero section end -->
@@ -51,7 +54,7 @@
             <p>We recommend</p>
         </div>
         <div class="intro-slider">
-            <ul class="slidee">
+            <ul class="slidee ">
                 @foreach ($data->slice(0, 4) as $product)
                     <li>
                         <form action="">
@@ -146,18 +149,21 @@
     <div class="featured-section spad">
         <div class="container">
             <div class="row">
+                @foreach ($data->slice(4, 5) as $product)
                 <div class="col-md-6">
                     <div class="featured-item">
-                        <img src="img/featured/featured-1.jpg" alt="" />
+                        <img src="{{ url('storage/' . $product->img3) }}" alt="" />
                         <a href="#" class="site-btn">see more</a>
                     </div>
+
                 </div>
-                <div class="col-md-6">
+                @endforeach
+                {{-- <div class="col-md-6">
                     <div class="featured-item mb-0">
-                        <img src="img/featured/featured-2.jpg" alt="" />
+                        <img src="{{ url('storage/' . $product->img3) }}" alt="" />
                         <a href="#" class="site-btn">see more</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
