@@ -16,9 +16,11 @@ use Illuminate\Support\Facades\Route;
 ##########################################################################
 // admin dashboard routes
 ##########################################################################
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'Unkown_index']);
 
 Route::get('contactus', function () {
     return view('contactus');

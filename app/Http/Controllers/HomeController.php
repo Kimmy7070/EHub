@@ -29,6 +29,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function Unkown_index()
+    {
+        $data = DB::table('products')->get();
+        return view ('index', compact('data'));
+    }
     public function index()
     {
         return view('admin.admin');
@@ -85,8 +91,4 @@ class HomeController extends Controller
     public function Admin_User(){
         return view ('admin.user');
     }
-
-
-
-
 }

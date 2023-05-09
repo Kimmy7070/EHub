@@ -58,6 +58,9 @@ class LoginController extends Controller
             } elseif (Auth::user()->is_customer == 1) {
                 return redirect('/customer/home');
             }
+            //elseif (Auth::user()->is_admin == 0 && Auth::user()->is_customer == 0) {
+            //     return redirect('/banned')->with('error', 'You are Banned! Contact Admin!');
+            // }
         } else {
             return redirect()->route('login')->with('error', 'Email-Address And Password Are Wrong.');
         }
