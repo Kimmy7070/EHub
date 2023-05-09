@@ -52,7 +52,7 @@
         </div>
         <div class="intro-slider">
             <ul class="slidee">
-                @foreach ($data as $product)
+                @foreach ($data->slice(0, 4) as $product)
                     <li>
                         <form action="">
                             <div class="intro-item">
@@ -172,31 +172,32 @@
                 <li class="control" data-filter=".best">Best sellers</li>
             </ul>
             <div class="row" id="product-filter">
-                @for ($data->id = 1; $data->id <= 6; $i++)
-                    {{-- @include('partials.product'); --}}
-                    <div class="mix col-lg-3 col-md-6 best">
-                        <div class="product-item">
-                            <figure>
-                                <img src="{{ url('storage/' . $data->img1) }}" alt="" />
-                                <div class="pi-meta">
-                                    <div class="pi-m-left">
-                                        <img src="img/icons/eye.png" alt="" />
-                                        <p>quick view</p>
+                @foreach ($data->slice(0, 8) as $product)
+                        <div class="mix col-lg-3 col-md-6 best">
+                            <div class="product-item">
+                                <figure>
+                                    <img src="{{ url('storage/' . $product->img1) }}" alt="" />
+                                    <div class="pi-meta">
+                                        <div class="pi-m-left">
+                                            <img src="img/icons/eye.png" alt="" />
+                                            <p>quick view</p>
+                                        </div>
+                                        <div class="pi-m-right">
+                                            <img src="img/icons/heart.png" alt="" />
+                                            <p>save</p>
+                                        </div>
                                     </div>
-                                    <div class="pi-m-right">
-                                        <img src="img/icons/heart.png" alt="" />
-                                        <p>save</p>
-                                    </div>
+                                </figure>
+                                <div class="product-info">
+                                    <h6>{{ $product->name }}</h6>
+                                    <p>{{ $product->price }}</p>
+                                    <a href="#" class="site-btn btn-line">ADD TO CART</a>
                                 </div>
-                            </figure>
-                            <div class="product-info">
-                                <h6>{{$data->name}}</h6>
-                                <p>{{$data->price}}</p>
-                                <a href="#" class="site-btn btn-line">ADD TO CART</a>
                             </div>
                         </div>
-                    </div>
-                @endfor
+                @endforeach
+
+
 
                 {{-- <div class="mix col-lg-3 col-md-6 best">
                     <div class="product-item">
