@@ -16,7 +16,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->is_admin==1){
+        if (Auth::user()->is_admin==1){
             return $next($request);
         }
         return redirect('login')->with('error', "Access Denied");

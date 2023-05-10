@@ -27,7 +27,7 @@
                     <div class="hs-right">
                         <div class="hs-content">
                             <div class="price">from {{ $product->price }}</div>
-                            <h2><span>2023</span> <br />summer collection</h2>
+                            <h2><span>2023</span> <br />summer festival</h2>
                             <a href="" class="site-btn">Shop NOW!</a>
                         </div>
                     </div>
