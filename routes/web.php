@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'Unkown_index']);
+Route::get('/', [App\Http\Controllers\DisplayIndexController::class, 'Unkown_index']);
 
 Route::get('contactus', function () {
     return view('contactus');
