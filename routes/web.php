@@ -22,9 +22,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\DisplayIndexController::class, 'Unkown_index']);
 
+##########################################################################
+//contact us for customer route
+##########################################################################
 Route::get('contactus', function () {
     return view('contactus');
 });
+
+Route::get('contactus_backend_api', [App\Http\Controllers\DisplayIndexController::class, 'contactus_backend_ganja']);
+
+##########################################################################
+//contact us for customer route ends here
+##########################################################################
 
 Route::get('aboutus', function () {
     return view('aboutus');
@@ -32,8 +41,6 @@ Route::get('aboutus', function () {
 Route::get('checkout', function () {
     return view('checkout');
 });
-
-Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::class, 'contactus_backend_ganja']);
 
 Auth::routes();
 
@@ -65,7 +72,16 @@ Route::get('/admin/profile', function(){
     return view('/admin/profile');
 });
 
-Route::get('/admin/contact', [App\Http\Controllers\HomeController::class, 'Admin_Contact_Index']);
+#####################################################################
+//contact us for admin route
+#####################################################################
+Route::get('/admin/contact', [App\Http\Controllers\ContactController::class, 'Admin_Contact_Index']);
+
+Route::get('/admin/contact/delete/{id}', [App\Http\Controllers\ContactController::class, 'delete']);
+
+#####################################################################
+//contact us for admin route ends here
+#####################################################################
 
 Route::get('/admin/error', [App\Http\Controllers\HomeController::class, 'Admin_Contact_Error']);
 

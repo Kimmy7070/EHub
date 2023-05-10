@@ -55,7 +55,15 @@
                                     <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->query }}</td>
                                     <td>{{ $contact->created_at }}</td>
-                                    <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
+                                    <td>
+                                        <form action="{{ url('/admin/contact/delete', ['id' => $contact->id]) }}">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-danger" name="delete"><i
+                                                        class='bi bi-trash'></i></button>
+                                            </div>
+
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 {{-- <tr>

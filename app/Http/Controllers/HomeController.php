@@ -40,10 +40,10 @@ class HomeController extends Controller
     //     return view ('/admin/home');
     // }
 
-    public function Admin_Contact_Index(){
-        $data = DB::table('contactuses')->select('id','name','email','query','created_at')->get();
-        return view ('admin.contact', compact('data'));
-    }
+    // public function Admin_Contact_Index(){
+    //     $data = DB::table('contactuses')->select('id','name','email','query','created_at')->get();
+    //     return view ('admin.contact', compact('data'));
+    // }
 
     public function Admin_Contact_Error(){
         return view ('admin.error');

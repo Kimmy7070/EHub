@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elkart|HomePage</title>
+    <title>EHUB</title>
 
     <!-- bootstrap  -->
 
@@ -34,7 +34,7 @@
 <body>
     {{-- navbar starts here --}}
     <header>
-        <a href="" class="logo"><img src="./img/logo.png" alt="" /></a>
+        <a href=" {{ url('/') }} " class="logo"><img src="./img/logo.png" alt="" /></a>
         <ul class="search-bar">
             <input type="search" class="search" placeholder="Search" />
             <a href="#"><i class="bx bx-search"></i></a>
@@ -125,7 +125,7 @@
     </div>
     <div class="end-text">
         <p>
-            Copyright &copy; 2023. All Rights Reserved. Designed By Jai shree ram
+            Copyright &copy; 2023. All Rights Reserved. Designed By Jai shree ram.
         </p>
     </div>
 
