@@ -25,6 +25,15 @@ class DisplayIndexController extends Controller
         return view('allproducts',compact('data'));
     }
 
+    public function unknown_product_page($id)
+    {
+        $data = DB::table('products')->where('id', $id)->get();
+        $alldata = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
+        return view('product_page',compact('data','alldata'));
+    }
+
+
+
     public function contactus_backend_ganja(Request $request){
         //echo"We all are gandus";
         $data = contactus::create($request->all());

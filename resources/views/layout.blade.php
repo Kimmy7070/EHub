@@ -34,7 +34,7 @@
 <body>
     {{-- navbar starts here --}}
     <header>
-        <a href=" {{ url('/') }} " class="logo"><img src="./img/logo.png" alt="" /></a>
+        <a href=" {{ url('/') }} " class="logo"><img src="{{asset('img/logo.png')}}" alt="" /></a>
         <ul class="search-bar">
             <input type="search" class="search" placeholder="Search" />
             <a href="#"><i class="bx bx-search"></i></a>

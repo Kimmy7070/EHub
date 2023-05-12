@@ -57,7 +57,7 @@
             <ul class="slidee ">
                 @foreach ($data->slice(0, 4) as $product)
                     <li>
-                        <form action="">
+                        <a href="{{url('/product_page',['id'=>$product->id] )}} ">
                             <div class="intro-item">
                                 <figure>
                                     <img src="{{ url('storage/' . $product->img1) }}" alt="#" />
@@ -69,7 +69,7 @@
                                     <a href="#" class="site-btn btn-line">ADD TO CART</a>
                                 </div>
                             </div>
-                        </form>
+                        </a>
                     </li>
                 @endforeach
                 {{-- <li>
