@@ -18,9 +18,22 @@
 
 
     <!-- Hero section -->
-    <section class="hero-section set-bg" data-setbg="img/bg.jpg">
+    <section class="hero-section set-bg" data-setbg="{{ asset('img/bg.jpg') }}">
+
         <div class="hero-slider owl-carousel">
-            <div class="hs-item">
+            @foreach ($data->slice(0, 4) as $product)
+                <div class="hs-item">
+                    <div class="hs-left"><img src="{{ url('storage/' . $product->img1) }}" alt="" /></div>
+                    <div class="hs-right">
+                        <div class="hs-content">
+                            <div class="price">from {{ $product->price }}</div>
+                            <h2><span>2023</span> <br />summer festival</h2>
+                            <a href="" class="site-btn">Shop NOW!</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="hs-item">
                 <div class="hs-left"><img src="img/slider-img.png" alt="" /></div>
                 <div class="hs-right">
                     <div class="hs-content">
@@ -29,17 +42,7 @@
                         <a href="" class="site-btn">Shop NOW!</a>
                     </div>
                 </div>
-            </div>
-            <div class="hs-item">
-                <div class="hs-left"><img src="img/slider-img.png" alt="" /></div>
-                <div class="hs-right">
-                    <div class="hs-content">
-                        <div class="price">from $19.90</div>
-                        <h2><span>2018</span> <br />summer collection</h2>
-                        <a href="" class="site-btn">Shop NOW!</a>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- Hero section end -->
@@ -47,13 +50,30 @@
     <!-- Intro section -->
     <section class="intro-section spad pb-0">
         <div class="section-title">
-            <h2>pemium products</h2>
+            <h2>premium products</h2>
             <p>We recommend</p>
         </div>
         <div class="intro-slider">
-            <ul class="slidee">
-                <li>
-                    <div class="intro-item">
+            <ul class="slidee ">
+                @foreach ($data->slice(0, 4) as $product)
+                    <li>
+                        <form action="">
+                            <div class="intro-item">
+                                <figure>
+                                    <img src="{{ url('storage/' . $product->img1) }}" alt="#" />
+                                </figure>
+                                <div class="product-info">
+                                    <h5>{{ $product->name }}</h5>
+                                    {{-- <span>{{ $product->mrp }}</span> --}}
+                                    <p>{{ $product->price }}</p>
+                                    <a href="#" class="site-btn btn-line">ADD TO CART</a>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                @endforeach
+                {{-- <li>
+                        <div class="intro-item">
                         <figure>
                             <img src="img/intro/1.jpg" alt="#" />
                         </figure>
@@ -112,7 +132,7 @@
                             <a href="#" class="site-btn btn-line">ADD TO CART</a>
                         </div>
                     </div>
-                </li>
+                    </li> --}}
             </ul>
         </div>
         <div class="container">
@@ -129,18 +149,21 @@
     <div class="featured-section spad">
         <div class="container">
             <div class="row">
+                @foreach ($data->slice(4, 5) as $product)
                 <div class="col-md-6">
                     <div class="featured-item">
-                        <img src="img/featured/featured-1.jpg" alt="" />
+                        <img src="{{ url('storage/' . $product->img3) }}" alt="" />
                         <a href="#" class="site-btn">see more</a>
                     </div>
+
                 </div>
-                <div class="col-md-6">
+                @endforeach
+                {{-- <div class="col-md-6">
                     <div class="featured-item mb-0">
-                        <img src="img/featured/featured-2.jpg" alt="" />
+                        <img src="{{ url('storage/' . $product->img3) }}" alt="" />
                         <a href="#" class="site-btn">see more</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -155,7 +178,34 @@
                 <li class="control" data-filter=".best">Best sellers</li>
             </ul>
             <div class="row" id="product-filter">
-                <div class="mix col-lg-3 col-md-6 best">
+                @foreach ($data->slice(0, 8) as $product)
+                        <div class="mix col-lg-3 col-md-6 best">
+                            <div class="product-item">
+                                <figure>
+                                    <img src="{{ url('storage/' . $product->img1) }}" alt="" />
+                                    <div class="pi-meta">
+                                        <div class="pi-m-left">
+                                            <img src="img/icons/eye.png" alt="" />
+                                            <p>quick view</p>
+                                        </div>
+                                        <div class="pi-m-right">
+                                            <img src="img/icons/heart.png" alt="" />
+                                            <p>save</p>
+                                        </div>
+                                    </div>
+                                </figure>
+                                <div class="product-info">
+                                    <h6>{{ $product->name }}</h6>
+                                    <p>{{ $product->price }}</p>
+                                    <a href="#" class="site-btn btn-line">ADD TO CART</a>
+                                </div>
+                            </div>
+                        </div>
+                @endforeach
+
+
+
+                {{-- <div class="mix col-lg-3 col-md-6 best">
                     <div class="product-item">
                         <figure>
                             <img src="img/products/1.jpg" alt="" />
@@ -333,7 +383,7 @@
                             <a href="#" class="site-btn btn-line">ADD TO CART</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

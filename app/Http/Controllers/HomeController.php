@@ -14,6 +14,7 @@ use App\Http\Models\User;
 
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -29,19 +30,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
         return view('admin.admin');
     }
 
-    public function testing(){
-        return view ('/admin/admin');
-    }
+    // public function testing(){
+    //     return view ('/admin/home');
+    // }
 
-    public function Admin_Contact_Index(){
-        $data = DB::table('contactuses')->select('id','name','email','query','created_at')->get();
-        return view ('admin.contact', compact('data'));
-    }
+    // public function Admin_Contact_Index(){
+    //     $data = DB::table('contactuses')->select('id','name','email','query','created_at')->get();
+    //     return view ('admin.contact', compact('data'));
+    // }
 
     public function Admin_Contact_Error(){
         return view ('admin.error');
@@ -55,24 +57,34 @@ class HomeController extends Controller
         return view ('admin.faq');
     }
 
-    public function Admin_User_Index(){
-        $data = DB::table('users')->select('id','name','email','type','created_at')->get();
-        return view ('admin.user', compact('data'));
+    public function Admin_User_Index(Request $request){
+        //->orwhere('type' , 'LIKE', '%' . $search .'%') type search code
+
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            if ($search == "Admin" || $search == "admin" || $search == "ADMIN") {
+                $data = DB::table('users')->where('is_admin', 1)->get();
+            }
+            elseif ($search == "Customer" || $search == "customer" || $search == "CUSTOMER") {
+                $data = DB::table('users')->where('is_customer', 1)->get();
+            }
+            else{
+                $data = DB::table('users')->where('name', 'LIKE', '%' . $search .'%')->orwhere('email', 'LIKE', '%' . $search .'%')->get();
+            }
+        }
+         else {
+            $data = DB::table('users')->select('id','name','email','is_admin','is_customer','created_at')->get();
+        }
+        $data = compact('data', 'search');
+        return view ('admin.user')->with($data);
     }
 
+    public function user_delete($id)
+    {
+        DB::table('users')->where('id', $id)->delete();
+        return redirect('/admin/user');
+    }
     public function Admin_User(){
         return view ('admin.user');
-    }
-
-    public function Admin_Categories(){
-        return view ('admin.categories');
-    }
-
-    public function Admin_Product(){
-        return view ('admin.product');
-    }
-
-    public function Admin_Add_Product(){
-        return view ('admin.add_product');
     }
 }

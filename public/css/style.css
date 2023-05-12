@@ -9,7 +9,9 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
-
+*{
+    text-decoration: none;
+}
 html,
 body {
 	height: 100%;
@@ -395,6 +397,7 @@ ol {
 }
 
 .hs-item .hs-left {
+
 	padding-top: 170px;
 	width: calc(50% + 135px);
 	padding-left: 70px;
@@ -403,6 +406,7 @@ ol {
 }
 
 .hs-item .hs-right {
+    margin-left: 1rem;
 	width: calc(50% - 135px);
 	float: left;
 }

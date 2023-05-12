@@ -48,9 +48,9 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="{{ url('/admin/home') }}" class="logo d-flex align-items-center">
+            <a href="{{ url('/customer/home') }}" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">Admin</span>
+                <span class="d-none d-lg-block">Customer Dashboard</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -81,7 +81,7 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                         <li class="dropdown-header">
                             You have 3 new messages
-                            <a href="{{ url('/admin/contact') }}"><span
+                            <a href="{{ url('/customer/contact') }}"><span
                                     class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                         </li>
                         <li>
@@ -264,63 +264,31 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ url('/admin/home') }}">
+                <a class="nav-link " href="{{ url('/customer/home') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
 
-
-
-
-
             <li class="nav-heading">Pages</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/profile') }}">
+                <a class="nav-link collapsed" href="{{ url('/customer/profile') }}">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>
             </li><!-- End Profile Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/faq') }}">
+                <a class="nav-link collapsed" href="{{ url('/customer/faq') }}">
                     <i class="bi bi-question-circle"></i>
                     <span>F.A.Q</span>
                 </a>
             </li><!-- End F.A.Q Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/user') }}">
-                    <i class="bi bi-people-fill"></i>
-                    <span>User</span>
-                </a>
-            </li><!-- End Users Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/contact') }}">
-                    <i class="bi bi-envelope"></i>
-                    <span>Queries</span>
-                </a>
-            </li><!-- End Contact Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/categories') }}">
-                    <i class="bi bi-collection"></i>
-                    <span>Categories</span>
-                </a>
-            </li><!-- End Categories Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/product') }}">
-                    <i class="bi bi-p-square-fill"></i>
-                    <span>Product</span>
-                </a>
-            </li><!-- End Product Page Nav -->
-
-            <li class="nav-item">
-                {{-- <a class="nav-link collapsed" href="{{ url('/admin/logout') }}">
+                {{-- <a class="nav-link collapsed" href="{{ url('/customer/logout') }}">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Logout Fuckers</span>
                 </a> --}}
@@ -335,7 +303,7 @@
             </li><!-- End Login Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('/admin/error') }}">
+                <a class="nav-link collapsed" href="{{ url('/customer/error') }}">
                     <i class="bi bi-dash-circle"></i>
                     <span>Error 404</span>
                 </a>

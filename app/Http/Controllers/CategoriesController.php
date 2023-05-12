@@ -15,14 +15,15 @@ class CategoriesController extends Controller
      * Display a listing of the resource.
      */
 
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
-        return view ('admin.add_categories');
+        $data = DB::table('categories')->select('id', 'cat_name', 'cat_status', 'created_at')->get();
+        return view('admin.add_categories');
     }
 
     /**
@@ -32,8 +33,7 @@ class CategoriesController extends Controller
     {
         //for add_categories
         $fetch_data = categories::create($request->all());
-        $data = DB::table('categories')->select('id','cat_name','cat_status','created_at')->get();
-        return view ('admin.categories',compact('data'))->with('success', "Categories added successfully.");
+        return redirect('/admin/categories');
     }
 
     /**
@@ -41,40 +41,32 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-
     }
 
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(Request $request)
     {
-        $data = DB::table('categories')->select('id','cat_name','cat_status','created_at')->get();
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            $data = DB::table('categories')->where('cat_name', 'LIKE', '%' . $search .'%')->get();
+        } else {
+            $data = DB::table('categories')->select('id', 'cat_name', 'cat_status', 'created_at')->get();
+        }
+        $data = compact('data', 'search');
         // return view ('admin.categories', compact('data'));
-        return view('admin.categories', compact('data'));
+        return view('admin.categories')->with($data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(categories $categories)
+    public function add_categories_form_view()
     {
-        //
+        return view('admin.add_categories');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, categories $categories)
+    public function delete($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(categories $categories)
-    {
-        //
+        DB::table('categories')->where('id', $id)->delete();
+        return redirect('/admin/categories');
     }
 }

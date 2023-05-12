@@ -19,13 +19,24 @@
                 <div class="col-lg-12">
 
                     <div class="card">
+
+
                         <div class="card-body">
                             <h5 class="card-title">Datatables</h5>
-                            <p>Add lightweight datatables to your project with using the <a
+                            {{-- <p>Add lightweight datatables to your project with using the <a
                                     href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
                                     DataTables</a> library. Just add <code>.datatable</code> class name to any table you
-                                wish to conver to a datatable</p>
+                                wish to conver to a datatable</p> --}}
 
+                            <form action="">
+                                <div class="form-group">
+                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search">
+
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    {{ $search }}
+                                </div>
+
+                            </form>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
@@ -33,7 +44,7 @@
                                         <th scope="col">id</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Admin</th>
+                                        <th scope="col">Type</th>
                                         <th scope="col">Time</th>
                                         <th scope="col">Edit</th>
                                         <th scope="col">Delete</th>
@@ -45,10 +56,29 @@
                                             <th scope="row">{{ $user->id }}</th>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->type }}</td>
+                                            <td>
+                                                @if ($user->is_admin == 1 && $user->is_customer == 0)
+                                                    <button type="button" class="badge bg-success">Admin</button>
+                                                @elseif($user->is_admin == 0 && $user->is_customer == 1)
+                                                    <button type="button" class="badge bg-primary">Customer</button>
+                                                @elseif($user->is_admin == 1 && $user->is_customer == 1)
+                                                    <button type="button" class="badge bg-warning">Super Admin</button>
+                                                @else
+                                                    <button type="button" class="badge bg-danger">Banned</button>
+                                                @endif
+                                            </td>
                                             <td>{{ $user->created_at }}</td>
-                                            <td><button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button></td>
-                                            <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
+                                            <td><button type="button" class="btn btn-success"><i
+                                                        class="bi bi-pencil-square"></i></button></td>
+                                            <td>
+                                                <form action="{{ url('/admin/user/delete', ['id' => $user->id]) }}">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger" name="delete"><i
+                                                                class='bi bi-trash'></i></button>
+                                                    </div>
+
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

@@ -14,14 +14,14 @@ class product extends Model
         'mrp',
         'price',
         'quantity',
-        'img-1',
-        'img-2',
-        'img-3',
+        'img1',
+        'img2',
+        'img3',
         'desc',
-        'short-desc',
-        'meta-title',
-        'meta-desc',
-        'meta-keyword',
+        'short_desc',
+        'meta_title',
+        'meta_desc',
+        'meta_keyword',
         'status'
     ];
 }

@@ -1,57 +1,70 @@
 @extends('admin.layout')
 
 @section('body')
-<main id="main" class="main">
+    <main id="main" class="main">
 
-    <div class="pagetitle">
-        <h1>Categories</h1>
-    </div><!-- End Page Title -->
+        <div class="pagetitle">
+            <h1>Categories</h1>
+        </div><!-- End Page Title -->
 
-    <section class="section">
-        <div class="row">
-            <div class="col-lg-12">
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Datatables</h5>
-                        {{-- <p>Add lightweight datatables to your project with using the <a
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Datatables</h5>
+                            {{-- <p>Add lightweight datatables to your project with using the <a
                                 href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple
                                 DataTables</a> library. Just add <code>.datatable</code> class name to any table you
                             wish to conver to a datatable</p> --}}
                             <form action="">
                                 <div class="form-group">
-                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px">
-                                    <input type="submit" value="Search" class="btn btn-primary mr-3">
-                                    <a href="{{ url('/admin/add_categories') }}"><button type="button" class="btn btn-success"><i class="bi bi-plus">Add Categories</i></button></a>
+                                    <input type="search" name="search" class="col-5 p-1 mt-1" style="border-radius: 10px"
+                                        value="{{ $search }}">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                    {{ $search }}
                                 </div>
 
                             </form>
-
+                            <br>
+                            <a href="{{ url('/admin/add_categories/form') }}"><button type="button"
+                                    class="btn btn-success"><i class="bi bi-plus">Add Categories</i></button></a>
                             <br>
                             <br>
-                        <!-- Table with stripped rows -->
-                        <table class="table datatable">
-                            <thead>
-                                <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $cat)
+                            <!-- Table with stripped rows -->
+                            <table class="table datatable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data as $cat)
+                                        <tr>
+                                            <th scope="row">{{ $cat->id }}</th>
+                                            <td>{{ $cat->cat_name }}</td>
+                                            <td>{{ $cat->cat_status }}</td>
+                                            <td>{{ $cat->created_at }}</td>
 
-                                <tr>
-                                    <th scope="row">{{ $cat->id }}</th>
-                                    <td>{{ $cat->cat_name }}</td>
-                                    <td>{{ $cat->cat_status }}</td>
-                                    <td>{{ $cat->created_at }}</td>
-                                    <td><button type="button" class="btn btn-danger"><i class='bi bi-trash'></i></button></td>
-                                </tr>
-                                @endforeach
-                                {{-- <tr>
+                                            <td>
+                                                <form action="{{ url('/admin/categories/delete', ['id' => $cat->id]) }}">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-danger" name="delete"><i
+                                                                class='bi bi-trash'></i></button>
+                                                    </div>
+
+                                                </form>
+                                            </td>
+
+
+                                        </tr>
+                                    @endforeach
+                                    {{-- <tr>
                                     <th scope="row">2</th>
                                     <td>Bridie Kessler</td>
                                     <td>Developer</td>
@@ -79,15 +92,15 @@
                                     <td>47</td>
                                     <td>2011-04-19</td>
                                 </tr> --}}
-                            </tbody>
-                        </table>
-                        <!-- End Table with stripped rows -->
+                                </tbody>
+                            </table>
+                            <!-- End Table with stripped rows -->
 
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
-    </section>
-</main><!-- End #main -->
+        </section>
+    </main><!-- End #main -->
 @stop
