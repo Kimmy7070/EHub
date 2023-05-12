@@ -5,7 +5,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Cart</h1>
+        <h1>Orders</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="admin.blade.php">Home</a></li>
@@ -39,9 +39,11 @@
                             <thead>
                                 <tr>
                                     <th scope="col">id</th>
+                                    <th scope="col">Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Product id</th>
+                                    <th scope="col">Query</th>
                                     <th scope="col">Time</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>

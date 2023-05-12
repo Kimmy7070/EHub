@@ -68,7 +68,8 @@
                                     <p>{{ $product->price }}</p>
                                     <a href="#" class="site-btn btn-line">ADD TO CART</a>
                                 </div>
-                            </div>{{Auth::user->email}}
+                            </div>
+                            {{-- {{Auth::user->email}} --}}
                         </form>
                     </li>
                 @endforeach
@@ -202,8 +203,6 @@
                             </div>
                         </div>
                 @endforeach
-
-
 
                 {{-- <div class="mix col-lg-3 col-md-6 best">
                     <div class="product-item">

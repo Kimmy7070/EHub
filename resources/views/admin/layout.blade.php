@@ -327,6 +327,13 @@
             </li>{{-- End cart page nav --}}
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ url('/admin/order') }}">
+                    <i class="bi bi-bookmark-check-fill"></i>
+                    <span>Orders</span>
+                </a>
+            </li>{{-- End cart page nav --}}
+
+            <li class="nav-item">
                 {{-- <a class="nav-link collapsed" href="{{ url('/admin/logout') }}">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Logout Fuckers</span>
