@@ -44,20 +44,11 @@
                         </div>
                         <div class="col-md-12">
                             <input type="text" placeholder="Company">
-                            <select>
-                                <option>Country *</option>
-                                <option>USA</option>
-                                <option>UK</option>
-                                <option>BANGLADESH</option>
-                            </select>
                             <input type="text" placeholder="Address *">
                             <input type="text">
                             <input type="text" placeholder="Zipcode *">
                             <select>
                                 <option>City/Town *</option>
-                            </select>
-                            <select>
-                                <option>Province *</option>
                             </select>
                             <input type="text" placeholder="Phone no *">
                             <input type="email" placeholder="Email Address *">
@@ -114,10 +105,6 @@
                                 </table>
                             </div>
                             <div class="payment-method">
-                                <div class="pm-item">
-                                    <input type="radio" name="pm" id="one">
-                                    <label for="one">Paypal</label>
-                                </div>
                                 <div class="pm-item">
                                     <input type="radio" name="pm" id="two">
                                     <label for="two">Cash on delievery</label>
