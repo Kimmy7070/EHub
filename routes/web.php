@@ -24,12 +24,7 @@ Route::get('contactus', function () {
 Route::get('aboutus', function () {
     return view('aboutus');
 });
-Route::get('checkout', function () {
-    return view('checkout');
-});
-Route::get('allproducts', function () {
-    return view('allproducts');
-});
+
 Route::get('contactus_backend_api', [App\Http\Controllers\contactus_controller::class, 'contactus_backend_ganja']);
 
 Auth::routes();
