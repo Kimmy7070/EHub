@@ -36,6 +36,11 @@ class HomeController extends Controller
         return view('admin.admin');
     }
 
+
+
+
+
+
     // public function testing(){
     //     return view ('/admin/home');
     // }

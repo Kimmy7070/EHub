@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
+use Auth;
+
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -21,10 +25,13 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+
+    public function customer_index()
     {
-        return view('customer.customer');
+        $data = DB::table('products')->get();
+        return view ('customer.index', compact('data'));
     }
+
     public function Customer_Error_view(){
         return view ('customer.error');
     }

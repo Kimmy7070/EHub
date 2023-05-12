@@ -175,13 +175,17 @@ Route::get('/admin/form', function(){
 
 Auth::routes();
 
-Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'index'])->middleware('is_customer'); //application base route; route for customer access
+Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer'); //application base route; route for customer access
+
+Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer');
 
 Route::get('/customer/error', [App\Http\Controllers\CustomerController::class, 'Customer_Error_view']);
 
 Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class, 'Customer_Profile_view']);
 
 Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
+
+
 
 
 ###############################################################################
