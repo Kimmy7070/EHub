@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +81,8 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                         <li class="dropdown-header">
                             You have 3 new messages
-                            <a href="{{ url('/customer/contact') }}"><span
+                            <a href="
+                            "><span
                                     class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                         </li>
                         <li>
