@@ -17,7 +17,7 @@ class DisplayIndexController extends Controller
     public function unknown_checkout()
     {
        $data = DB::table('products')->get();
-        return view('checkout',compact('data'));
+        return view('customer.checkout',compact('data'));
     }
     public function unknown_allproducts()
     {
