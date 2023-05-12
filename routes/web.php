@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [App\Http\Controllers\DisplayIndexController::class, 'Unkown_index']);
+Route::get('allproducts', [App\Http\Controllers\DisplayIndexController::class, 'unknown_allproducts']);
+Route::get('checkout', [App\Http\Controllers\DisplayIndexController::class, 'unknown_checkout']);
+
 
 ##########################################################################
 //contact us for customer route

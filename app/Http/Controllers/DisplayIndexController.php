@@ -14,6 +14,16 @@ class DisplayIndexController extends Controller
         $data = DB::table('products')->get();
         return view ('index', compact('data'));
     }
+    public function unknown_checkout()
+    {
+       $data = DB::table('products')->get();
+        return view('checkout',compact('data'));
+    }
+    public function unknown_allproducts()
+    {
+        $data = DB::table('products')->get();
+        return view('allproducts',compact('data'));
+    }
 
     public function contactus_backend_ganja(Request $request){
         //echo"We all are gandus";
