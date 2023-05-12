@@ -320,6 +320,13 @@
             </li><!-- End Product Page Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ url('/admin/cart') }}">
+                    <i class="bi bi-cart4"></i>
+                    <span>Cart</span>
+                </a>
+            </li>{{-- End cart page nav --}}
+
+            <li class="nav-item">
                 {{-- <a class="nav-link collapsed" href="{{ url('/admin/logout') }}">
                     <i class="bi bi-box-arrow-in-right"></i>
                     <span>Logout Fuckers</span>

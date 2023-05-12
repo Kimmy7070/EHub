@@ -68,7 +68,7 @@
                                     <p>{{ $product->price }}</p>
                                     <a href="#" class="site-btn btn-line">ADD TO CART</a>
                                 </div>
-                            </div>
+                            </div>{{Auth::user->email}}
                         </form>
                     </li>
                 @endforeach
