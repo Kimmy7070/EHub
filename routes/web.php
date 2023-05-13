@@ -202,8 +202,9 @@ Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'c
 
 Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer');
 
+Route::get('/customer/cart', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
 
-
+Route::get('/customer/cart/add_to_cart_backend/{user_id}/{product_id}', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
 
 
 Route::get('/customer/error', [App\Http\Controllers\CustomerController::class, 'Customer_Error_view']);
@@ -212,9 +213,12 @@ Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class,
 
 Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
 
-
+Route::get('/customer/cart', [App\Http\Controllers\CartController::class, 'Customer_Cart_Index']);
 
 
 ###############################################################################
 // Customer side routes ends here
 ###############################################################################
+
+
+

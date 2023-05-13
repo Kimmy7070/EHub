@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use DB;
 
+use Auth;
+
 use Illuminate\Http\Request;
 use App\Models\contactus;
+use App\Models\User;
 
 class DisplayIndexController extends Controller
 {

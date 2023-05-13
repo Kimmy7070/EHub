@@ -66,7 +66,7 @@
                                     <h5>{{ $product->name }}</h5>
                                     {{-- <span>{{ $product->mrp }}</span> --}}
                                     <p>{{ $product->price }}</p>
-                                    <a href="#" class="site-btn btn-line">ADD TO CART</a>
+                                    <a href="{{url('/customer/add_to_cart')}}" class="site-btn btn-line">ADD TO CART</a>
                                 </div>
                             </div>
                             {{-- {{Auth::user->email}} --}}

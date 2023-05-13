@@ -8,6 +8,8 @@ use Auth;
 
 use Illuminate\Http\Request;
 
+use App\Http\Models\cart;
+
 class CustomerController extends Controller
 {
     /**
@@ -30,6 +32,12 @@ class CustomerController extends Controller
     {
         $data = DB::table('products')->get();
         return view ('customer.index', compact('data'));
+    }
+
+    public function add_to_cart(Request $request){
+        // add to cart backend
+        // $data= cart::create();
+        // return view ('/customer/home');
     }
 
     public function Customer_Error_view(){

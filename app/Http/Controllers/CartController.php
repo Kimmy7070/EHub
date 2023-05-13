@@ -20,4 +20,9 @@ class CartController extends Controller
         $data = DB::table('carts')->select('id','email', 'product_id','created_at')->get();
         return view ('admin.cart', compact('data'));
     }
+
+    public function Customer_Cart_Index()
+    {
+        return view ('customer.cart');
+    }
 }
