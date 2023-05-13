@@ -202,7 +202,7 @@ Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'c
 
 Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer');
 
-Route::get('/customer/cart', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
+// Route::get('/customer/cart', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
 
 Route::get('/customer/cart/add_to_cart_backend/{user_id}/{product_id}', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
 

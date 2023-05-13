@@ -43,26 +43,31 @@
                         <th class="total-th">Remove <span></span></th>
                     </tr>
                 </thead>
+
+                @foreach ($fetch_product_data as $product)
+
+
                 <tbody>
                     <tr>
                         <td class="product-col">
-                            <img src="img/product/cart.jpg" alt="">
+                            <img src="{{ url('storage/' . $product->img1) }}" alt="">
                             <div class="pc-title">
-                                <h4>Black Shoulder Bag</h4>
+                                <h4>{{$product->name}}</h4>
                                 <a href="#">Edit Product</a>
                             </div>
                         </td>
-                        <td class="price-col">$59.90</td>
+                        <td class="price-col">{{$product->name}}</td>
                         <td class="quy-col">
                             <div class="quy-input">
                                 <span>Qty</span>
                                 <input type="number" value="01">
                             </div>
                         </td>
-                        <td class="total-col">$59.90</td>
+                        <td class="total-col">{{$product->price}}</td>
                         <td class="total-col"><i class="fa-solid fa-trash mr-4"></i></td>
                     </tr>
                 </tbody>
+                @endforeach
             </table>
         </div>
         <div class="row cart-buttons">

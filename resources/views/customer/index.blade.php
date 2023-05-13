@@ -56,22 +56,21 @@
         <div class="intro-slider">
             <ul class="slidee ">
                 @foreach ($data->slice(0, 4) as $product)
-                    <li>
-                        <form action="">
-                            <div class="intro-item">
-                                <figure>
-                                    <img src="{{ url('storage/' . $product->img1) }}" alt="#" />
-                                </figure>
-                                <div class="product-info">
-                                    <h5>{{ $product->name }}</h5>
-                                    {{-- <span>{{ $product->mrp }}</span> --}}
-                                    <p>{{ $product->price }}</p>
-                                    <a href="{{url('/customer/add_to_cart')}}" class="site-btn btn-line">ADD TO CART</a>
-                                </div>
+                <li>
+                    <a href="{{url('/product_page',['id'=>$product->id] )}} ">
+                        <div class="intro-item">
+                            <figure>
+                                <img src="{{ url('storage/' . $product->img1) }}" alt="#" />
+                            </figure>
+                            <div class="product-info">
+                                <h5>{{ $product->name }}</h5>
+                                {{-- <span>{{ $product->mrp }}</span> --}}
+                                <p>{{ $product->price }}</p>
+                                <a href="{{url('/customer/cart/add_to_cart_backend', ['user_id'=>Auth::user()->id, 'product_id'=>$product->id])}}" class="site-btn btn-line">ADD TO CART</a>
                             </div>
-                            {{-- {{Auth::user->email}} --}}
-                        </form>
-                    </li>
+                        </div>
+                    </a>
+                </li>
                 @endforeach
                 {{-- <li>
                         <div class="intro-item">

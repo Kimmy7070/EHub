@@ -15,6 +15,7 @@ class DisplayIndexController extends Controller
     public function Unkown_index()
     {
         $data = DB::table('products')->get();
+        // $user_email = Auth::user()->email->get();
         return view ('index', compact('data'));
     }
     public function unknown_checkout()
