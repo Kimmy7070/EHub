@@ -38,7 +38,7 @@ class CustomerController extends Controller
     {
         // add to cart backend
         $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
-        $fetch_product_data = DB::table('products')->where($product_id,'=','id')->get();
+        $fetch_product_data = DB::table('products')->where('id','=',$product_id)->get();
 
         return view('/customer/cart',compact('data', 'fetch_product_data'));
     }

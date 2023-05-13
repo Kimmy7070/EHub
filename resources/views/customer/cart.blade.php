@@ -40,7 +40,7 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th class="total-th">Total</th>
-                        <th class="total-th">Remove <span></span></th>
+                        <th class="total-th">Remove</th>
                     </tr>
                 </thead>
 
@@ -53,14 +53,14 @@
                             <img src="{{ url('storage/' . $product->img1) }}" alt="">
                             <div class="pc-title">
                                 <h4>{{$product->name}}</h4>
-                                <a href="#">Edit Product</a>
+                                {{-- <a href="#">Edit Product</a> --}}
                             </div>
                         </td>
                         <td class="price-col">{{$product->name}}</td>
                         <td class="quy-col">
                             <div class="quy-input">
                                 <span>Qty</span>
-                                <input type="number" value="01">
+                                <input type="number" value="01" min="1" max="20">
                             </div>
                         </td>
                         <td class="total-col">{{$product->price}}</td>
@@ -87,13 +87,13 @@
                         <h4>Shipping method</h4>
                         <p>Select the one you want</p>
                         <div class="shipping-chooes">
-                            <div class="sc-item">
+                            {{-- <div class="sc-item">
                                 <input type="radio" name="sc" id="one">
-                                <label for="one">Next day delivery<span>$4.99</span></label>
-                            </div>
+                                <label for="one">Next day delivery<span>&#8377; 100</span></label>
+                            </div> --}}
                             <div class="sc-item">
                                 <input type="radio" name="sc" id="two">
-                                <label for="two">Standard delivery<span>$1.99</span></label>
+                                <label for="two">Standard delivery<span>&#8377;0 (Opening Offer)</span></label>
                             </div>
                             <div class="sc-item">
                                 <input type="radio" name="sc" id="three">
@@ -113,9 +113,9 @@
                         <h4>Cart total</h4>
                         <p>Final Info</p>
                         <ul class="cart-total-card">
-                            <li>Subtotal<span>$59.90</span></li>
+                            <li>Subtotal<span>{{$product->price}}</span></li>
                             <li>Shipping<span>Free</span></li>
-                            <li class="total">Total<span>$59.90</span></li>
+                            <li class="total">Total<span>{{$product->price}}</span></li>
                         </ul>
                         <a class="site-btn btn-full" href="checkout.html">Proceed To Checkout</a>
                     </div>
