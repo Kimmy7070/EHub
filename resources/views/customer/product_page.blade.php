@@ -15,7 +15,6 @@
 
 @section('body')
 
-    <!-- Page Info -->
     <div class="page-area product-page spad">
         @foreach ($data->slice(0, 4) as $product)
             <div class="container">
@@ -74,13 +73,13 @@
                             <div class="size-choose">
                                 <span>Amount:</span>
                                 <div class="sc-item">
-                                    <input type="number" max="10" value="1" class="mt-1" min="1"
-                                        name="sc" id="l-size">
+                                    <input type="number" max="10" value="1" class="mt-1" min="1" name="sc"
+                                        id="l-size">
                                     {{-- <label for="l-size">L</label> --}}
                                 </div>
 
                             </div>
-                            <a href="#" class="site-btn btn-line">ADD TO CART</a>
+                            <a href="{{url('/customer/cart/add_to_cart_backend', ['user_id'=>Auth::user()->id, 'product_id'=>$product->id])}}" class="site-btn btn-line">ADD TO CART</a>
                             <a href="#" class="site-btn btn-line">BUY NOW</a>
                         </div>
                     </div>
@@ -139,7 +138,7 @@
                                 <div class="product-info">
                                     <h6>{{ $product_ref->name }}</h6>
                                     <p>{{ $product_ref->price }}</p>
-                                    <a href="#" class="site-btn btn-line">ADD TO CART</a>
+                                    <a href="{{url('/customer/cart/add_to_cart_backend', ['user_id'=>Auth::user()->id, 'product_id'=>$product_ref->id])}}" class="site-btn btn-line">ADD TO CART</a>
                                 </div>
                             </div>
                         </div>

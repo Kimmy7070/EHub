@@ -74,4 +74,11 @@ class CustomerController extends Controller
     {
         return view('customer.faq');
     }
+
+    public function product_page($id)
+    {
+        $data = DB::table('products')->where('id', $id)->get();
+        $alldata = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
+        return view('customer.product_page',compact('data','alldata'));
+    }
 }

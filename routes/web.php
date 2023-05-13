@@ -202,17 +202,27 @@ Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'c
 
 Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer');
 
-// Route::get('/customer/cart', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
+##########################################################################################
+// customer cart routes starts here
+##########################################################################################
 
 Route::get('/customer/cart/add_to_cart_backend/{user_id}/{product_id}', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
+
+Route::get('/customer/cart', [App\Http\Controllers\CartController::class, 'Customer_Cart_Index']);
+
+//Route::get('/customer/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
+
+##########################################################################################
+// customer cart routes ends here
+##########################################################################################
+
+Route::get('/customer/product_page/{id}', [App\Http\Controllers\CustomerController::class, 'product_page']);
 
 Route::get('/customer/error', [App\Http\Controllers\CustomerController::class, 'Customer_Error_view']);
 
 Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class, 'Customer_Profile_view']);
 
 Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
-
-Route::get('/customer/cart', [App\Http\Controllers\CartController::class, 'Customer_Cart_Index']);
 
 
 ###############################################################################
