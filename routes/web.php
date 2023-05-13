@@ -26,9 +26,6 @@ Route::get('allproducts', [App\Http\Controllers\DisplayIndexController::class, '
 
 Route::get('/product_page/{id}', [App\Http\Controllers\DisplayIndexController::class, 'unknown_product_page']);
 
-Route::get('checkout', [App\Http\Controllers\DisplayIndexController::class, 'unknown_checkout']);
-
-
 ##########################################################################
 //contact us for customer route
 ##########################################################################
@@ -224,6 +221,7 @@ Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class,
 
 Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
 
+Route::get('/customer/checkout', [App\Http\Controllers\CustomerController::class, 'Checkout_Index']);
 
 ###############################################################################
 // Customer side routes ends here

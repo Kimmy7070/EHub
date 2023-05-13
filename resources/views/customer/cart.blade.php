@@ -60,7 +60,8 @@
                         <td class="quy-col">
                             <div class="quy-input">
                                 <span>Qty</span>
-                                <input type="number" value="01" min="1" max="20">
+                                <input type="number" value="{{$product->quantity}}" min="1">
+                                {{-- max = "{{$product->quantity}}" --}}
                             </div>
                         </td>
                         <td class="total-col">{{$product->price}}</td>
@@ -72,10 +73,10 @@
         </div>
         <div class="row cart-buttons">
             <div class="col-lg-5 col-md-5">
-                <div class="site-btn btn-continue">Continue shopping</div>
+                <a href="{{url('/customer/home')}}"><div class="site-btn btn-continue">Continue shopping</div></a>
             </div>
             <div class="col-lg-7 col-md-7 text-lg-right text-left">
-                <div class="site-btn btn-line btn-update">Checkout</div>
+                <a href="{{url('/customer/checkout')}}"><div class="site-btn btn-line btn-update">Checkout</div></a>
             </div>
         </div>
     </div>

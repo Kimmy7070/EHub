@@ -81,4 +81,10 @@ class CustomerController extends Controller
         $alldata = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
         return view('customer.product_page',compact('data','alldata'));
     }
+
+    public function Checkout_Index()
+    {
+       $data = DB::table('products')->get();
+        return view('customer.checkout',compact('data'));
+    }
 }
