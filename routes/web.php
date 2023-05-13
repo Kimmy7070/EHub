@@ -206,7 +206,6 @@ Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, '
 
 Route::get('/customer/cart/add_to_cart_backend/{user_id}/{product_id}', [App\Http\Controllers\CustomerController::class, 'add_to_cart'])->middleware('is_customer');
 
-
 Route::get('/customer/error', [App\Http\Controllers\CustomerController::class, 'Customer_Error_view']);
 
 Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class, 'Customer_Profile_view']);

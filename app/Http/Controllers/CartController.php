@@ -23,6 +23,9 @@ class CartController extends Controller
 
     public function Customer_Cart_Index()
     {
-        return view ('customer.cart');
+        $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
+        ->select('carts.*', 'products.name', 'products.price', 'products.img1', 'products.mrp')
+        ->where('carts.user_id', Auth::user()->id)->get();
+        return view('customer.cart', compact('data'));
     }
 }

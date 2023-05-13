@@ -44,7 +44,7 @@
                     </tr>
                 </thead>
 
-                @foreach ($fetch_product_data as $product)
+                @foreach ($data as $product)
 
 
                 <tbody>
@@ -56,7 +56,7 @@
                                 {{-- <a href="#">Edit Product</a> --}}
                             </div>
                         </td>
-                        <td class="price-col">{{$product->name}}</td>
+                        <td class="price-col">{{$product->mrp}}</td>
                         <td class="quy-col">
                             <div class="quy-input">
                                 <span>Qty</span>
