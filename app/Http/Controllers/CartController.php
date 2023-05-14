@@ -24,16 +24,27 @@ class CartController extends Controller
     public function Customer_Cart_Index()
     {
         $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
-        ->select('carts.*', 'products.name','carts.quantity','products.price', 'products.img1', 'products.mrp')
+        ->select('carts.*', 'products.name','carts.cart_quantity','products.quantity','products.price', 'products.img1', 'products.mrp')
         ->where('carts.user_id', Auth::user()->id)->get();
-        return view('customer.cart', compact('data'));
+
+        $cart_id = DB::table('carts')->select('id')->where('user_id', Auth::user()->id)->get();
+        return view('customer.cart', compact('data', 'cart_id'));
     }
 
-    public function update_cart(Request $request)
+    public function update_cart($cart_id, Request $request)
     {
-        $data = cart::find($request->id);
-        $data->quantity = $request->quantity;
-        $data->save();
+        // echo $cart_id;
+        $qty = $request['qty'];
+        $qt=(int)$qty;
+        echo $qt;
+        $data = DB::table('carts')->where('user_id', $cart_id)->update(['cart_quantity'=>$qt]);
         return redirect('/customer/cart')->with('success', 'Cart updated successfully');
+    }
+
+    public function edit_cart($user_id, $product_id)
+    {
+        // add to cart backend
+        $data = cart::create(['user_id'=>$user_id, 'product_id',$product_id]);
+        return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
     }
 }

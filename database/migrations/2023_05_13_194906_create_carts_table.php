@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('user_id')->default("null");
             $table->string('product_id')->default("null");
-            $table->integer('quantity')->default(1);
+            $table->integer('cart_quantity')->default(1);
             $table->timestamps();
         });
     }
