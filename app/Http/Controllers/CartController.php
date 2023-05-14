@@ -38,13 +38,13 @@ class CartController extends Controller
         $qt=(int)$qty;
         echo $qt;
         $data = DB::table('carts')->where('user_id', $cart_id)->update(['cart_quantity'=>$qt]);
-        return redirect('/customer/cart')->with('success', 'Cart updated successfully');
+        // return redirect('/customer/cart')->with('success', 'Cart updated successfully');
     }
 
-    public function edit_cart($user_id, $product_id)
-    {
-        // add to cart backend
-        $data = cart::create(['user_id'=>$user_id, 'product_id',$product_id]);
-        return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
-    }
+    // public function edit_cart($user_id, $product_id)
+    // {
+    //     // add to cart backend
+    //     $data = cart::create(['user_id'=>$user_id, 'product_id',$product_id]);
+    //     return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
+    // }
 }

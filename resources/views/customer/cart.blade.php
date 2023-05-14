@@ -92,7 +92,6 @@
                                     </td>
                                     <td class="total-col">{{ $product->price * $product->cart_quantity }}</td>
                                     <td class="total-col"><i class="fa-solid fa-trash mr-4"></i></td>
-                                    <td class="total-col">{{ $cart->id }}</td>
                                     {{-- <td class="total-col">
                             <form action="{{url('update_quantity')}}" method="get">
                                 <button type="submit" class="btn btn-dark"><i class="fa-solid fa-edit"></i>

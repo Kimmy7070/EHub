@@ -38,8 +38,16 @@ class CustomerController extends Controller
     public function add_to_cart($user_id, $product_id)
     {
         // add to cart backend
-        $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
-        return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
+        if(cart::where('user_id', $user_id)->where('product_id', $product_id)->exists()){
+            $data = DB::table('carts')->where('user_id', $user_id)->where('product_id', $product_id)->increment('cart_quantity');
+            return redirect('/customer/cart')->with('success', 'Cart updated successfully');
+        }
+        else{
+            $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
+            return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
+        }
+        // $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
+        // return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
     }
 
     // public function show_cart()
