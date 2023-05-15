@@ -1532,6 +1532,7 @@ ol {
 }
 
 .checkout-form input[type=text],
+.checkout-form textarea,
 .checkout-form input[type=email],
 .checkout-form input[type=password],
 .checkout-form select {

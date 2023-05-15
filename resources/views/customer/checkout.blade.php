@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('customer.layout_index')
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="shortcut icon" />
 
@@ -16,33 +16,30 @@
     <!-- Page -->
     <div class="page-area cart-page spad">
         <div class="container">
-            <form class="checkout-form">
+            <form class="checkout-form" action="{{url('order_backend')}}" method="get" enctype="">
                 <div class="row">
                     <div class="col-lg-6">
                         <h4 class="checkout-title">Billing Address</h4>
-                        <form action="" method="get">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="First Name *" required>
+                                    <input type="text" name="fname" placeholder="First Name *" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="Last Name *" required>
+                                    <input type="text" name="lname" placeholder="Last Name *" required>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Address *" required>
+                                    <textarea type="text" name="address" placeholder="Address *" required></textarea>
 
-                                    <input type="text">
+                                    <input type="text" name="zip" placeholder="Zipcode *" required>
 
-                                    <input type="text" placeholder="Zipcode *" required>
+                                    <input type="text" name="city" placeholder="City/Town *" required>
 
-                                    <input type="text" placeholder="City/Town *" required>
+                                    <input type="text" name="phone" placeholder="Phone no *" required>
 
-                                    <input type="text" placeholder="Phone no *" required>
-
-                                    <input type="email" placeholder="Email Address *" required>
-                                    <div style="background-color: #fff;outline: none;border: none"  class= "order-card">
-                                    <button class="site-btn btn-full">Back to Cart</button>
+                                    <input type="email" name="email" placeholder="Email Address *" required>
+                                    <div style="background-color: #fff;outline: none;border: none" class="order-card">
+                                        <a href="{{url('/customer/cart')}}" style="text-decoration: none" class="site-btn btn-full">Back to Cart</a>
                                     </div>
                                     {{-- <div class="checkbox-items">
                                         <div class="ci-item">
@@ -61,7 +58,6 @@
                                     </div> --}}
                                 </div>
                             </div>
-                        </form>
                     </div>
 
 
@@ -78,14 +74,28 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            @php
+                                                // $data = Cart::getContent();
+                                                $total=0;
+
+                                            @endphp
+                                            @foreach ($data as $item)
+                                                <tr>
+                                                    <td>{{ $item->name }} <strong> × {{ $item->quantity }}</strong></td>
+                                                    <td>&#8377;{{ $item->price * $item->quantity}}</td>
+                                                </tr>
+                                                @php
+                                                    $total += $item->price * $item->quantity;
+                                                @endphp
+                                            @endforeach
+                                            {{-- <tr>
                                                 <td>Cocktail Yellow dress</td>
                                                 <td>$59.90</td>
                                             </tr>
                                             <tr>
                                                 <td>SubTotal</td>
                                                 <td>$59.90</td>
-                                            </tr>
+                                            </tr> --}}
                                             <tr class="cart-subtotal">
                                                 <td>Shipping</td>
                                                 <td>Free</td>
@@ -94,27 +104,23 @@
                                         <tfoot>
                                             <tr class="order-total">
                                                 <th>Total</th>
-                                                <th>$59.90</th>
+                                                <th>&#8377;{{$total}}</th>
                                             </tr>
                                         </tfoot>
                                     </table>
                                 </div>
                                 <div class="payment-method">
                                     <div class="pm-item">
-                                        <input type="radio" name="pm" id="two">
-                                        <label for="two">Cash on delievery</label>
+                                        <input type="radio" checked name="pm" id="one" value="COD">
+                                        <label for="one">Cash on delievery</label>
                                     </div>
                                     <div class="pm-item">
-                                        <input type="radio" name="pm" id="three">
-                                        <label for="three">Credit card</label>
-                                    </div>
-                                    <div class="pm-item">
-                                        <input type="radio" name="pm" id="four" checked>
-                                        <label for="four">Direct bank transfer</label>
+                                        <input type="radio" name="pm" id="two" value="RazorPay">
+                                        <label for="two">Credit card/Debit card/UPI</label>
                                     </div>
                                 </div>
                             </div>
-                            <button class="site-btn btn-full">Place Order</button>
+                            <button type="submit" class="site-btn btn-full">Place Order</button>
                         </div>
                     </div>
                 </div>

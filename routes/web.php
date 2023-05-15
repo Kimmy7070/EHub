@@ -223,7 +223,17 @@ Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class,
 
 Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
 
+##########################################################################################
+// customer order us routes starts here
+##########################################################################################
+
 Route::get('/customer/checkout', [App\Http\Controllers\CustomerController::class, 'Checkout_Index']);
+
+Route::get('order_backend', [App\Http\Controllers\OrderController::class, 'add_to_order']);
+
+##########################################################################################
+// customer order us routes ends here
+##########################################################################################
 
 ###############################################################################
 // Customer side routes ends here

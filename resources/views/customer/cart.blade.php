@@ -50,6 +50,9 @@
                         </tr>
                     </thead>
                     {{-- @foreach ($cart_id as $cart) --}}
+                    @php
+                        $total = 0;
+                    @endphp
                         @foreach ($data as $product)
                             <tbody>
                                 <tr>
@@ -66,30 +69,17 @@
                                             {{-- <span>Qty</span> --}}
                                             <form action="{{ url('/customer/cart/update_cart', ['id' => $product->id])}}"
                                                 method="get" id="cart_qty" class="d-flex justify-content-around align-items-baseline">
-                                                {{-- <input name="qty" id="qty" type="number"
-                                                    value="{{ $product->cart_quantity }}" min="1"
-                                                    max="{{ $product->quantity }}"> --}}
-
-                                                {{-- <select name="mySelect" id="mySelect" onchange="this.form.submit()"> --}}
-                                                {{-- <select  id="mySelect" onchange="document.getElementById('cart_qty').submit();">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-
-                                                    </select> --}}
-
-
 
                                                 <select class="" name="qty" id="qty" onchange="this.form.submit()" value="{{$product->cart_quantity}}">
 
-                                                    @for ($i=1; $i <=10 && $i <= $product->quantity ; $i++)
+                                                    @for ($i=1; $i <= 10 && $i <= $product->quantity ; $i++)
                                                         <option selected disabled hidden value="$product->cart_quantity">{{$product->cart_quantity}}</option>
                                                         <option value="{{$i}}">{{$i}}</option>
                                                     @endfor
 
+                                                    @php
+                                                    $total += $product->price*$product->quantity;
+                                                    @endphp
 
                                                 </select>
                                             </form>
@@ -131,7 +121,7 @@
                             <h4>Shipping method</h4>
                             <p>Select the one you want</p>
                             <div class="shipping-chooes">
-                                {{-- <div class="sc-item">
+                                {{-- <div class="product">
                                 <input type="radio" name="sc" id="one">
                                 <label for="one">Next day delivery<span>&#8377; 100</span></label>
                             </div> --}}
@@ -157,9 +147,9 @@
                             <h4>Cart total</h4>
                             <p>Final Info</p>
                             <ul class="cart-total-card">
-                                <li>Subtotal<span>{{ $product->price }}</span></li>
+                                <li>Subtotal<span>{{$total}}</span></li>
                                 <li>Shipping<span>Free</span></li>
-                                <li class="total">Total<span>{{ $product->price }}</span></li>
+                                <li class="total">Total<span>{{ $total }}</span></li>
                             </ul>
                             <a class="site-btn btn-full" href="checkout.html">Proceed To Checkout</a>
                         </div>
