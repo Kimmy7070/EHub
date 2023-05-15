@@ -20,41 +20,51 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h4 class="checkout-title">Billing Address</h4>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" placeholder="First Name *">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" placeholder="Last Name *">
-                            </div>
-                            <div class="col-md-12">
-                                <input type="text" placeholder="Company">
-                                <input type="text" placeholder="Address *">
-                                <input type="text">
-                                <input type="text" placeholder="Zipcode *">
-                                <select>
-                                    <option>City/Town *</option>
-                                </select>
-                                <input type="text" placeholder="Phone no *">
-                                <input type="email" placeholder="Email Address *">
-                                <div class="checkbox-items">
-                                    <div class="ci-item">
-                                        <input type="checkbox" name="a" id="tandc">
-                                        <label for="tandc">Terms and conditions</label>
+                        <form action="" method="get">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="First Name *" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Last Name *" required>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="text" placeholder="Address *" required>
+
+                                    <input type="text">
+
+                                    <input type="text" placeholder="Zipcode *" required>
+
+                                    <input type="text" placeholder="City/Town *" required>
+
+                                    <input type="text" placeholder="Phone no *" required>
+
+                                    <input type="email" placeholder="Email Address *" required>
+                                    <div style="background-color: #fff;outline: none;border: none"  class= "order-card">
+                                    <button class="site-btn btn-full">Back to Cart</button>
                                     </div>
-                                    <div class="ci-item">
-                                        <input type="checkbox" name="b" id="newaccount">
-                                        <label for="newaccount">Create an account</label>
-                                        <input type="password" placeholder="password">
-                                    </div>
-                                    <div class="ci-item">
-                                        <input type="checkbox" name="c" id="newsletter">
-                                        <label for="newsletter">Subscribe to our newsletter</label>
-                                    </div>
+                                    {{-- <div class="checkbox-items">
+                                        <div class="ci-item">
+                                            <input type="checkbox" name="a" id="tandc">
+                                            <label for="tandc">Terms and conditions</label>
+                                        </div>
+                                        <div class="ci-item">
+                                            <input type="checkbox" name="b" id="newaccount">
+                                            <label for="newaccount">Create an account</label>
+                                            <input type="password" placeholder="password">
+                                        </div>
+                                        <div class="ci-item">
+                                            <input type="checkbox" name="c" id="newsletter">
+                                            <label for="newsletter">Subscribe to our newsletter</label>
+                                        </div>
+                                    </div> --}}
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
+
+
                     <div class="col-lg-6">
                         <div class="order-card">
                             <div class="order-details">

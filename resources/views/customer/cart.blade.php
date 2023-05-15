@@ -81,7 +81,7 @@
 
                                                     </select> --}}
 
-                                                <a href="{{url('/customer/add_to_cart_backend', ['product_id'=>$product->id, 'user_id'=>Auth::user()->id])}}"><button class=" btn btn-success justify-content-center mb-3 p-1" type="submit"><i class="fa-solid fa-plus"></i></button></a>
+
 
                                                 <select class="" name="qty" id="qty" onchange="this.form.submit()" value="{{$product->cart_quantity}}">
 
@@ -92,7 +92,6 @@
 
 
                                                 </select>
-                                                <a href=""><button class="btn btn-danger mb-3 p-1" type="submit"><i class="fa-solid fa-minus"></i></button></a>
                                             </form>
                                             {{-- cart quantity --}}
                                             {{-- max = "{{$product->quantity}}" --}}
