@@ -63,7 +63,7 @@
                                             {{-- <a href="#">Edit Product</a> --}}
                                         </div>
                                     </td>
-                                    <td class="price-col">{{ $product->price }}</td>
+                                    <td class="price-col">&#8377;{{ $product->price }}</td>
                                     <td class="quy-col">
                                         <div class="quy-input">
                                             {{-- <span>Qty</span> --}}
@@ -78,7 +78,7 @@
                                                     @endfor
 
                                                     @php
-                                                    $total += $product->price*$product->quantity;
+                                                    $total += $product->price*$product->cart_quantity;
                                                     @endphp
 
                                                 </select>
@@ -87,7 +87,7 @@
                                             {{-- max = "{{$product->quantity}}" --}}
                                         </div>
                                     </td>
-                                    <td class="total-col">{{ $product->price * $product->cart_quantity }}</td>
+                                    <td class="total-col">&#8377;{{ $product->price * $product->cart_quantity }}</td>
                                     <td class="total-col"><i class="fa-solid fa-trash mr-4"></i></td>
                                     {{-- <td class="total-col">
                             <form action="{{url('update_quantity')}}" method="get">
@@ -147,9 +147,9 @@
                             <h4>Cart total</h4>
                             <p>Final Info</p>
                             <ul class="cart-total-card">
-                                <li>Subtotal<span>{{$total}}</span></li>
+                                <li>Subtotal<span>&#8377;{{$total}}</span></li>
                                 <li>Shipping<span>Free</span></li>
-                                <li class="total">Total<span>{{ $total }}</span></li>
+                                <li class="total">Total<span>&#8377;{{ $total }}</span></li>
                             </ul>
                             <a class="site-btn btn-full" href="{{ url('/customer/checkout') }}">Proceed To Checkout</a>
                         </div>

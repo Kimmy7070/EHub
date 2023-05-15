@@ -79,4 +79,9 @@ class OrderController extends Controller
     {
         //
     }
+
+    public function place_order()
+    {
+
+    }
 }

@@ -16,6 +16,8 @@ class order extends Model
         'city',
         'phone',
         'email',
-        'pm'
+        'pm',
+        'total',
+        'status'
     ];
 }

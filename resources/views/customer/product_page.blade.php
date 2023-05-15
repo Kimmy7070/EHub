@@ -80,7 +80,7 @@
 
                             </div>
                             <a href="{{url('/customer/cart/add_to_cart_backend', ['user_id'=>Auth::user()->id, 'product_id'=>$product->id])}}" class="site-btn btn-line">ADD TO CART</a>
-                            <a href="#" class="site-btn btn-line">BUY NOW</a>
+                            <a href="{{url('/customer/checkout', ['user_id'=>Auth::user()->id, 'product_id'=>$product->id])}}" class="site-btn btn-line">BUY NOW</a>
                         </div>
                     </div>
                 </div>

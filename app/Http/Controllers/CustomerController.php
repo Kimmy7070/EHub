@@ -73,7 +73,9 @@ class CustomerController extends Controller
 
     public function Checkout_Index()
     {
-       $data = DB::table('products')->get();
+        $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
+        ->select('carts.*', 'products.name','products.quantity','products.price', 'products.img1', 'products.mrp')
+        ->where('carts.user_id', Auth::user()->id)->get();
         return view('customer.checkout',compact('data'));
     }
 }

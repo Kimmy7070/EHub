@@ -21,7 +21,9 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('pm');
-            $table->string('cart_id');
+            $table->string('user_id')->default('null');
+            $table->integer('total')->default(0);
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

@@ -81,11 +81,11 @@
                                             @endphp
                                             @foreach ($data as $item)
                                                 <tr>
-                                                    <td>{{ $item->name }} <strong> × {{ $item->quantity }}</strong></td>
-                                                    <td>&#8377;{{ $item->price * $item->quantity}}</td>
+                                                    <td>{{ $item->name }} <strong> × {{ $item->cart_quantity }}</strong></td>
+                                                    <td>&#8377;{{ $item->price * $item->cart_quantity}}</td>
                                                 </tr>
                                                 @php
-                                                    $total += $item->price * $item->quantity;
+                                                    $total += $item->price * $item->cart_quantity;
                                                 @endphp
                                             @endforeach
                                             {{-- <tr>
