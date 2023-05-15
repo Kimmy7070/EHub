@@ -50,9 +50,6 @@ class CartController extends Controller
         return redirect('/customer/cart')->with('success', 'Cart updated successfully');
     }
 
-
-
-
     // public function edit_cart($user_id, $product_id)
     // {
     //     // add to cart backend

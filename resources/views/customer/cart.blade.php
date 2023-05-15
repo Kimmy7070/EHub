@@ -151,7 +151,7 @@
                                 <li>Shipping<span>Free</span></li>
                                 <li class="total">Total<span>{{ $total }}</span></li>
                             </ul>
-                            <a class="site-btn btn-full" href="checkout.html">Proceed To Checkout</a>
+                            <a class="site-btn btn-full" href="{{ url('/customer/checkout') }}">Proceed To Checkout</a>
                         </div>
                     </div>
                 </div>
