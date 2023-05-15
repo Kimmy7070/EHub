@@ -207,7 +207,7 @@ Route::get('/customer/cart/add_to_cart_backend/{user_id}/{product_id}', [App\Htt
 
 Route::get('/customer/cart', [App\Http\Controllers\CartController::class, 'Customer_Cart_Index']);
 
-Route::get('/customer/update_cart/{id}', [App\Http\Controllers\CartController::class, 'update_cart']);
+Route::get('/customer/cart/update_cart/{id}', [App\Http\Controllers\CartController::class, 'update_cart']);
 
 //Route::get('/customer/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
 

@@ -11,7 +11,12 @@
 <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/animate.css') }}" />
-
+<style>
+    input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        display: none;
+      }
+</style>
 @section('body')
 
     <!-- Page Info -->
@@ -59,8 +64,8 @@
                                     <td class="quy-col">
                                         <div class="quy-input">
                                             {{-- <span>Qty</span> --}}
-                                            <form action="{{ url('/customer/update_cart', ['id' => $product->id]) }}"
-                                                method="get" id="cart_qty">
+                                            <form action="{{ url('/customer/cart/update_cart', ['id' => $product->id])}}"
+                                                method="get" id="cart_qty" class="d-flex justify-content-around align-items-baseline">
                                                 {{-- <input name="qty" id="qty" type="number"
                                                     value="{{ $product->cart_quantity }}" min="1"
                                                     max="{{ $product->quantity }}"> --}}
@@ -76,15 +81,18 @@
 
                                                     </select> --}}
 
-                                                <input placeholder="{{$product->cart_quantity}}" type="number" name="qty" list="qty" onchange="this.form.submit()">
-                                                <datalist>
-                                                    <option value="1">
-                                                    <option value="2">
-                                                    <option value="3">
-                                                    <option value="4">
-                                                    <option value="5">
-                                                    <option value="6">
-                                                </datalist>
+                                                <a href="{{url('/customer/add_to_cart_backend', ['product_id'=>$product->id, 'user_id'=>Auth::user()->id])}}"><button class=" btn btn-success justify-content-center mb-3 p-1" type="submit"><i class="fa-solid fa-plus"></i></button></a>
+
+                                                <select class="" name="qty" id="qty" onchange="this.form.submit()" value="{{$product->cart_quantity}}">
+
+                                                    @for ($i=1; $i <=10 && $i <= $product->quantity ; $i++)
+                                                        <option selected disabled hidden value="$product->cart_quantity">{{$product->cart_quantity}}</option>
+                                                        <option value="{{$i}}">{{$i}}</option>
+                                                    @endfor
+
+
+                                                </select>
+                                                <a href=""><button class="btn btn-danger mb-3 p-1" type="submit"><i class="fa-solid fa-minus"></i></button></a>
                                             </form>
                                             {{-- cart quantity --}}
                                             {{-- max = "{{$product->quantity}}" --}}
