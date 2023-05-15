@@ -38,35 +38,16 @@ class CustomerController extends Controller
     public function add_to_cart($user_id, $product_id)
     {
         // add to cart backend
-        if(cart::where('user_id', $user_id)->where('product_id', $product_id)->exists()){
-            $data = DB::table('carts')->where('user_id', $user_id)->where('product_id', $product_id)->increment('cart_quantity');
-            return redirect('/customer/cart')->with('success', 'Cart updated successfully');
-        }
-        else{
+        if(cart::where('user_id', $user_id)->where('product_id', $product_id)->doesntExist())
+        {
             $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
             return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
         }
-        // $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
-        // return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
+        else{
+            $data = DB::table('carts')->where('user_id', $user_id)->where('product_id', $product_id)->where('cart_quantity', '<', product::where('id', $product_id)->value('quantity'))->increment('cart_quantity');
+            return redirect('/customer/cart')->with('success', 'Cart updated successfully');
+        }
     }
-
-    // public function show_cart()
-    // {
-    //     $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
-    //     ->select('carts.*', 'products.product_name', 'products.product_price', 'products.product_image')
-    //     ->where('carts.user_id', Auth::user()->id)->get();
-    //     return view('customer.cart', compact('data'));
-    // }
-
-    // public function add_to_cart(Request $request)
-    // {
-    //     $data = new cart;
-    //     $data->user_id = Auth::user()->id;
-    //     $data->product_id = $request->product_id;
-    //     $data->quantity = $request->quantity;
-    //     $data->save();
-    //     return redirect()->back()->with('success', 'Product added to cart successfully');
-    // }
 
     public function Customer_Error_view()
     {

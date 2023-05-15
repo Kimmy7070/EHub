@@ -24,7 +24,7 @@ class CartController extends Controller
     public function Customer_Cart_Index()
     {
         $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
-        ->select('carts.*', 'products.name','carts.cart_quantity','products.quantity','products.price', 'products.img1', 'products.mrp')
+        ->select('carts.*', 'products.name','products.quantity','products.price', 'products.img1', 'products.mrp')
         ->where('carts.user_id', Auth::user()->id)->get();
 
         $cart_id = DB::table('carts')->select('id')->where('user_id', Auth::user()->id)->get();
@@ -36,9 +36,9 @@ class CartController extends Controller
         // echo $cart_id;
         $qty = $request['qty'];
         $qt=(int)$qty;
-        echo $qt;
+        // echo $qt;
         $data = DB::table('carts')->where('user_id', $cart_id)->update(['cart_quantity'=>$qt]);
-        // return redirect('/customer/cart')->with('success', 'Cart updated successfully');
+        return redirect('/customer/cart')->with('success', 'Cart updated successfully');
     }
 
     // public function edit_cart($user_id, $product_id)

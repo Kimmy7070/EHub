@@ -44,7 +44,7 @@
                             {{-- <th class="total-th">Edit Quantity</th> --}}
                         </tr>
                     </thead>
-                    @foreach ($cart_id as $cart)
+                    {{-- @foreach ($cart_id as $cart) --}}
                         @foreach ($data as $product)
                             <tbody>
                                 <tr>
@@ -59,7 +59,7 @@
                                     <td class="quy-col">
                                         <div class="quy-input">
                                             {{-- <span>Qty</span> --}}
-                                            <form action="{{ url('/customer/update_cart', ['id' => $cart->id]) }}"
+                                            <form action="{{ url('/customer/update_cart', ['id' => $product->id]) }}"
                                                 method="get" id="cart_qty">
                                                 {{-- <input name="qty" id="qty" type="number"
                                                     value="{{ $product->cart_quantity }}" min="1"
@@ -100,7 +100,7 @@
                                 </tr>
                             </tbody>
                         @endforeach
-                    @endforeach
+                    {{-- @endforeach --}}
                 </table>
             </div>
             <div class="row cart-buttons">
