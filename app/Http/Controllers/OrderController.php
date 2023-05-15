@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use Auth;
+
 use App\Models\order;
+use App\Models\cart;
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -37,9 +42,29 @@ class OrderController extends Controller
         $order->phone = $request->phone;
         $order->email = $request->email;
         $order->pm = $request->pm;
+        $order->user_id = Auth::user()->id;
+        $order->total = $request->total;
         $order->save();
-        $message = 'Your order has been placed successfully';
-        return redirect('/customer/home')->with($message);
+
+        //data fetching ends here
+
+        if(cart::where('user_id', Auth::user()->id)->where('is_ordered', 0)->exists())
+        {
+            $data1 = DB::table('carts')->where('user_id', Auth::user()->id)->update(['is_ordered' => 1]);
+        }
+
+        //cart updating to ordered ends here
+
+        $product_id = cart::where('user_id', Auth::user()->id)->where('is_ordered', 1)->value('product_id');
+        // echo $product_id;
+        $product_quantity = product::where('id', $product_id)->value('quantity');
+        // echo $product_quantity;
+        $cart_qty = cart::where('user_id', Auth::user()->id)->where('is_ordered', 1)->value('cart_quantity');
+        // echo $cart_qty;
+        $data2 = DB::table('products')->where('id', $product_id)->update(['quantity' => $product_quantity - $cart_qty]);
+        // echo $data2;
+        // echo ($request);
+        return redirect('/customer/home')->with('success', 'Order placed successfully');
         // ->route('order.create');
     }
 
@@ -84,4 +109,18 @@ class OrderController extends Controller
     {
 
     }
+
+     //same code as customer controller but redirects to checkout directly
+     public function buy_now($user_id,$product_id)
+     {
+         if(cart::where('user_id', $user_id)->where('product_id', $product_id)->doesntExist())
+         {
+             $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
+             return redirect('/customer/checkout')->with('success', 'Product added to cart successfully');
+         }
+         else{
+             $data = DB::table('carts')->where('user_id', $user_id)->where('product_id', $product_id)->where('cart_quantity', '<', product::where('id', $product_id)->value('quantity'))->increment('cart_quantity');
+             return redirect('/customer/checkout')->with('success', 'Cart updated successfully');
+         }
+     }
 }

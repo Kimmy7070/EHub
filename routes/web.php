@@ -227,7 +227,7 @@ Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Cu
 // customer order us routes starts here
 ##########################################################################################
 
-Route::get('/customer/checkout/{user_id}/{product_id}', [App\Http\Controllers\CartController::class, 'buy_now']);
+Route::get('/customer/checkout/{user_id}/{product_id}', [App\Http\Controllers\OrderController::class, 'buy_now']);
 
 Route::get('/customer/checkout', [App\Http\Controllers\CustomerController::class, 'Checkout_Index']);
 

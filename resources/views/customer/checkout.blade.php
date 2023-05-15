@@ -104,19 +104,19 @@
                                         <tfoot>
                                             <tr class="order-total">
                                                 <th>Total</th>
-                                                <th>&#8377;{{$total}}</th>
+                                                <th>&#8377;<input type='number' name="total" hidden value="{{$total}}">{{$total}}</th>
                                             </tr>
                                         </tfoot>
                                     </table>
                                 </div>
                                 <div class="payment-method">
                                     <div class="pm-item">
-                                        <input type="radio" checked name="pm" id="one" value="COD">
-                                        <label for="one">Cash on delievery</label>
+                                        <input type="radio" checked name="pm" id="two" value="COD">
+                                        <label for="two">Cash on delievery</label>
                                     </div>
                                     <div class="pm-item">
-                                        <input type="radio" name="pm" id="two" value="RazorPay">
-                                        <label for="two">Credit card/Debit card/UPI</label>
+                                        <input type="radio" name="pm" id="three" value="RazorPay">
+                                        <label for="three">Credit card/Debit card/UPI</label>
                                     </div>
                                 </div>
                             </div>

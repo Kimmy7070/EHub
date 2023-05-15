@@ -50,20 +50,6 @@ class CartController extends Controller
         return redirect('/customer/cart')->with('success', 'Cart updated successfully');
     }
 
-    //same code as customer controller but redirects to checkout directly
-    public function buy_now($user_id,$product_id)
-    {
-        if(cart::where('user_id', $user_id)->where('product_id', $product_id)->doesntExist())
-        {
-            $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
-            return redirect('/customer/checkout')->with('success', 'Product added to cart successfully');
-        }
-        else{
-            $data = DB::table('carts')->where('user_id', $user_id)->where('product_id', $product_id)->where('cart_quantity', '<', product::where('id', $product_id)->value('quantity'))->increment('cart_quantity');
-            return redirect('/customer/checkout')->with('success', 'Cart updated successfully');
-        }
-    }
-
     // public function edit_cart($user_id, $product_id)
     // {
     //     // add to cart backend
