@@ -50,18 +50,19 @@ class OrderController extends Controller
 
         if(cart::where('user_id', Auth::user()->id)->where('is_ordered', 0)->exists())
         {
-            $data1 = DB::table('carts')->where('user_id', Auth::user()->id)->update(['is_ordered' => 1]);
+            $data1 = DB::table('carts')->where('user_id', Auth::user()->id)->update(['is_ordered' => -1]);
         }
 
         //cart updating to ordered ends here
 
-        $product_id = cart::where('user_id', Auth::user()->id)->where('is_ordered', 1)->value('product_id');
+        $product_id = cart::where('user_id', Auth::user()->id)->where('is_ordered', -1)->value('product_id');
         // echo $product_id;
         $product_quantity = product::where('id', $product_id)->value('quantity');
         // echo $product_quantity;
-        $cart_qty = cart::where('user_id', Auth::user()->id)->where('is_ordered', 1)->value('cart_quantity');
+        $cart_qty = cart::where('user_id', Auth::user()->id)->where('is_ordered', -1)->value('cart_quantity');
         // echo $cart_qty;
         $data2 = DB::table('products')->where('id', $product_id)->update(['quantity' => $product_quantity - $cart_qty]);
+        $data3 = DB::table('carts')->where('user_id', Auth::user()->id)->where('is_ordered', -1)->update(['is_ordered' => $order->id]);
         // echo $data2;
         // echo ($request);
         return redirect('/customer/home')->with('success', 'Order placed successfully');
