@@ -38,7 +38,7 @@ class CustomerController extends Controller
     public function add_to_cart($user_id, $product_id)
     {
         // add to cart backend
-        if(cart::where('user_id', $user_id)->where('product_id', $product_id)->doesntExist())
+        if(cart::where('user_id', $user_id)->where('product_id', $product_id)->doesntExist() || (cart::where('user_id', $user_id)->where('product_id', $product_id)->where('is_ordered', 1)->exists())&&(cart::where('user_id', $user_id)->where('product_id', $product_id)->where('is_ordered', 0)->doesntExist()))
         {
             $data = cart::create(['user_id'=>$user_id, 'product_id'=>$product_id]);
             return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
@@ -69,13 +69,5 @@ class CustomerController extends Controller
         $data = DB::table('products')->where('id', $id)->get();
         $alldata = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
         return view('customer.product_page',compact('data','alldata'));
-    }
-
-    public function Checkout_Index()
-    {
-        $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
-        ->select('carts.*', 'products.name','products.quantity','products.price', 'products.img1', 'products.mrp')
-        ->where('carts.user_id', Auth::user()->id)->get();
-        return view('customer.checkout',compact('data'));
     }
 }

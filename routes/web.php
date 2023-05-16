@@ -229,7 +229,7 @@ Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Cu
 
 Route::get('/customer/checkout/{user_id}/{product_id}', [App\Http\Controllers\OrderController::class, 'buy_now']);
 
-Route::get('/customer/checkout', [App\Http\Controllers\CustomerController::class, 'Checkout_Index']);
+Route::get('/customer/checkout', [App\Http\Controllers\OrderController::class, 'Checkout_Index']);
 
 Route::get('order_backend', [App\Http\Controllers\OrderController::class, 'add_to_order']);
 

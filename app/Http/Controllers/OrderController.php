@@ -56,28 +56,26 @@ class OrderController extends Controller
         //cart updating to ordered ends here
 
         $product_id = cart::where('user_id', Auth::user()->id)->where('is_ordered', 1)->value('product_id');
-        // echo $product_id;
+        echo $product_id;
         $product_quantity = product::where('id', $product_id)->value('quantity');
-        // echo $product_quantity;
+        echo $product_quantity;
         $cart_qty = cart::where('user_id', Auth::user()->id)->where('is_ordered', 1)->value('cart_quantity');
-        // echo $cart_qty;
+        echo $cart_qty;
         $data2 = DB::table('products')->where('id', $product_id)->update(['quantity' => $product_quantity - $cart_qty]);
         // echo $data2;
         // echo ($request);
-        return redirect('/customer/home')->with('success', 'Order placed successfully');
+        // return redirect('/customer/home')->with('success', 'Order placed successfully');
         // ->route('order.create');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(order $order)
+    public function Checkout_Index()
     {
         $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
         ->select('carts.*', 'products.name','products.quantity','products.price', 'products.img1', 'products.mrp')
-        ->where('carts.user_id', Auth::user()->id)->get();
-
-        // $cart_id = DB::table('carts')->select('id')->where('user_id', Auth::user()->id)->get();
+        ->where('carts.user_id', Auth::user()->id)->where('carts.is_ordered', 0)->get();
         return view('customer.checkout', compact('data'));
     }
 

@@ -27,7 +27,7 @@ class CartController extends Controller
     {
         $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')
         ->select('carts.*', 'products.name','products.quantity','products.price', 'products.img1', 'products.mrp')
-        ->where('carts.user_id', Auth::user()->id)->get();
+        ->where('carts.user_id', Auth::user()->id)->where('carts.is_ordered', 0)->get();
 
         // $cart_id = DB::table('carts')->select('id')->where('user_id', Auth::user()->id)->get();
         return view('customer.cart', compact('data'));
