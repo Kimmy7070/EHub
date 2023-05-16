@@ -32,7 +32,7 @@ class DisplayIndexController extends Controller
         return view('product_page',compact('data','alldata'));
     }
 
-    public function contactus_backend_ganja(Request $request){
+    public function contactus_backend(Request $request){
         //echo"We all are gandus";
         $data = contactus::create($request->all());
 

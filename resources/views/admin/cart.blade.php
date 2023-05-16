@@ -40,31 +40,35 @@
                                 <tr>
                                     <th scope="col">id</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Product id</th>
+                                    <th scope="col">Product image</th>
+                                    <th scope="col">Product name</th>
+                                    <th scope="col">Quantity</th>
                                     <th scope="col">Time</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($data as $contact)
+                                @foreach ($data as $cart)
 
                                 <tr>
-                                    <th scope="row">{{ $contact->id }}</th>
-                                    <td>{{ $contact->name }}</td>
-                                    <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->query }}</td>
-                                    <td>{{ $contact->created_at }}</td>
+                                    <th scope="row">{{ $cart->id }}</th>
+                                    <td>{{ $cart->email }}</td>
+                                    <td><a href="{{ url('storage/' . $cart->img1) }}">
+                                    <img src="{{ url('storage/' . $cart->img1) }}" width="30rem" height="auto"alt=""></a></td>
+                                    <td>{{$cart->name}}</td>
+                                    <td>{{ $cart->cart_quantity }}</td>
+                                    <td>{{ $cart->created_at }}</td>
                                     <td>
-                                        <form action="{{ url('/admin/contact/delete', ['id' => $contact->id]) }}">
+                                        <form action="{{ url('/admin/cart/delete', ['id' => $cart->id]) }}">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-danger" name="delete"><i
-                                                        class='bi bi-trash'></i></button>
+                                                <button type="submit" class="btn btn-danger" name="delete"><i class='bi bi-trash'></i></button>
                                             </div>
 
                                         </form>
                                     </td>
                                 </tr>
-                                @endforeach --}}
-                                <tr>
+                                @endforeach
+                                {{-- <tr>
                                     <th scope="row">2</th>
                                     <td>Bridie Kessler</td>
                                     <td>Developer</td>
@@ -91,7 +95,7 @@
                                     <td>Dynamic Division Officer</td>
                                     <td>47</td>
                                     <td>2011-04-19</td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->

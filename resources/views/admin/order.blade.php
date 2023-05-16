@@ -68,7 +68,16 @@
                                     <td>{{ $order->user_id }}</td>
                                     <td>{{ $order->name }}</td>
                                     <td>&#8377;{{ $order->total }}</td>
-                                    <td>{{ $order->status }}</td>
+                                    <td>
+                                        @if ($order->status == "pending")
+                                            <button type="button" class="btn btn-warning">{{$order->status}}</button>
+                                        @elseif($order->status == "delivered")
+                                            <button type="button" class="btn btn-success">{{$order->status}}</button>
+                                        @else
+                                            <button type="button" class="btn btn-danger">{{$order->status}}</button>
+                                        @endif
+
+                                    </td>
                                     <td>
                                         <form action="{{ url('/admin/contact/delete', ['id' => $order->id]) }}">
                                             <div class="form-group">
