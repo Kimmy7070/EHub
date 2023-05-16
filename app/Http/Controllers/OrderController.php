@@ -80,6 +80,15 @@ class OrderController extends Controller
         return view('customer.checkout', compact('data'));
     }
 
+    public function Admin_Order_Index()
+    {
+        $data = DB::table('orders')->join('carts', 'orders.id', '=', 'carts.is_ordered')
+        ->join('products', 'carts.product_id', '=', 'products.id')
+        ->select('orders.*', 'carts.cart_quantity', 'products.name')
+        ->get();
+
+        return view('admin.order', compact('data'));
+    }
     /**
      * Show the form for editing the specified resource.
      */

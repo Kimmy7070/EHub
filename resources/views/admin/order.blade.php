@@ -40,23 +40,37 @@
                                 <tr>
                                     <th scope="col">id</th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Zip code</th>
+                                    <th scope="col">City</th>
+                                    <th scope="col">Phone</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Query</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Delete</th>
+                                    <th scope="col">Pay method</th>
+                                    <th scope="col">User_id</th>
+                                    <th scope="col">Product_name</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Remove</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($data as $contact)
+                                @foreach ($data as $order)
 
                                 <tr>
-                                    <th scope="row">{{ $contact->id }}</th>
-                                    <td>{{ $contact->name }}</td>
-                                    <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->query }}</td>
-                                    <td>{{ $contact->created_at }}</td>
+                                    <th scope="row">{{ $order->id }}</th>
+                                    <td>{{ $order->fname." ".$order->lname }}</td>
+                                    <td>{{ $order->address }}</td>
+                                    <td>{{ $order->zip }}</td>
+                                    <td>{{ $order->city }}</td>
+                                    <td>{{ $order->phone }}</td>
+                                    <td>{{ $order->email }}</td>
+                                    <td>{{ $order->pm }}</td>
+                                    <td>{{ $order->user_id }}</td>
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->total }}</td>
+                                    <td>{{ $order->status }}</td>
                                     <td>
-                                        <form action="{{ url('/admin/contact/delete', ['id' => $contact->id]) }}">
+                                        <form action="{{ url('/admin/contact/delete', ['id' => $order->id]) }}">
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-danger" name="delete"><i
                                                         class='bi bi-trash'></i></button>
@@ -65,8 +79,8 @@
                                         </form>
                                     </td>
                                 </tr>
-                                @endforeach --}}
-                                <tr>
+                                @endforeach
+                                {{-- <tr>
                                     <th scope="row">2</th>
                                     <td>Bridie Kessler</td>
                                     <td>Developer</td>
@@ -93,7 +107,7 @@
                                     <td>Dynamic Division Officer</td>
                                     <td>47</td>
                                     <td>2011-04-19</td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->

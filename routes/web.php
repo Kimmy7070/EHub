@@ -177,9 +177,8 @@ Route::get('/admin/cart', function(){
 #####################################################################
 //order for admin route
 #####################################################################
-Route::get('/admin/order', function(){
-    return view('/admin/order');
-});
+
+Route::get('/admin/order', [App\Http\Controllers\OrderController::class, 'Admin_Order_Index']);
 
 #####################################################################
 //order for admin route ends here
@@ -198,8 +197,6 @@ Auth::routes();
 Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer'); //application base route; route for customer access
 
 Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer');
-
-Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class, 'Customer_Profile_view'])->middleware('is_customer');
 
 ##########################################################################################
 // customer cart routes starts here
