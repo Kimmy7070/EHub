@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="pm-item">
                                         <input type="radio" name="pm" id="three" value="RazorPay">
-                                        <label for="three">Credit card/Debit card/UPI</label>
+                                        <label for="three">Razor Pay</label>
                                     </div>
                                 </div>
                             </div>
