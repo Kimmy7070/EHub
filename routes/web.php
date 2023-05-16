@@ -222,6 +222,8 @@ Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class,
 
 Route::get('/customer/faq', [App\Http\Controllers\CustomerController::class, 'Customer_FAQ_view']);
 
+Route::get('/customer/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
+
 ##########################################################################################
 // customer order us routes starts here
 ##########################################################################################

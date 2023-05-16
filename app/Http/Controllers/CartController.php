@@ -56,4 +56,10 @@ class CartController extends Controller
     //     $data = cart::create(['user_id'=>$user_id, 'product_id',$product_id]);
     //     return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
     // }
+    public function delete($id)
+    {
+        // echo $cart_id;
+        $data = DB::table('carts')->where('id', $id)->delete();
+        return redirect('/customer/cart')->with('success', 'Product deleted from cart successfully');
+    }
 }

@@ -57,7 +57,7 @@
                                             <td>{{ $product->name }}</td>
                                             <td>{{ $product->category }}</td>
                                             <td>{{ $product->mrp }}</td>
-                                            <td>{{ $product->price }}</td>
+                                            <td>&#8377;{{ $product->price }}</td>
                                             <td>
                                                 @if ($product->quantity >= '1')
                                                     {{ $product->quantity }}

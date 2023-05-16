@@ -67,7 +67,7 @@
                                     <td>{{ $order->pm }}</td>
                                     <td>{{ $order->user_id }}</td>
                                     <td>{{ $order->name }}</td>
-                                    <td>{{ $order->total }}</td>
+                                    <td>&#8377;{{ $order->total }}</td>
                                     <td>{{ $order->status }}</td>
                                     <td>
                                         <form action="{{ url('/admin/contact/delete', ['id' => $order->id]) }}">

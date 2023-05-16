@@ -88,7 +88,14 @@
                                         </div>
                                     </td>
                                     <td class="total-col">&#8377;{{ $product->price * $product->cart_quantity }}</td>
-                                    <td class="total-col"><i class="fa-solid fa-trash mr-4"></i></td>
+                                    <td class="total-col">
+                                        <form action="{{ url('/customer/cart/delete', ['id' => $product->id]) }}" method="get">
+                                            <button type="submit" class="btn btn-dark" style=""><i
+                                                    class="fa-solid fa-trash mr-4"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    {{-- <td class="total-col"><i class="fa-solid fa-trash mr-4"></i></td> --}}
                                     {{-- <td class="total-col">
                             <form action="{{url('update_quantity')}}" method="get">
                                 <button type="submit" class="btn btn-dark"><i class="fa-solid fa-edit"></i>
