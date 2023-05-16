@@ -50,7 +50,7 @@ class OrderController extends Controller
 
         if(cart::where('user_id', Auth::user()->id)->where('is_ordered', 0)->exists())
         {
-            $data1 = DB::table('carts')->where('user_id', Auth::user()->id)->update(['is_ordered' => -1]);
+            $data1 = DB::table('carts')->where('user_id', Auth::user()->id)->where('is_ordered', 0)->update(['is_ordered' => -1]);
         }
 
         //cart updating to ordered ends here
