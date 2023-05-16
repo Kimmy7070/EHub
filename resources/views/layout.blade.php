@@ -42,8 +42,8 @@
 
         <div class="nav-icon">
             <div class="icons-container">
-                <a href=""><i class="bx bx-heart"></i></a>
-                <a href="#"><i class="bx bx-cart"></i></a>
+                {{-- <a href=""><i class="bx bx-heart"></i></a> --}}
+                <a href="/customer/cart"><i class="bx bx-cart"></i></a>
                 <a href=""><i class="bx bx-bell"></i></a>
                 <div class="dropdown">
                     <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"

@@ -199,6 +199,8 @@ Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'c
 
 Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer');
 
+Route::get('/customer/profile', [App\Http\Controllers\CustomerController::class, 'Customer_Profile_view'])->middleware('is_customer');
+
 ##########################################################################################
 // customer cart routes starts here
 ##########################################################################################

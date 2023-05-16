@@ -110,64 +110,60 @@
             <input type="search" class="search" placeholder="Search" />
             <a href="#"><i class="bx bx-search"></i></a>
         </ul>
-        @guest
-            @if (Route::has('login'))
-                <li>
-                    <a class="dropdown-item d-flex align-items-center" href="{{ route('login') }}">
-                        <i class="bi bi-person"></i><span>{{ __('Login') }}</span></a>
+            <div class="nav-icon">
+                <div class="icons-container">
+                    {{-- <a href=""><i class="bx bx-heart"></i></a> --}}
+                    <a href="/customer/cart"><i class="bx bx-cart"></i></a>
+                    <a href=""><i class="bx bx-bell"></i></a>
+                    @guest
+                        @if (Route::has('login'))
+                            <div class="dropdown">
+                                <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-user-circle"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </div>
+                            </div>
+                        @endif
 
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-            @endif
+                        @if (Route::has('register'))
+                            <div class="dropdown">
+                                <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-user-circle"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </div>
+                            </div>
+                        @endif
+                    @else
+                        <div class="dropdown">
+                            <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-user-circle"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/customer/profile">Profile</a>
+                                <a class="dropdown-item" onclick="event.preventDefault();
 
-            @if (Route::has('register'))
-                <li>
-                    <a class="dropdown-item d-flex align-items-center" href="{{ route('register') }}">
-                        <i class="bi bi-person"></i><span>{{ __('Register') }}</span></a>
-
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-            @endif
-        @else
-
-                <li>
-                    <div class="dropdown">
-                        {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a> --}}
-
-
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                <span><i class="bi bi-box-arrow-in-right"></i>{{ __('Logout') }}</span>
-                            </a>
-
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                    </div>
-                </div>
-            </li>
+                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
 
 
-        @endguest
+                        </div>
+                @endguest
 
+            </div>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
 
-
-        <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
     </header>
     {{-- navbar ends here --}}
 
