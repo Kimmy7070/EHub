@@ -22,15 +22,16 @@
 
                             <form action="">
                                 <div class="form-group">
-                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search">
-
+                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search" data-toggle="tooltip"
+                                    data-placement="top" title="Search">
                                     <button class="btn btn-primary" type="submit">Search</button>
                                     {{ $search }}
                                 </div>
 
                             </form>
                             <br>
-                            <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success"><i
+                            <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success" data-toggle="tooltip"
+                                data-placement="top" title="Add Product"><i
                                         class="bi bi-plus">Add Product</i></button></a>
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
@@ -61,35 +62,49 @@
                                             <td>
                                                 @if ($product->quantity >= '1')
                                                     {{ $product->quantity }}
+                                                @else
+                                                    <button type="button" class="badge bg-warning">Out of Stock</button>
+                                                @endif
                                             </td>
-                                        @else
-                                            <button type="button" class="badge bg-warning">Out of Stock</button></td>
+                                            <td><a href="{{ url('storage/' . $product->img1) }}"><img
+                                                        src="{{ url('storage/' . $product->img1) }}" width="30rem"
+                                                        height="auto" alt=""></a></td>
+                                            <td><a href="{{ url('storage/' . $product->img2) }}"><img
+                                                        src="{{ url('storage/' . $product->img2) }}" width="30rem"
+                                                        height="auto" alt=""></a></td>
+                                            <td><a href="{{ url('storage/' . $product->img3) }}"><img
+                                                        src="{{ url('storage/' . $product->img3) }}" width="30rem"
+                                                        height="auto" alt=""></a></td>
+                                            <td>
+                                                @if ($product->status == '1')
+                                                    <form
+                                                        action="{{ url('update/product/status', ['id' => $product->id]) }}">
+                                                        <button type="submit" class="btn btn-success" data-toggle="tooltip"
+                                                            data-placement="top" title="Change to Inactive">Active</button>
+                                                    </form>
+                                            </td>
+                                        @elseif ($product->status == '0')
+                                            <form action="{{ url('update/product/status', ['id' => $product->id]) }}">
+                                                <button type="submit" class="btn btn-danger" data-toggle="tooltip"
+                                                    data-placement="top" title="Change to Active">Inactive</button>
+                                            </form>
                                     @endif
-                                    </td>
-                                    <td><a href="{{ url('storage/' . $product->img1) }}"><img
-                                                src="{{ url('storage/' . $product->img1) }}" width="30rem" height="auto"
-                                                alt=""></a></td>
-                                    <td><a href="{{ url('storage/' . $product->img2) }}"><img
-                                                src="{{ url('storage/' . $product->img2) }}" width="30rem" height="auto"
-                                                alt=""></a></td>
-                                    <td><a href="{{ url('storage/' . $product->img3) }}"><img
-                                                src="{{ url('storage/' . $product->img3) }}" width="30rem" height="auto"
-                                                alt=""></a></td>
-                                    <td>
-                                        @if ($product->status == '1')
-                                            <button type="button" class="btn btn-danger">Inactive</button>
-                                    </td>
-                                @elseif ($product->status == '0')
-                                    <button type="button" class="btn btn-sucess">Active</button></td>
+
+                                    @if (Session::has('success'))
+                                        <script type="text/javascript">
+                                            alert({{ session()->get('success') }});
+                                        </script>
                                     @endif
 
 
-                                    <td><button type="button" class="btn btn-success"><i
-                                                class="bi bi-pencil-square"></i></button></td>
+                                    <td><button type="button" name="edit" class="btn btn-success" data-toggle="tooltip"
+                                            data-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                                    </td>
                                     <td>
                                         <form action="{{ url('/admin/product/delete', ['id' => $product->id]) }}">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-danger" name="delete"><i
+                                                <button type="submit" class="btn btn-danger" name="delete"
+                                                    data-toggle="tooltip" data-placement="top" title="Delete"><i
                                                         class='bi bi-trash'></i></button>
                                             </div>
 

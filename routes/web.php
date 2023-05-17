@@ -101,6 +101,14 @@ Route::match(['get','post'], '/admin/add_product/add', [App\Http\Controllers\Pro
 
 Route::get('add_product', [App\Http\Controllers\ProductController::class, 'index']);
 
+Route::get('update/product/status/{id}', [App\Http\Controllers\ProductController::class, 'status']);
+
+//Route::get('{id}', [App\Http\Controllers\ProductController::class, 'edit']);
+
+//edit route
+
+Route::get('/admin/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit']);
+
 // delete route
 Route::get('/admin/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
 

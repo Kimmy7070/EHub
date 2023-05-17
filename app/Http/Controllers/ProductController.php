@@ -102,10 +102,17 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(categories $categories)
+    public function status($id)
     {
-        //
+        $data = DB::table('products')->where('id', $id)->first();
+        if ($data->status == 1) {
+            DB::table('products')->where('id', $id)->update(['status' => 0]);
+        } else {
+            DB::table('products')->where('id', $id)->update(['status' => 1]);
+        }
+        return redirect('/admin/product')->with('success', "Status updated successfully.");
     }
+
     public function delete($id)
     {
         DB::table('products')->where('id', $id)->delete();
