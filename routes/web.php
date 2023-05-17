@@ -109,6 +109,8 @@ Route::get('update/product/status/{id}', [App\Http\Controllers\ProductController
 
 Route::get('/admin/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit']);
 
+Route::get('/admin/product/update_quantity/{id}', [App\Http\Controllers\ProductController::class, 'update_quantity']);
+
 // delete route
 Route::get('/admin/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
 

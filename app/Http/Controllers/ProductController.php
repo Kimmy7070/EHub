@@ -94,9 +94,22 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, categories $categories)
+
+
+    public function update_quantity(Request $request , $id)
     {
-        //
+
+        $name = $request['name'];
+        $mrp = $request['mrp'];
+        $price = $request['price'];
+        $qty = $request['quantity'];
+
+        DB::table('products')->where('id', $id)->update(['name' => $name]);
+        DB::table('products')->where('id', $id)->update(['mrp' => $mrp]);
+        DB::table('products')->where('id', $id)->update(['price' => $price]);
+        DB::table('products')->where('id', $id)->update(['quantity' => $qty]);
+
+        return redirect('/admin/product');
     }
 
     /**
