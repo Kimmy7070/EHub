@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('customer.layout_index')
 
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="shortcut icon" />

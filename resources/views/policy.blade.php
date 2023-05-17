@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('customer.layout_index')
 
 <link rel="stylesheet" href="{{ asset('css/policy.css') }}" />
 
