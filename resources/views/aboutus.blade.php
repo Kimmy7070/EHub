@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('customer.layout_index')
 
 <!-- team section css -->
 <link rel="stylesheet" href="{{ asset('css/team.css') }}" />
