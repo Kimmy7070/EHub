@@ -116,7 +116,7 @@
             <div class="icons-container">
                 {{-- <a href=""><i class="bx bx-heart"></i></a> --}}
                 <a href="/customer/cart"><i class="bx bx-cart"></i></a>
-                <a href=""><i class="bx bx-bell"></i></a>
+                <a href="/customer/order"><i class="bx bx-bell"></i></a>
                 @guest
                     @if (Route::has('login'))
                         <div class="dropdown">

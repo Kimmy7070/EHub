@@ -37,6 +37,7 @@
     <!-- Page -->
     <div class="page-area cart-page spad">
         <div class="container">
+            <h1>Cart</h1>
             <div class="cart-table">
                 <table>
                     <thead>

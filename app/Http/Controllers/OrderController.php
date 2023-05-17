@@ -89,9 +89,18 @@ class OrderController extends Controller
 
         return view('admin.order', compact('data'));
     }
-    /**
-     * Show the form for editing the specified resource.
-     */
+
+    public function Customer_Order_Index()
+    {
+        $data = DB::table('orders')->join('carts', 'orders.id', '=', 'carts.is_ordered')
+        ->join('products', 'carts.product_id', '=', 'products.id')
+        ->select('orders.*','products.*', 'carts.cart_quantity', 'products.name')
+        ->where('orders.user_id', Auth::user()->id)->orderBy('orders.id', 'desc')
+        ->get();
+
+        return view('customer.order', compact('data'));
+    }
+
     public function edit(order $order)
     {
         //

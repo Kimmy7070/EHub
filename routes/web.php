@@ -252,6 +252,8 @@ Route::get('/customer/checkout/{user_id}/{product_id}', [App\Http\Controllers\Or
 
 Route::get('/customer/checkout', [App\Http\Controllers\OrderController::class, 'Checkout_Index']);
 
+Route::get('/customer/order', [App\Http\Controllers\OrderController::class, 'Customer_Order_Index']);
+
 Route::get('order_backend', [App\Http\Controllers\OrderController::class, 'add_to_order']);
 
 ##########################################################################################
