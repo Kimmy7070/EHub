@@ -30,13 +30,13 @@
 <div class="page-area categorie-page spad">
     <div class="container">
         <div class="categorie-filter-warp">
-            <p>Showing 12 results</p>
+            <p>Showing {{$count}} results</p>
             <div class="cf-right">
-                <div class="cf-layouts">
-                    <a href="#"><img src="img/icons/layout-1.png" alt=""></a>
-                    <a class="active" href="#"><img src="img/icons/layout-2.png" alt=""></a>
-                </div>
-                <form action="#">
+                {{-- <div class="cf-layouts">
+                    <a href="#"><img src="{{asset('assets/icons/layout-1.png')}}" alt=""></a>
+                    <a class="active" href="#"><img src="{{asset('assets/icons/layout-2.png')}}" alt=""></a>
+                </div> --}}
+                {{-- <form action="#">
                     <select>
                         <option>Filter</option>
                     </select>
@@ -46,33 +46,37 @@
                     <select>
                         <option>Sort by</option>
                     </select>
-                </form>
+                </form> --}}
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <div class="product-item">
-                    <figure>
-                        <img src="img/products/1.jpg" alt="">
-                        <div class="pi-meta">
-                            <div class="pi-m-left">
-                                <img src="img/icons/eye.png" alt="">
-                                <p>quick view</p>
-                            </div>
-                            <div class="pi-m-right">
-                                <img src="img/icons/heart.png" alt="">
-                                <p>save</p>
+            @foreach ($data as $product)
+                <a href="{{url('/product_page',['id'=>$product->id] )}} ">
+                    <div class="col-lg-3">
+                        <div class="product-item">
+                            <figure>
+                                <img src="{{ url('storage/' . $product->img1) }}" alt="">
+                                <div class="pi-meta">
+                                    <div class="pi-m-left">
+                                        <img src="{{asset('assets/icons/eye.png')}}" alt="">
+                                        <p>quick view</p>
+                                    </div>
+                                    <div class="pi-m-right">
+                                        <img src="{{asset('assets/icons/heart.png')}}" alt="">
+                                        <p>save</p>
+                                    </div>
+                                </div>
+                            </figure>
+                            <div class="product-info">
+                                <h6>{{ $product->name }}</h6>
+                                <p>{{ $product->price }}</p>
+                                <a href="{{route('login')}}" class="site-btn btn-line">ADD TO CART</a>
                             </div>
                         </div>
-                    </figure>
-                    <div class="product-info">
-                        <h6>Long red Shirt</h6>
-                        <p>$39.90</p>
-                        <a href="#" class="site-btn btn-line">ADD TO CART</a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
+                </a>
+            @endforeach
+            {{-- <div class="col-lg-3">
                 <div class="product-item">
                     <figure>
                         <img src="img/products/2.jpg" alt="">
@@ -317,16 +321,16 @@
                         <a href="#" class="site-btn btn-line">ADD TO CART</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
-        <div class="site-pagination">
+        {{-- <div class="site-pagination">
             <span class="active">01.</span>
             <a href="">02.</a>
             <a href="">03.</a>
             <a href="">04.</a>
             <a href="">05.</a>
             <a href="">06</a>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- Page -->

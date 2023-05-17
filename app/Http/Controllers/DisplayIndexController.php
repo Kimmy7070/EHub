@@ -22,7 +22,8 @@ class DisplayIndexController extends Controller
     public function unknown_allproducts()
     {
         $data = DB::table('products')->get();
-        return view('allproducts',compact('data'));
+        $count = count($data);
+        return view('allproducts',compact('data','count'));
     }
 
     public function unknown_product_page($id)
