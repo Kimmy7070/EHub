@@ -11,7 +11,7 @@
     </p>
     <h2 class="h2">Cancellation Policy</h2>
     <p class="p">
-      You can cancel your order within 24 hours of purchase. To request a cancellation, please contact us with your order details at<a href="mailto:e-hub.com">e-hub.com</a>
+      You can cancel your order within 24 hours of purchase. To request a cancellation, please contact us with your order details at<a href="{{url('contact')}}">e-hub.com</a>
     </p>
     <h2 class="h2">Refund Policy</h2>
     <p class="p">
