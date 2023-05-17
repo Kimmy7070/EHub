@@ -37,8 +37,8 @@
         <a href=" {{ url('/') }} " class="logo"><img src="{{asset('img/logo.png')}}" alt="" /></a>
         <ul class="search-bar">
             <form action="/allproducts" method="get">
-            <input type="search" class="search" placeholder="Search" />
-            <a href="#"><i class="bx bx-search"></i></a>
+            <input type="search" class="search" name="search" placeholder="Search" />
+            <a href="submit"><i class="bx bx-search"></i></a>
             </form>
         </ul>
 
