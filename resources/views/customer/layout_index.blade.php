@@ -141,9 +141,9 @@
                         @endif
                     @else
                         <div class="dropdown">
-                            <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-user-circle"></i>
+                            <button class="btn btn-link"  style="text-decoration: none" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-user-circle"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="/customer/profile">Profile</a>
