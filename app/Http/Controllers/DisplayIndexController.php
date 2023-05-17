@@ -39,4 +39,23 @@ class DisplayIndexController extends Controller
 
         return redirect('/')->with('success', "Query sent successfully.We will contact you shortly.");
      }
+
+     public function show(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            $data = DB::table('products')->where('name', 'LIKE', '%' . $search .'%')->orwhere('category' , 'LIKE', '%' . $search .'%')->orwhere('mrp' ,'LIKE', '%' . $search .'%')->get();
+        } else {
+            $data = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
+        }
+        $count = count($data);
+        $data = compact('data', 'search' , 'count');
+        // echo $search;
+        // echo $data;
+        // echo $count;
+        // return view ('allproducts', compact('data','search','count'));
+        return view('allproducts')->with($data);
+
+
+    }
 }

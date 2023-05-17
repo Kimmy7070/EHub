@@ -107,56 +107,59 @@
         <a href=" {{ url('/customer/index') }} " class="logo"><img src="{{ asset('img/logo.png') }}"
                 alt="" /></a>
         <ul class="search-bar">
-            <input type="search" class="search" placeholder="Search" />
-            <a href="#"><i class="bx bx-search"></i></a>
+            <form action="/allproducts" method="get">
+                <input type="search" class="search" name="search" placeholder="Search" />
+                <a href="submit"><i class="bx bx-search"></i></a>
+            </form>
         </ul>
-            <div class="nav-icon">
-                <div class="icons-container">
-                    {{-- <a href=""><i class="bx bx-heart"></i></a> --}}
-                    <a href="/customer/cart"><i class="bx bx-cart"></i></a>
-                    <a href=""><i class="bx bx-bell"></i></a>
-                    @guest
-                        @if (Route::has('login'))
-                            <div class="dropdown">
-                                <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="bx bx-user-circle"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </div>
-                            </div>
-                        @endif
-
-                        @if (Route::has('register'))
-                            <div class="dropdown">
-                                <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="bx bx-user-circle"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </div>
-                            </div>
-                        @endif
-                    @else
+        <div class="nav-icon">
+            <div class="icons-container">
+                {{-- <a href=""><i class="bx bx-heart"></i></a> --}}
+                <a href="/customer/cart"><i class="bx bx-cart"></i></a>
+                <a href=""><i class="bx bx-bell"></i></a>
+                @guest
+                    @if (Route::has('login'))
                         <div class="dropdown">
-                            <button class="btn btn-link"  style="text-decoration: none" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="bx bx-user-circle"></i>
+                            <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-user-circle"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="/customer/profile">Profile</a>
-                                <a class="dropdown-item" onclick="event.preventDefault();
+                                <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if (Route::has('register'))
+                        <div class="dropdown">
+                            <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-user-circle"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </div>
+                        </div>
+                    @endif
+                @else
+                    <div class="dropdown">
+                        <button class="btn btn-link" style="text-decoration: none" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-user-circle"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/customer/profile">Profile</a>
+                            <a class="dropdown-item"
+                                onclick="event.preventDefault();
 
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-
-
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
+
+
+                    </div>
                 @endguest
 
             </div>
@@ -207,9 +210,9 @@
             <div class="second-info">
                 <h4>Support</h4>
                 <p><a href="{{ url('contactus') }}">Contact Us</a></p>
-                <p><a href="{{url('policy') }}">Policy</a></p>
-                <p><a href="{{url('policy') }}">Policy</a></p>
-                <p><a href="{{url('refunds') }}">Cancellation and Return</a></p>
+                <p><a href="{{ url('policy') }}">Policy</a></p>
+                <p><a href="{{ url('policy') }}">Policy</a></p>
+                <p><a href="{{ url('refunds') }}">Cancellation and Return</a></p>
             </div>
 
             <div class="third-info">
@@ -225,8 +228,8 @@
             <div class="forth-info">
                 <h4>Company</h4>
                 <p><a href="{{ url('aboutus') }}">About Us</a></p>
-                <p><a href="{{url('blog') }}">Blog</a></p>
-                <p><a href="{{url('donate') }}">Donate</a></p>
+                <p><a href="{{ url('blog') }}">Blog</a></p>
+                <p><a href="{{ url('donate') }}">Donate</a></p>
                 <p><a href="{{ route('login') }}">Login</a></p>
                 <p><a href="{{ route('register') }}">Register</a></p>
             </div>

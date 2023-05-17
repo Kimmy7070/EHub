@@ -22,7 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\DisplayIndexController::class, 'Unkown_index']);
 
-Route::get('allproducts', [App\Http\Controllers\DisplayIndexController::class, 'unknown_allproducts']);
+// Route::get('allproducts', [App\Http\Controllers\DisplayIndexController::class, 'unknown_allproducts']);
+
+Route::get('allproducts', [App\Http\Controllers\DisplayIndexController::class, 'show']);
+
+
 
 Route::get('/product_page/{id}', [App\Http\Controllers\DisplayIndexController::class, 'unknown_product_page']);
 
@@ -213,6 +217,8 @@ Auth::routes();
 Route::get('/customer/home', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer'); //application base route; route for customer access
 
 Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'customer_index'])->middleware('is_customer');
+
+Route::get('/customer/allproducts', [App\Http\Controllers\CustomerController::class, 'show'])->middleware('is_customer');
 
 ##########################################################################################
 // customer cart routes starts here
