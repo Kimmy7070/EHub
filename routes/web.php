@@ -256,5 +256,25 @@ Route::get('order_backend', [App\Http\Controllers\OrderController::class, 'add_t
 // Customer side routes ends here
 ###############################################################################
 
+##########################################################################################
+// customer unknown routes starts here
+##########################################################################################
 
+Route::get('policy', function(){
+    return view('policy');
+});
 
+Route::get('refunds', function(){
+    return view('refunds');
+});
+
+Route::get('donate', function(){
+    return view('donate');
+});
+
+Route::get('blog', function(){
+    return view('blog');
+});
+##########################################################################################
+// customer unknown routes ends here
+##########################################################################################

@@ -100,9 +100,9 @@
             <div class="second-info">
                 <h4>Support</h4>
                 <p><a href="{{url('contactus')}}">Contact Us</a></p>
-                <p>Policy</p>
-                <p>privacy</p>
-                <p>Cancellation and Return</p>
+                <p><a href="{{url('policy') }}">Policy</a></p>
+                <p><a href="{{url('policy') }}">Policy</a></p>
+                <p><a href="{{url('refunds') }}">Cancellation and Return</a></p>
             </div>
 
             <div class="third-info">
@@ -118,8 +118,8 @@
             <div class="forth-info">
                 <h4>Company</h4>
                 <p><a href="{{url('aboutus')}}">About Us</a></p>
-                <p>Blog</p>
-                <p>Donate</p>
+                <p><a href="{{url('blog') }}">Blog</a></p>
+                <p><a href="{{url('donate') }}">Donate</a></p>
                 <p><a href="{{ route('login') }}">Login</a></p>
                 <p><a href="{{ route('register') }}">Register</a></p>
             </div>

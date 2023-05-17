@@ -42,6 +42,7 @@
 .team-img img{
     width: 100%;
     transition: 0.3s;
+    max-height: 250px;
 }
 
 .team-info{
