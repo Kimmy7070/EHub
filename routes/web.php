@@ -26,19 +26,6 @@ Route::get('allproducts', [App\Http\Controllers\DisplayIndexController::class, '
 
 Route::get('/product_page/{id}', [App\Http\Controllers\DisplayIndexController::class, 'unknown_product_page']);
 
-##########################################################################
-//contact us for customer route
-##########################################################################
-Route::get('contactus', function () {
-    return view('contactus');
-});
-
-Route::get('contactus_backend_api', [App\Http\Controllers\DisplayIndexController::class, 'contactus_backend_ganja']);
-
-##########################################################################
-//contact us for customer route ends here
-##########################################################################
-
 Route::get('aboutus', function () {
     return view('aboutus');
 });
@@ -114,6 +101,18 @@ Route::match(['get','post'], '/admin/add_product/add', [App\Http\Controllers\Pro
 
 Route::get('add_product', [App\Http\Controllers\ProductController::class, 'index']);
 
+Route::get('update/product/status/{id}', [App\Http\Controllers\ProductController::class, 'status']);
+
+//Route::get('{id}', [App\Http\Controllers\ProductController::class, 'edit']);
+
+//edit route
+
+Route::get('/admin/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit']);
+
+Route::get('edit_product', [App\Http\Controllers\ProductController::class, 'edit_all']);
+
+Route::get('/admin/product/update_quantity/{id}', [App\Http\Controllers\ProductController::class, 'update_quantity']);
+
 // delete route
 Route::get('/admin/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
 
@@ -148,6 +147,7 @@ Route::get('/admin/faq', function(){
     return view('/admin/faq');
 });
 
+//not needed
 Route::get('/admin/contactus', function(){
     return view('/admin/contactus');
 });
@@ -166,9 +166,13 @@ Route::get('/admin/form', function(){
 //cart for admin route
 #####################################################################
 
-Route::get('/admin/cart', function(){
-    return view('/admin/cart');
-});
+// Route::get('/admin/cart', function(){
+//     return view('/admin/cart');
+// });
+
+Route::get('/admin/cart', [App\Http\Controllers\CartController::class, 'Admin_Cart_Index']);
+
+Route::get('/admin/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
 
 #####################################################################
 //cart for admin route ends here
@@ -191,6 +195,18 @@ Route::get('/admin/order', [App\Http\Controllers\OrderController::class, 'Admin_
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                            DO NOT MESS WITH THIS CODE                            $$$$$$$$$$$$$$$$$$$$$$$
 #######################################################################################################################################################################
 
+##########################################################################
+//contact us for customer route
+##########################################################################
+Route::get('contactus', function () {
+    return view('contactus');
+});
+
+Route::get('contactus_backend_api', [App\Http\Controllers\DisplayIndexController::class, 'contactus_backend']);
+
+##########################################################################
+//contact us for customer route ends here
+##########################################################################
 
 Auth::routes();
 
@@ -208,7 +224,7 @@ Route::get('/customer/cart', [App\Http\Controllers\CartController::class, 'Custo
 
 Route::get('/customer/cart/update_cart/{id}', [App\Http\Controllers\CartController::class, 'update_cart']);
 
-//Route::get('/customer/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
+Route::get('/customer/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
 
 ##########################################################################################
 // customer cart routes ends here

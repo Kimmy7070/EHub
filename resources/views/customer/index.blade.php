@@ -65,7 +65,7 @@
                             <div class="product-info">
                                 <h5>{{ $product->name }}</h5>
                                 {{-- <span>{{ $product->mrp }}</span> --}}
-                                <p>{{ $product->price }}</p>
+                                <p>&#8377;{{ $product->price }}</p>
                                 <a href="{{url('/customer/cart/add_to_cart_backend', ['user_id'=>Auth::user()->id, 'product_id'=>$product->id])}}" class="site-btn btn-line">ADD TO CART</a>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                                 </figure>
                                 <div class="product-info">
                                     <h6>{{ $product->name }}</h6>
-                                    <p>{{ $product->price }}</p>
+                                    <p>&#8377;{{ $product->price }}</p>
                                     <a href="#" class="site-btn btn-line">ADD TO CART</a>
                                 </div>
                             </div>

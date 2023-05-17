@@ -19,8 +19,10 @@ class CartController extends Controller
     }
 
     public function Admin_Cart_Index(){
-        $data = DB::table('carts')->select('id','email', 'product_id','created_at')->get();
-        return view ('admin.cart', compact('data'));
+        $data = DB::table('carts')->join('products', 'carts.product_id', '=', 'products.id')->join('users', 'carts.user_id', '=', 'users.id')
+        ->select('carts.*', 'products.name', 'products.img1', 'users.email')
+        ->where('carts.is_ordered', 0)->get();
+        return view('admin.cart', compact('data'));
     }
 
     public function Customer_Cart_Index()
@@ -56,4 +58,10 @@ class CartController extends Controller
     //     $data = cart::create(['user_id'=>$user_id, 'product_id',$product_id]);
     //     return redirect('/customer/cart')->with('success', 'Product added to cart successfully');
     // }
+    public function delete($id)
+    {
+        // echo $cart_id;
+        $data = DB::table('carts')->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Product deleted from cart successfully');
+    }
 }

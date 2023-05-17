@@ -38,7 +38,7 @@
                         <div class="product-content">
                             <h2>{{ $product->name }}</h2>
                             <div class="pc-meta">
-                                <h4 class="price">{{ $product->price }}</h4>
+                                <h4 class="price">&#8377;{{ $product->price }}</h4>
                                 <div class="review">
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="size-choose">
-                                <span>Amount:</span>
+                                <span>Quantity:</span>
                                 <div class="sc-item">
                                     <input type="number" max="10" value="1" class="mt-1" min="1" name="sc"
                                         id="l-size">

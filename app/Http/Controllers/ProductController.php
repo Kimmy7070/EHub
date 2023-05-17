@@ -86,26 +86,60 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(categories $categories)
+    public function edit($id)
     {
-        //
+        $data = DB::table('products')->where('id', $id)->get();
+        return view('admin.edit_product', compact('data'));
     }
+
+    public function edit_all(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            $data = DB::table('products')->where('name', 'LIKE', '%' . $search .'%')->orwhere('category' , 'LIKE', '%' . $search .'%')->orwhere('mrp' ,'LIKE', '%' . $search .'%')->orwhere('quantity' , 'LIKE', '%' . $search .'%')->get();
+        } else {
+            $data = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
+        }
+        $data = compact('data', 'search');
+        return view('admin.edit_product')->with($data);
+    }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, categories $categories)
+
+
+    public function update_quantity(Request $request , $id)
     {
-        //
+
+        $name = $request['name'];
+        $mrp = $request['mrp'];
+        $price = $request['price'];
+        $qty = $request['quantity'];
+
+        DB::table('products')->where('id', $id)->update(['name' => $name]);
+        DB::table('products')->where('id', $id)->update(['mrp' => $mrp]);
+        DB::table('products')->where('id', $id)->update(['price' => $price]);
+        DB::table('products')->where('id', $id)->update(['quantity' => $qty]);
+
+        return redirect('/admin/product');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(categories $categories)
+    public function status($id)
     {
-        //
+        $data = DB::table('products')->where('id', $id)->first();
+        if ($data->status == 1) {
+            DB::table('products')->where('id', $id)->update(['status' => 0]);
+        } else {
+            DB::table('products')->where('id', $id)->update(['status' => 1]);
+        }
+        return redirect('/admin/product')->with('success', "Status updated successfully.");
     }
+
     public function delete($id)
     {
         DB::table('products')->where('id', $id)->delete();
