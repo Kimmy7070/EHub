@@ -7,21 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EHUB</title>
 
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-
-
     <!-- bootstrap  -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -29,6 +14,13 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}" />
+
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+
 
     <!-- font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,6 +36,16 @@
     <!-- boxicons -->
 
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Scripts -->
+    @vite(['resources/js/app.js'])
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+
 </head>
 
 <body>
@@ -107,7 +109,7 @@
         <a href=" {{ url('/customer/index') }} " class="logo"><img src="{{ asset('img/logo.png') }}"
                 alt="" /></a>
         <ul class="search-bar">
-            <form action="/allproducts" method="get">
+            <form action="/customer/allproducts" method="get">
                 <input type="search" class="search" name="search" placeholder="Search" />
                 <a href="submit"><i class="bx bx-search"></i></a>
             </form>
@@ -241,7 +243,7 @@
         </p>
     </div>
 
-    <script src="./js/index.js"></script>
+    <script src="{{ asset('js/index.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

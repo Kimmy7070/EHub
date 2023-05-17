@@ -52,7 +52,7 @@
         <div class="row">
             @foreach ($data as $product)
                 <a href="{{url('/product_page',['id'=>$product->id] )}} ">
-                    <div class="col-lg-3">
+                    <div style="flex-direction: row" class="col-lg-3">
                         <div class="product-item">
                             <figure>
                                 <img src="{{ url('storage/' . $product->img1) }}" alt="">
