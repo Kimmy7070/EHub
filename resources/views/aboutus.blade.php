@@ -65,7 +65,7 @@
                 <div class="col-md-3">
                     <div class="single-team">
                         <div class="team-img">
-                            <img src="./img/3.jpg">
+                            <img src="{{ asset('img/6.jpg') }}">
                         </div>
                         <div class="team-info">
                             <h3>Smita chatterjee</h3>
@@ -77,7 +77,7 @@
                 <div class="col-md-3">
                     <div class="single-team">
                         <div class="team-img">
-                            <img src="./img/3.jpg">
+                            <img src="{{ asset('img/7.jpg') }}">
                         </div>
                         <div class="team-info">
                             <h3>Sounak Mukhopadhyay</h3>
@@ -89,7 +89,7 @@
                 <div class="col-md-3">
                     <div class="single-team">
                         <div class="team-img">
-                            <img src="./img/3.jpg">
+                            <img src="{{ asset('img/5.webp') }}">
                         </div>
                         <div class="team-info">
                             <h3>Suranjan kumar Ghosh</h3>

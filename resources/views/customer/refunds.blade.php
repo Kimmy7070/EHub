@@ -1,10 +1,10 @@
 @extends('customer.layout_index')
 
-{{-- <link rel="stylesheet" href="{{ asset('css/refund.css') }}" /> --}}
+<link rel="stylesheet" href="{{ asset('css/refund.css') }}" />
 
 @section('body')
 
-{{-- <div class="containerx">
+<div class="containerx">
     <h1 class="h1">Cancellation and Refund Policy</h1>
     <p class="p">
       Thank you for using our services. If you are not entirely satisfied with your purchase, we're here to help.
@@ -20,6 +20,6 @@
     <p class="highlight">
       Please note that refunds may take up to 5-7 business days to process.
     </p>
-  </div> --}}
+  </div>
 
 @stop
