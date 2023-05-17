@@ -22,16 +22,16 @@
 
                             <form action="">
                                 <div class="form-group">
-                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search" data-toggle="tooltip"
-                                    data-placement="top" title="Search">
+                                    <input type="search" class="col-5 p-1 mt-1" style="border-radius: 10px" name="search"
+                                        data-toggle="tooltip" data-placement="top" title="Search">
                                     <button class="btn btn-primary" type="submit">Search</button>
                                 </div>
 
                             </form>
                             <br>
-                            <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success" data-toggle="tooltip"
-                                data-placement="top" title="Add Product"><i
-                                        class="bi bi-plus">Add Product</i></button></a>
+                            <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success"
+                                    data-toggle="tooltip" data-placement="top" title="Add Product"><i class="bi bi-plus">Add
+                                        Product</i></button></a>
 
                             <a href="{{ url('edit_product') }}"><button type="button" class="btn btn-success" data-toggle="tooltip"
                                             data-placement="top" title="Edit Product"><i
@@ -52,23 +52,45 @@
                                         <th scope="col">status</th>
                                         <th scope="col">Edit</th>
                                         <th scope="col">Delete</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($Product_data as $product)
+                                    @foreach ($data as $product)
                                         <tr>
-                                            <th scope="row">{{ $product->id }}</th>
-                                            <td>{{ $product->name }}</td>
-                                            <td>{{ $product->category }}</td>
-                                            <td>{{ $product->mrp }}</td>
-                                            <td>&#8377;{{ $product->price }}</td>
-                                            <td>
-                                                @if ($product->quantity >= '1')
-                                                    {{ $product->quantity }}
-                                                @else
-                                                    <button type="button" class="badge bg-warning">Out of Stock</button>
-                                                @endif
-                                            </td>
+
+                                            <form
+                                                action="{{ url('/admin/product/update_quantity', ['id' => $product->id]) }} "
+                                                id="form-qty">
+
+
+                                                <td scope="row">{{ $product->id }}</td>
+                                                <td>
+                                                    <input type="text" placeholder="{{ $product->name }}" min="0"
+                                                        class="form-control-sm" name="name">
+                                                </td>
+
+                                                <td>{{ $product->category }}</td>
+
+                                                <td>
+                                                    <input type="number" placeholder="{{ $product->mrp }}" min="0"
+                                                        class="form-control-sm" name="mrp">
+                                                </td>
+                                                <td>
+                                                    <input type="number" placeholder="{{ $product->price }}" min="0"
+                                                        class="form-control-sm" name="price">
+                                                </td>
+                                                <td>
+                                                    <div class="form-group d-flex">
+                                                        <input type="number" placeholder="{{ $product->quantity }}"
+                                                            min="0" class="form-control-sm" name="quantity">
+
+                                                    </div>
+
+
+                                                </td>
+                                            </form>
+
                                             <td><a href="{{ url('storage/' . $product->img1) }}"><img
                                                         src="{{ url('storage/' . $product->img1) }}" width="30rem"
                                                         height="auto" alt=""></a></td>
@@ -93,15 +115,18 @@
                                             </form>
                                     @endif
 
+
                                     <td>
-                                        <form action="{{ url('/admin/product/edit', ['id' => $product->id]) }}">
-                                            <button type="submit" name="edit" class="btn btn-success" data-toggle="tooltip"
-                                            data-placement="top" title="Edit"><i class="bi bi-pencil-square"></i></button>
-                                        </form>
+                                        <button type="submit" class="btn btn-success" data-toggle="tooltip"
+                                            data-placement="top" title="Edit"
+                                            onclick="document.getElementById('form-qty').submit()"><i
+                                                class="bi bi-pencil-square"></i></button>
                                     </td>
+
+
                                     <td>
                                         <form action="{{ url('/admin/product/delete', ['id' => $product->id]) }}">
-                                            <div class="form-group">
+                                            <div class="form-group-sm">
                                                 <button type="submit" class="btn btn-danger" name="delete"
                                                     data-toggle="tooltip" data-placement="top" title="Delete"><i
                                                         class='bi bi-trash'></i></button>

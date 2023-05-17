@@ -86,10 +86,24 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(categories $categories)
+    public function edit($id)
     {
-        //
+        $data = DB::table('products')->where('id', $id)->get();
+        return view('admin.edit_product', compact('data'));
     }
+
+    public function edit_all()
+    {
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            $data = DB::table('products')->where('name', 'LIKE', '%' . $search .'%')->orwhere('category' , 'LIKE', '%' . $search .'%')->orwhere('mrp' ,'LIKE', '%' . $search .'%')->orwhere('quantity' , 'LIKE', '%' . $search .'%')->get();
+        } else {
+            $data = DB::table('products')->select('id', 'name', 'category', 'mrp', 'price', 'quantity', 'img1', 'img2', 'img3', 'desc', 'short_desc', 'meta_title', 'meta_desc', 'meta_keyword', 'status', 'created_at', 'updated_at')->get();
+        }
+        $data = compact('data', 'search');
+        return view('admin.edit_product')->with($data);
+    }
+
 
     /**
      * Update the specified resource in storage.
