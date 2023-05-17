@@ -92,7 +92,7 @@ class ProductController extends Controller
         return view('admin.edit_product', compact('data'));
     }
 
-    public function edit_all()
+    public function edit_all(Request $request)
     {
         $search = $request['search'] ?? "";
         if ($search != "") {
