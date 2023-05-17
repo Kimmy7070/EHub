@@ -24,21 +24,21 @@
                         <h5 class="card-title">Basic Questions</h5>
 
                         <div>
-                            <h6>1. Nisi ut ut exercitationem voluptatem esse sunt rerum?</h6>
+                            <h6>1.  How do I create an admin account?</h6>
                             <p>Saepe perspiciatis ea. Incidunt blanditiis enim mollitia qui voluptates. Id rem nulla
                                 tenetur nihil in unde rerum. Quae consequatur placeat qui cumque earum eius omnis
                                 quos.</p>
                         </div>
 
                         <div class="pt-2">
-                            <h6>2. Reiciendis dolores repudiandae?</h6>
+                            <h6>2. How do I log in to my admin account?</h6>
                             <p>Id ipsam non ut. Placeat doloremque deserunt quia tenetur inventore laboriosam
                                 dolores totam odio. Aperiam incidunt et. Totam ut quos sunt atque modi molestiae
                                 dolorem.</p>
                         </div>
 
                         <div class="pt-2">
-                            <h6>3. Qui qui reprehenderit ut est illo numquam voluptatem?</h6>
+                            <h6>3. What should I do if I forget my admin password?</h6>
                             <p>Enim inventore in consequuntur ipsam voluptatem consequatur beatae. Nostrum
                                 consequuntur voluptates et blanditiis.</p>
                         </div>
@@ -49,7 +49,7 @@
                 <!-- F.A.Q Group 1 -->
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Laborum dolorem quam porro</h5>
+                        <h5 class="card-title">How can I manage product listings on the website?</h5>
 
                         <div class="accordion accordion-flush" id="faq-group-1">
 
@@ -57,7 +57,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsOne-1"
                                         type="button" data-bs-toggle="collapse">
-                                        Debitis adipisci eius?
+                                        How do I create and manage promotions or discounts on my website?
                                     </button>
                                 </h2>
                                 <div id="faqsOne-1" class="accordion-collapse collapse"
@@ -75,7 +75,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsOne-2"
                                         type="button" data-bs-toggle="collapse">
-                                        Omnis fugiat quis repellendus?
+                                        How do I add new products to the website?
                                     </button>
                                 </h2>
                                 <div id="faqsOne-2" class="accordion-collapse collapse"
@@ -92,7 +92,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsOne-3"
                                         type="button" data-bs-toggle="collapse">
-                                        Et occaecati praesentium aliquam modi incidunt?
+                                        How do I update or edit existing product information?
                                     </button>
                                 </h2>
                                 <div id="faqsOne-3" class="accordion-collapse collapse"
@@ -110,7 +110,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsOne-4"
                                         type="button" data-bs-toggle="collapse">
-                                        Quo unde eaque vero dolor quis ipsam?
+                                        Can I set different prices for different customer groups or regions?
                                     </button>
                                 </h2>
                                 <div id="faqsOne-4" class="accordion-collapse collapse"
@@ -126,7 +126,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsOne-5"
                                         type="button" data-bs-toggle="collapse">
-                                        Natus sunt quo atque mollitia accusamus?
+                                        How do I manage inventory and stock levels?
                                     </button>
                                 </h2>
                                 <div id="faqsOne-5" class="accordion-collapse collapse"
@@ -152,7 +152,7 @@
                 <!-- F.A.Q Group 2 -->
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Deserunt ut unde corporis</h5>
+                        <h5 class="card-title">How can I track and manage customer orders?</h5>
 
                         <div class="accordion accordion-flush" id="faq-group-2">
 
@@ -160,7 +160,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsTwo-1"
                                         type="button" data-bs-toggle="collapse">
-                                        Cumque voluptatem recusandae blanditiis?
+                                        Can I process refunds or cancellations for orders?
                                     </button>
                                 </h2>
                                 <div id="faqsTwo-1" class="accordion-collapse collapse"
@@ -178,7 +178,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsTwo-2"
                                         type="button" data-bs-toggle="collapse">
-                                        Provident beatae eveniet placeat est aperiam repellat adipisci?
+                                        How do I handle shipping and delivery of orders?
                                     </button>
                                 </h2>
                                 <div id="faqsTwo-2" class="accordion-collapse collapse"
@@ -195,7 +195,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsTwo-3"
                                         type="button" data-bs-toggle="collapse">
-                                        Minus aliquam modi id reprehenderit nihil?
+                                        Can I set up promotional discounts or coupon codes?
                                     </button>
                                 </h2>
                                 <div id="faqsTwo-3" class="accordion-collapse collapse"
@@ -213,7 +213,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsTwo-4"
                                         type="button" data-bs-toggle="collapse">
-                                        Quaerat qui est iusto asperiores qui est reiciendis eos et?
+                                        How can I manage customer reviews and ratings?
                                     </button>
                                 </h2>
                                 <div id="faqsTwo-4" class="accordion-collapse collapse"
@@ -229,7 +229,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsTwo-5"
                                         type="button" data-bs-toggle="collapse">
-                                        Laboriosam asperiores eum?
+                                        Is it possible to integrate third-party payment gateways?
                                     </button>
                                 </h2>
                                 <div id="faqsTwo-5" class="accordion-collapse collapse"
@@ -251,7 +251,7 @@
                 <!-- F.A.Q Group 3 -->
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Dolore occaecati ducimus quam</h5>
+                        <h5 class="card-title">How do I add or remove products from my e-commerce website?</h5>
 
                         <div class="accordion accordion-flush" id="faq-group-3">
 
@@ -259,7 +259,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsThree-1"
                                         type="button" data-bs-toggle="collapse">
-                                        Assumenda doloribus est fugiat sint incidunt animi totam nisi?
+                                        How do I update product descriptions, prices, and images on my website?
                                     </button>
                                 </h2>
                                 <div id="faqsThree-1" class="accordion-collapse collapse"
@@ -277,7 +277,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsThree-2"
                                         type="button" data-bs-toggle="collapse">
-                                        Consequatur saepe explicabo odio atque nisi?
+                                        How do I manage customer orders and track shipments?
                                     </button>
                                 </h2>
                                 <div id="faqsThree-2" class="accordion-collapse collapse"
@@ -294,7 +294,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsThree-3"
                                         type="button" data-bs-toggle="collapse">
-                                        Voluptates vel est fugiat molestiae rem sit eos sint?
+                                        How do I set up and manage payment gateways?
                                     </button>
                                 </h2>
                                 <div id="faqsThree-3" class="accordion-collapse collapse"
@@ -312,7 +312,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsThree-4"
                                         type="button" data-bs-toggle="collapse">
-                                        Ab ipsa cum autem voluptas doloremque velit?
+                                        How do I handle refunds and returns?
                                     </button>
                                 </h2>
                                 <div id="faqsThree-4" class="accordion-collapse collapse"
@@ -328,7 +328,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" data-bs-target="#faqsThree-5"
                                         type="button" data-bs-toggle="collapse">
-                                        Aliquam magni ducimus facilis numquam dolorum harum eveniet iusto?
+                                        How do I manage inventory and keep track of stock levels?
                                     </button>
                                 </h2>
                                 <div id="faqsThree-5" class="accordion-collapse collapse"
