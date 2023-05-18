@@ -32,10 +32,10 @@
                             <a href="{{ url('add_product') }}"><button type="button" class="btn btn-success" data-toggle="tooltip"
                                 data-placement="top" title="Add Product"><i
                                         class="bi bi-plus">Add Product</i></button></a>
-
+{{--
                             <a href="{{ url('edit_product') }}"><button type="button" class="btn btn-success" data-toggle="tooltip"
                                             data-placement="top" title="Edit Product"><i
-                                                    class="bi bi-pencil-square">Edit Product</i></button></a>
+                                                    class="bi bi-pencil-square">Edit Product</i></button></a> --}}
                             <!-- Table with stripped rows -->
                             <table class="table datatable">
                                 <thead>
